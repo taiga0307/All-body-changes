@@ -20,6 +20,6 @@ All body changes
 
 
 ### 機能一覧
-<https://docs.google.com/spreadsheets/d/16kRHHMIxnSn31UvDY7Gfycw0Qasne2pa_I7aYTk-vUU/edit#gid=1488381057>
+https://docs.google.com/spreadsheets/d/16kRHHMIxnSn31UvDY7Gfycw0Qasne2pa_I7aYTk-vUU/edit?usp=sharing
 
 
