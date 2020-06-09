@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      customer:
+        name_sei: 姓
+        name_mei: 名
+        yomi_sei: セイ
+        yomi_mei: メイ
+        nickname: ニックネーム
+        postal_code: 郵便番号
+        prefecture_code: 都道府県
+        address_city: 市区町村
+        address_street: 町名番地
+        tell: 電話番号
+        email: メールアドレス
+        password: パスワード

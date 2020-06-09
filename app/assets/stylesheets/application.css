@@ -13,3 +13,35 @@
  *= require_tree .
  *= require_self
  */
+
+ .form{
+    margin: 0 auto;
+    width: 850px;
+ }
+
+table.table_singup{
+    border: 1px solid #dedede;
+    background: #f9f9f5;
+    margin: 0 auto;
+    width: 800px;
+    font-size: 110%;
+    color: #5E6469;
+}
+
+th{
+  text-align: center;
+  border-bottom: 1px solid #dedede;
+}
+
+td {
+  text-align: center;
+  border-bottom: 1px solid #dedede;
+}
+
+.pa10px40px{
+  padding: 10px 40px;
+}
+
+
+
+

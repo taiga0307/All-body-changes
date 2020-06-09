@@ -1,0 +1,2 @@
+module Customers::GymFavoritesHelper
+end

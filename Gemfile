@@ -60,3 +60,30 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+gem 'devise'
+gem 'devise-i18n' # deviseを日本語化するため
+gem 'devise-i18n-views'
+
+gem 'activeadmin' # 管理画面作成のため
+
+gem "refile", require: "refile/rails", github: 'manfe/refile' # 画像投稿用gem
+gem "refile-mini_magick" # 画像加工用（サイズ調整など）gem
+
+gem 'bootstrap-sass', '~> 3.3.6' # デザイン
+
+gem 'jquery-rails' # RailsでjQueryを使えるようにするため
+
+gem 'pry-byebug' # 一度プログラム処理を止めて、その時点のアプリケーションの状態をみることができる
+
+gem 'kaminari','~> 1.1.1' #ページ区切る為
+
+gem 'jp_prefecture' # 住所機能
+
+gem 'enum_help' #enumの日本語化
+
+gem 'jquery-rails' #jquery-rails
+
+gem 'fullcalendar-rails' #カレンダー
+
+gem 'dotenv-rails' # 環境変数を管理するため
