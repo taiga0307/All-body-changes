@@ -1,5 +1,8 @@
-<div class="form">
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
 <h2>ログイン</h2>
+  <p>メールアドレスとパスワードを入力後、ログインボタンをクリックしてください。</p><br>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
@@ -7,7 +10,7 @@
   <table class="table_singup">
     <tbody>
       <tr>
-        <th>メールアドレス</th>
+        <th class="pa10px40px">メールアドレス</th>
         <td>
           <div class="field">
             <!-- <= f.label :email %><br /> -->
@@ -15,7 +18,7 @@
           </div>
         </td>
       <tr>
-        <th>パスワード</th>
+        <th class="pa10px40px">パスワード</th>
         <td>
           <div class="field">
             <!-- <= f.label :password %><br /> -->
@@ -24,18 +27,27 @@
         </td>
       </tr>
       <tr>
-        <th>
+        <td colspan="2", class="pa10px40px">
           <% if devise_mapping.rememberable? %>
           <div class="field">
             <%= f.check_box :remember_me %>
             <%= f.label :remember_me %>
           </div>
           <% end %>
-
           <div class="actions">
-             <%= f.submit "Log in" %>
+             <%= f.submit "ログイン", class:"btn btn-success btn-lg" %>
           </div>
+          <%= render "customers/shared/links" %>
+        </td>
+        <th></th>
+      </tr>
+    </tbody>
+  </table>
 <% end %>
 
-<%= render "customers/shared/links" %>
+
+</div>
+</div>
+</div>
+</div>
 </div>

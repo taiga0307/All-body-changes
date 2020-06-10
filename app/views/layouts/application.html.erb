@@ -8,29 +8,57 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-<header class="navbar navbar-fixed-top navbar-inverse">
+
+    <header class="navbar navbar-fixed-top navbar-inverse">
       <div class="container">
+        <div class="row">
+          <div class="col-xs-8">
+            <h1 class=name>ジム・フィットネスクラブ検索・スポーツ商品購入サイト</h1>
+          </div>
 
-        <nav class="nav navbar-nav navbar-left">
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-            <% if customer_signed_in? %>
-              <li><%= link_to 'アバウト', customers_homes_about_path, class:"fas fa-cookie-bite" %></li>
-              <li><%= link_to 'マイページ', customers_mypage_path, class:"fas fa-user-cog" %></li>
-              <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete, class:"fas fa-sign-out-alt" %></li><!-- 変更 -->
-              <li><%= link_to '退会画面', customers_withdraw_path, class:"fas fa-cookie-bite" %></li>
-            <% else %>
-              <li><%= link_to 'アバウト', customers_homes_about_path, class:"fas fa-cookie-bite" %></li>
-              <li><%= link_to '商品一覧', customers_products_path, class:"fas fa-cookie" %></li>
-              <li><%= link_to '会員登録', '/customers/sign_up', class:"fas fa-user-plus" %></li>
-              <li><%= link_to 'ログイン', new_customer_session_path, class:"fas fa-sign-in-alt" %></li>
-            <% end %>
-        </nav>
+          <!-- 検索フォーム -->
+          <div class="col-xs-4">
+            <div class=search>
+              <%= form_with url: customers_search_path, method: :get, local: true do |f| %>
+                <%= f.select :genre, [["ジム", "Gym"], ["商品", "Product"]] %>
+                <%= f.select :direction, [["完全一致","完全一致"], ["前方一致", "前方一致"], ["後方一致", "後方一致"], ["部分一致","部分一致"]] %>
+                <!-- 配列[[ 選択肢の表示名1, 実際に送信されるデータ1 ], [ 選択肢の表示名1, 実際に送信されるデータ2 ]] -->
+                <%= f.text_field :search, placeholder: "検索ワードを入力" %><!-- 検索ワードを入力を入力するための架空カラム -->
+                <%= f.submit "検索" %>
+              <% end %>
+            </div>
+          </div>
+          <!-- 検索フォーム -->
 
-      </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <a class="navbar-brand" href="#">
+              タイトル
+            </a>
+          </div>
+          <div class="col-xs-8">
+            <ul class="nav navbar-nav navbar-center">
+              <% if customer_signed_in? %>
+                <li><%= link_to 'アバウト', customers_homes_about_path, class:"fas fa-cookie-bite" %></li>
+                <li><%= link_to 'マイページ', customers_mypage_path, class:"fas fa-user-cog" %></li>
+                <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete, class:"fas fa-sign-out-alt" %></li>
+                <li></li>
+                <!-- 変更 -->
+                <li><%= link_to '退会画面', customers_withdraw_path, class:"fas fa-cookie-bite" %></li>
+                <li><%= link_to '会員情報編集画面', customers_fix_path, class:"fas fa-cookie-bite" %></li>
+              <% else %>
+                <li><%= link_to 'アバウト', customers_homes_about_path, class:"fas fa-cookie-bite" %></li>
+                <li><%= link_to '商品一覧', customers_products_path, class:"fas fa-cookie" %></li>
+                <li><%= link_to '会員登録', '/customers/sign_up', class:"fas fa-user-plus" %></li>
+                <li><%= link_to 'ログイン', new_customer_session_path, class:"fas fa-sign-in-alt" %></li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
     </header>
-    <%= yield %>
+    <div class="main">
+      <%= yield %>
+    </div>
   </body>
 </html>

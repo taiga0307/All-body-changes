@@ -1,13 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-10 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
-      <h2>会員登録</h2>
-      <p>会員情報を入力してください。この情報は後から変更することが出来ます。</p><br>
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+      <h2>会員情報編集</h2>
+      <p>会員情報を入力してください。入力後「編集内容を保存する」ボタンをクリックしてください。尚、退会をご希望される場合は「退会」ボタンをクリックしてください。</p><br>
+
+      <%= form_with model: @customer, url: '/customers/fix',local: true do |f| %>
       <table class="table_singup">
         <tbody>
-
           <tr>
             <th class="pa10px40px">お名前</th>
             <td>
@@ -23,7 +22,6 @@
               </div>
             </td>
           </tr>
-
           <tr>
             <th class="pa10px40px">お名前(フリガナ)</th>
             <td>
@@ -109,34 +107,13 @@
           </tr>
 
           <tr>
-            <th class="pa10px40px">パスワード</th>
-            <td colspan="2">
-              <div class="field">
-                <% if @minimum_password_length %>
-                <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
-                <% end %>
-                <%= f.password_field :password, autocomplete: "new-password" %>
-              </div>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <th class="pa10px40px">パスワード(確認用)</th>
-            <td colspan="2">
-              <div class="field">
-                <!--  <= f.label :password_confirmation %><br /> -->
-                <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-              </div>
-            </td>
-            <td></td>
-          </tr>
-
-          <tr>
             <td colspan="3">
               <div class="actions">
-                <%= f.submit "会員登録をする", class:"btn btn-success btn-lg" %>
+                <%= f.submit "編集内容を保存する", class:"btn btn-primary"%>
               </div>
-              <!-- <= render "customers/shared/links" %> -->
+              <div class="actions">
+                <%= link_to "退会する", customers_withdraw_path, class:"btn btn-danger" %>
+              </div>
             </td>
             <td></td>
             <td></td>
@@ -148,3 +125,4 @@
     </div>
   </div>
 </div>
+

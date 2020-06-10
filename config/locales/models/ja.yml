@@ -14,3 +14,9 @@ ja:
         tell: 電話番号
         email: メールアドレス
         password: パスワード
+        customer_status: 会員ステータス
+      # customer:
+      #   customer_status:
+      #     one customer_status:
+      #       "true": "会員"
+      #       "folse": "退会済み"

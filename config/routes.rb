@@ -3,15 +3,18 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :customers, controllers: {
     sessions:      'customers/sessions', # 会員ログイン画面
-    passwords:     'customers/passwords', # 会員パスワード編集画面
-    registrations: 'customers/registrations' # 会員登録画面
+    passwords:     'customers/passwords',
+    registrations: 'customers/registrations' # 会員登録画面、会員パスワード編集画面
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
     get 'customers/mypage' => 'customers#mypage' # マイページ画面
     get 'customers/withdraw' => 'customers#withdraw'# 会員退会画面
-    put 'customers/withdraw' => 'customers#withdraw_update'
     patch 'customers/withdraw' => 'customers#withdraw_update'
+    get 'customers/fix' => 'customers#fix'
+    patch 'customers/fix' => 'customers#fix_update'
+
+    get 'customers/search' => 'customers#search' # 検索画面
 
   namespace :customers do
 

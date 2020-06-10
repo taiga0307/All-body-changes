@@ -1,3 +1,30 @@
 // Place all the styles related to the customers::reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.table_singup{
+    border: 1px solid #dedede;
+    background: #f9f9f5;
+    margin: 0 auto;
+    width: 800px;
+    color: #5E6469;
+}
+th{
+  text-align: center;
+  border-bottom: 1px solid #dedede;
+  font-size: 110%;
+}
+td {
+  text-align: center;
+  border-bottom: 1px solid #dedede;
+  font-size: 80%;
+}
+.pa10px40px{
+  padding: 10px 40px;
+}
+.actions{
+  padding: 10px;
+}
+.field{
+  padding: 10px;
+}
