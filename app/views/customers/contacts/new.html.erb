@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
+      <h2>お問い合わせ内容入力</h2>
+      <p>お問い合わせは下記入力フォームよりお願いいたします。いただきましたお問い合わせは当日、もしくは翌日中に返答いたします。</p><br>
+      <% if @contact.errors.any? %>
+        <div class="alert alert-warning">
+          <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <%= form_with model:@contact, local: true, url: customers_contacts_confirm_path do |f| %>
+      <table class="table_singup">
+        <tbody>
+          <tr>
+            <th class="pa10px40px">お名前</th>
+            <td>
+              <div class="field">
+                <%= f.text_field :contact_name, autofocus: true %>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="pa10px40px">メールアドレス</th>
+            <td>
+              <div class="field">
+                <%= f.text_field :contact_email, autofocus: true %>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="pa10px40px">お問い合わせ要件</th>
+            <td>
+              <div class="field">
+                <%= f.radio_button :contact_status, :gym %>　ジム・フィットネスについて　
+                <%= f.radio_button :contact_status, :product %>　商品について　
+                <%= f.radio_button :contact_status, :other %>　その他　
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <th class="pa10px40px">お問い合わせ内容</th>
+            <td>
+              <div class="field">
+                <%= f.text_field :contact_content, autofocus: true %>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div class="actions">
+                <%= f.submit "確認画面に進む", class:"btn btn-success btn-lg" %>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+

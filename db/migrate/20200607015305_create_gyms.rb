@@ -1,6 +1,7 @@
 class CreateGyms < ActiveRecord::Migration[5.2]
   def change
     create_table :gyms do |t|
+      t.integer :genre_id
       t.string :gym_name
       t.text :gym_description
       t.string :gym_tell

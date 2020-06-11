@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
+      <h2>お問い合わせ内容確認</h2>
+      <p>お問い合わせ内容を確認の上、「お問い合わせをする」ボタンをクリックしてください。</p><br>
+
+      <%= form_with model:@contact, local: true, url: customers_contacts_path do |f| %>
+      <table class="table_singup">
+        <tbody>
+          <tr>
+            <th class="pa10px40px">氏名</th>
+            <td>
+              <div class="field">
+                <%= @contact.contact_name %>
+                <%= f.hidden_field :contact_name, :value => @contact.contact_name %>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="pa10px40px">メールアドレス</th>
+            <td>
+              <div class="field">
+                <%= @contact.contact_email %>
+                <%= f.hidden_field :contact_email, :value => @contact.contact_email %>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="pa10px40px">お問い合わせ要件</th>
+            <td>
+              <div class="field">
+                <%= @contact.contact_status %>
+                <%= f.hidden_field :contact_status, :value => @contact.contact_status  %>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <th class="pa10px40px">お問い合わせ内容</th>
+            <td>
+              <div class="field">
+                <%= @contact.contact_content %>
+                <%= f.hidden_field :contact_content, :value => @contact.contact_content %>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <div class="actions">
+                <%= f.submit "お問い合わせをする", class:"btn btn-success btn-lg" %>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <% end %>
+    </div>
+  </div>
+</div>
+

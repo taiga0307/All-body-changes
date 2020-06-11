@@ -21,10 +21,9 @@ Rails.application.routes.draw do
     root 'homes#top' # トップ画面
     get 'homes/about' => 'homes#about' #アバウト画面
 
-    get 'contacts/new' => 'contacts#new'# お問い合わせ入力画面
-    get 'contacts/confirm' => 'contacts#confirm'# お問い合わせ確認画面
+    post 'contacts/confirm' => 'contacts#confirm'# お問い合わせ確認画面
     get 'contacts/thanks' => 'contacts#thanks'# お問い合わせサンクス画面
-    get 'contacts/index' => 'contacts#index'# お問い合わせ履歴一覧画面
+    resources :contacts, only: [:index, :create, :new] # お問い合わせ履歴一覧画面、お問い合わせ入力画面
 
     resources :products, only: [:index, :show] do # 商品一覧画面、商品詳細画面　ジャンル一覧は商品一覧と一緒
       resources :post_comments, only: [:create, :destroy] # 商品のコメント保存、削除

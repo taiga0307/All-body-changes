@@ -20,3 +20,8 @@ ja:
       #     one customer_status:
       #       "true": "会員"
       #       "folse": "退会済み"
+      contact:
+        contact_name: お名前
+        contact_email: メールアドレス
+        contact_content: お問い合わせ内容
+

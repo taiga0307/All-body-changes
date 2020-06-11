@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   </head>
   <body>
 
@@ -43,10 +45,9 @@
                 <li><%= link_to 'アバウト', customers_homes_about_path, class:"fas fa-cookie-bite" %></li>
                 <li><%= link_to 'マイページ', customers_mypage_path, class:"fas fa-user-cog" %></li>
                 <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete, class:"fas fa-sign-out-alt" %></li>
-                <li></li>
+                <li><%= link_to 'お問い合わせ入力画面', new_customers_contact_path, class:"fas fa-user-cog" %></li>
                 <!-- 変更 -->
-                <li><%= link_to '退会画面', customers_withdraw_path, class:"fas fa-cookie-bite" %></li>
-                <li><%= link_to '会員情報編集画面', customers_fix_path, class:"fas fa-cookie-bite" %></li>
+
               <% else %>
                 <li><%= link_to 'アバウト', customers_homes_about_path, class:"fas fa-cookie-bite" %></li>
                 <li><%= link_to '商品一覧', customers_products_path, class:"fas fa-cookie" %></li>

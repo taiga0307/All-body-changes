@@ -18,7 +18,7 @@ class Customers::PasswordsController < Devise::PasswordsController
 
   # PUT /resource/password
   # def update
-  #   super
+  # super
   # end
 
   # protected

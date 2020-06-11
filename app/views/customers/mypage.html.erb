@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
+			<h2><%= current_customer.name_sei %><%= current_customer.name_mei %>様のマイページ</h2>
+      	<p>会員情報を入力してください。入力後「編集内容を保存する」ボタンをクリックしてください。尚、退会をご希望される場合は「退会」ボタンをクリックしてください。</p><br>
+      	  <div class="row">
+    				<div class="col-xs-4">
+							<div class="box1">
+    						<div class="box1-title">
+    							<p class="fas fa-user-edit fa-lg"> 登録内容確認変更</p>
+    						</div>
+    						<p>氏名、ご住所、電話番号、メールアドレス、パスワードなど変更ができます。</p>
+    						<a><%= link_to '編集する', customers_fix_path, class:"btn1" %></a>
+    						<a><%= link_to 'パスワード変更', edit_customer_registration_path, class:"btn1" %></a>
+							</div>
+						</div>
+
+    				<div class="col-xs-4">
+							<div class="box2">
+    						<div class="box2-title">
+    							<p class="fas fa-user-check fa-lg"> お問い合わせ内容確認</p>
+    						</div>
+    						<p>今までのお問い合わせ内容が確認できます。</p>
+    						<a><%= link_to '確認する', customers_contacts_path, class:"btn2" %></a>
+							</div>
+						</div>
+
+			    	<div class="col-xs-4">
+							<div class="box3">
+    						<div class="box3-title">
+    							<p class="fas fa-dumbbell fa-lg"> ジムフィットネス予約一覧</p>
+    						</div>
+    						<p>ご予約いただいたジムの一覧を確認できます。</p>
+    						<a><%= link_to '確認する', customers_reservations_path, class:"btn3" %></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="row">
+			    	<div class="col-xs-4">
+							<div class="box4">
+    						<div class="box4-title">
+    							<p class="fas fa-heart fa-lg"> お気に入り一覧</p>
+    						</div>
+    						<p>お気に入りいただいたジムの一覧や商品の一覧を確認できます。</p>
+    						<a><%= link_to 'ジムの一覧', customers_gyms_path, class:"btn4" %></a>
+    						<a><%= link_to '商品の一覧', customers_products_path, class:"btn4" %></a>
+							</div>
+						</div>
+					</div>
+					</div>
+
+
+
+		</div>
+	</div>
+</div>
+
+
+

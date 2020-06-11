@@ -1,3 +1,157 @@
 // Place all the styles related to the customer controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+  @import "bootstrap-sprockets";  /*Bootstrapを読み込ませる*/
+  @import "bootstrap";            /*Bootstrapを読み込ませる*/
+
+.box1{
+    margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    width: 300px;
+    height: 200px;
+}
+.box1-title{
+    font-size: 1.2em;
+    background: #5fc2f5;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 15px;
+}
+.box1 p {
+    padding: 15px 20px;
+    margin: 0;
+}
+.btn1 {
+  display: inline-block;
+  padding: 0.3em 1em;
+  margin: 15px 0 0 5px;
+  text-decoration: none;
+  color: #5fc2f5;
+  border: solid 2px #5fc2f5;
+  border-radius: 3px;
+  transition: .4s;
+  width:140px;
+  text-align: center;
+}
+.btn1:hover {
+  background: #5fc2f5;
+  color: white;
+}
+
+.box2{
+    margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    width: 300px;
+    height: 200px;
+}
+.box2-title{
+    font-size: 1.2em;
+    background: #33CC99;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 15px;
+}
+.box2 p {
+    padding: 15px 20px;
+    margin: 0;
+}
+.btn2 {
+  display: inline-block;
+  padding: 0.3em 1em;
+  margin: 15px 0 0 80px;
+  text-decoration: none;
+  color: #33CC99;
+  border: solid 2px #33CC99;
+  border-radius: 3px;
+  transition: .4s;
+  width:140px;
+  text-align: center;
+}
+.btn2:hover {
+  background: #33CC99;
+  color: white;
+}
+
+.box3{
+    margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    width: 300px;
+    height: 200px;
+}
+.box3-title{
+    font-size: 1.2em;
+    background: #FFCC00;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 13px;
+}
+.box3 p {
+    padding: 15px 20px;
+    margin: 0;
+}
+.btn3 {
+  display: inline-block;
+  padding: 0.3em 1em;
+  margin: 15px 0 0 80px;
+  text-decoration: none;
+  color: #FFCC00;
+  border: solid 2px #FFCC00;
+  border-radius: 3px;
+  transition: .4s;
+  width:140px;
+  text-align: center;
+}
+.btn3:hover {
+  background: #FFCC00;
+  color: white;
+}
+
+.box4{
+    margin: 2em 0;
+    background: #f1f1f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+    width: 300px;
+    height: 200px;
+}
+.box4-title{
+    font-size: 1.2em;
+    background: #FF99CC;
+    padding: 4px;
+    text-align: center;
+    color: #FFF;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 11px;
+}
+.box4 p {
+    padding: 15px 20px;
+    margin: 0;
+}
+.btn4 {
+  display: inline-block;
+  padding: 0.3em 1em;
+  margin: 15px 0 0 5px;
+  text-decoration: none;
+  color: #FF99CC;
+  border: solid 2px #FF99CC;
+  border-radius: 3px;
+  transition: .4s;
+  width:140px;
+  text-align: center;
+}
+.btn4:hover {
+  background: #FF99CC;
+  color: white;
+}

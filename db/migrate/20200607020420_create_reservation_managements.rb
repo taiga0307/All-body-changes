@@ -1,7 +1,8 @@
 class CreateReservationManagements < ActiveRecord::Migration[5.2]
   def change
     create_table :reservation_managements do |t|
-
+      t.integer :reservation_id
+      t.integer :gym_id
       t.timestamps
     end
   end

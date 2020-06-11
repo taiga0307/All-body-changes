@@ -39,9 +39,11 @@ ActiveRecord::Schema.define(version: 2020_06_07_020420) do
   end
 
   create_table "contacts", force: :cascade do |t|
+    t.integer "customer_id"
     t.string "contact_name"
     t.string "contact_email"
     t.text "contact_content"
+    t.integer "contact_status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -79,6 +81,8 @@ ActiveRecord::Schema.define(version: 2020_06_07_020420) do
   end
 
   create_table "gym_comments", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "gym_id"
     t.string "gym_title"
     t.text "gym_comment"
     t.float "gym_rate"
@@ -87,11 +91,14 @@ ActiveRecord::Schema.define(version: 2020_06_07_020420) do
   end
 
   create_table "gym_favorites", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "gym_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "gyms", force: :cascade do |t|
+    t.integer "genre_id"
     t.string "gym_name"
     t.text "gym_description"
     t.string "gym_tell"
@@ -108,6 +115,8 @@ ActiveRecord::Schema.define(version: 2020_06_07_020420) do
   end
 
   create_table "product_comments", force: :cascade do |t|
+    t.integer "genre_id"
+    t.integer "product_id"
     t.string "product_title"
     t.text "product_comment"
     t.float "product_rate"
@@ -116,11 +125,14 @@ ActiveRecord::Schema.define(version: 2020_06_07_020420) do
   end
 
   create_table "product_favorites", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
+    t.integer "genre_id"
     t.string "product_name"
     t.text "product_description"
     t.integer "product_price"
@@ -132,11 +144,14 @@ ActiveRecord::Schema.define(version: 2020_06_07_020420) do
   end
 
   create_table "reservation_managements", force: :cascade do |t|
+    t.integer "reservation_id"
+    t.integer "gym_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "reservations", force: :cascade do |t|
+    t.integer "customer_id"
     t.string "full_name"
     t.string "postal_code"
     t.string "address"
