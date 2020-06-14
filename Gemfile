@@ -65,8 +65,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'devise-i18n' # deviseを日本語化するため
 gem 'devise-i18n-views'
+gem 'enum_help'
 
 gem 'activeadmin' # 管理画面作成のため
+gem 'carrierwave' # activeadmin画像アップロード用
 
 gem "refile", require: "refile/rails", github: 'manfe/refile' # 画像投稿用gem
 gem "refile-mini_magick" # 画像加工用（サイズ調整など）gem
@@ -86,3 +88,7 @@ gem 'jquery-rails' #jquery-rails
 gem 'fullcalendar-rails' #カレンダー
 
 gem 'dotenv-rails' # 環境変数を管理するため
+
+group :production do
+  gem 'mysql2'
+end
