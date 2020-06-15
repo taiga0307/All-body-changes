@@ -26,7 +26,14 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
     models:
+      admin_user: 管理者
+      comment: 管理者コメント
       customer: ユーザ
+      product: 商品
+      contact: お問い合わせ
+      gym: ジムフィットネス
+      genre: カテゴリー
+
   devise:
     confirmations:
       confirmed: アカウントを登録しました。

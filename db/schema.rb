@@ -44,6 +44,7 @@ ActiveRecord::Schema.define(version: 2020_06_07_020420) do
     t.string "contact_email"
     t.text "contact_content"
     t.integer "contact_status", default: 0, null: false
+    t.boolean "task_status", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
+      <h2>お問い合わせ内容確認</h2>
+      <p>今までのお問い合わせ内容を表示しております。</p><br>
+
+      <table>
+        <thead>
+          <tr>
+            <th>お問い合わ日</th>
+            <th>お名前</th>
+            <th>メールアドレス</th>
+            <th>お問い合わせ要件</th>
+            <th>お問い合わせ内容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+          <%= @contact.each do |contact| %>
+            <td>
+                <%= contact.created_at.strftime('%Y/%m/%d %H:%M') %><!-- ※問い合わせ日 年/月/日で表示 -->
+
+            </td>
+            <td>
+                <%= contact.contact_name %>
+            </td>
+            <td>
+                <%= contact.contact_email %>
+            </td>
+            <td>
+                <%= contact.contact_status %>
+            </td>
+            <td>
+                <%= contact.contact_content %>
+            </td>
+          <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

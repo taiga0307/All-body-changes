@@ -6,6 +6,7 @@ class CreateContacts < ActiveRecord::Migration[5.2]
       t.string :contact_email
       t.text :contact_content
       t.integer :contact_status, default: 0, null: false
+      t.boolean :task_status, default: false, null: false
 
       t.timestamps
     end

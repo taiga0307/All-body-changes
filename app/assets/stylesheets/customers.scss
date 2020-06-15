@@ -13,10 +13,10 @@
 }
 .box1-title{
     font-size: 1.2em;
-    background: #5fc2f5;
+    background: #0099FF;
     padding: 4px;
     text-align: center;
-    color: #FFF;
+    color: white;
     font-weight: bold;
     letter-spacing: 0.05em;
     font-size: 15px;
@@ -30,15 +30,16 @@
   padding: 0.3em 1em;
   margin: 15px 0 0 5px;
   text-decoration: none;
-  color: #5fc2f5;
-  border: solid 2px #5fc2f5;
+  color: #0099FF;
+  border: solid 2px #0099FF;
   border-radius: 3px;
   transition: .4s;
   width:140px;
   text-align: center;
+  font-weight:bold;
 }
 .btn1:hover {
-  background: #5fc2f5;
+  background: #0099FF;
   color: white;
 }
 
@@ -57,7 +58,7 @@
     color: #FFF;
     font-weight: bold;
     letter-spacing: 0.05em;
-    font-size: 15px;
+    font-size: 13px;
 }
 .box2 p {
     padding: 15px 20px;
@@ -74,6 +75,7 @@
   transition: .4s;
   width:140px;
   text-align: center;
+  font-weight:bold;
 }
 .btn2:hover {
   background: #33CC99;
@@ -89,44 +91,6 @@
 }
 .box3-title{
     font-size: 1.2em;
-    background: #FFCC00;
-    padding: 4px;
-    text-align: center;
-    color: #FFF;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    font-size: 13px;
-}
-.box3 p {
-    padding: 15px 20px;
-    margin: 0;
-}
-.btn3 {
-  display: inline-block;
-  padding: 0.3em 1em;
-  margin: 15px 0 0 80px;
-  text-decoration: none;
-  color: #FFCC00;
-  border: solid 2px #FFCC00;
-  border-radius: 3px;
-  transition: .4s;
-  width:140px;
-  text-align: center;
-}
-.btn3:hover {
-  background: #FFCC00;
-  color: white;
-}
-
-.box4{
-    margin: 2em 0;
-    background: #f1f1f1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-    width: 300px;
-    height: 200px;
-}
-.box4-title{
-    font-size: 1.2em;
     background: #FF99CC;
     padding: 4px;
     text-align: center;
@@ -135,11 +99,11 @@
     letter-spacing: 0.05em;
     font-size: 11px;
 }
-.box4 p {
+.box3 p {
     padding: 15px 20px;
     margin: 0;
 }
-.btn4 {
+.btn3 {
   display: inline-block;
   padding: 0.3em 1em;
   margin: 15px 0 0 5px;
@@ -150,8 +114,9 @@
   transition: .4s;
   width:140px;
   text-align: center;
+  font-weight:bold;
 }
-.btn4:hover {
+.btn3:hover {
   background: #FF99CC;
   color: white;
 }

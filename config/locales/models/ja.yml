@@ -2,6 +2,7 @@ ja:
   activerecord:
     attributes:
       customer:
+        id: 会員id
         name_sei: 姓
         name_mei: 名
         yomi_sei: セイ
@@ -14,14 +15,49 @@ ja:
         tell: 電話番号
         email: メールアドレス
         password: パスワード
-        customer_status: 会員ステータス
-      # customer:
-      #   customer_status:
-      #     one customer_status:
-      #       "true": "会員"
-      #       "folse": "退会済み"
+        customer_status: 有効
       contact:
-        contact_name: お名前
+        id: お問い合わせid
+        customer_id: 会員id
+        contact_name: お名前（フルネーム）
         contact_email: メールアドレス
         contact_content: お問い合わせ内容
+        contact_status: お問い合わせ項目
+        created_at: お問い合わせ日
+      product:
+        id: 商品id
+        genre_id: カテゴリーid
+        product_name: 商品名
+        product_description: 商品紹介
+        product_price: 税抜き価格
+        product_picture_id: 画像
+        product_brand: ブランド
+        product_valid: 表示ステータス
+        created_at: 登録日
+        updated_at: 更新日
+      gym:
+        id: 施設id
+        genre_id: カテゴリーid
+        gym_name: 施設名
+        gym_description: 施設紹介
+        gym_tell: 電話番号
+        gym_postal_code: 郵便番号
+        gym_address: 住所
+        prefecture_code: 都道府県
+        address_city: 市区町村
+        address_street: 町名番地
+        gym_picture_id: 画像
+        gym_brand: ブランド
+        gym_valid: 表示ステータス
+        created_at: 登録日
+        updated_at: 更新日
+  enums:
+    contact:
+      contact_status:
+        gym: "ジム・フィットネスについて"
+        product: "商品について"
+        other: "その他"
+
+
+
 

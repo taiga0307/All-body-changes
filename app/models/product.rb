@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   has_many :product_favorites, dependent: :destroy #商品いいねが削除された際に商品いいねテーブルの商品情報も削除
   belongs_to :genre
 
+  mount_uploader :product_picture_id, ImageUploader #activeadminにてアップロードするため記述
 
   def Product.search(search, genre, direction)
     if direction == "完全一致"
@@ -14,5 +15,9 @@ class Product < ApplicationRecord
       elsif direction == "部分一致"
          Product.where(['product_name LIKE ?', "%#{search}%"])
       end
+  end
+
+  def price_with_tax(price)
+      (price * 1.1).to_i
   end
 end
