@@ -7,8 +7,7 @@ Rails.application.routes.draw do
     registrations: 'customers/registrations' # 会員登録画面、会員パスワード編集画面
   }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-    root 'homes#top' # トップ画面
-
+    root 'customers/homes#top' # トップ画面
     get 'customers/mypage' => 'customers#mypage' # マイページ画面
     get 'customers/withdraw' => 'customers#withdraw'# 会員退会画面
     patch 'customers/withdraw' => 'customers#withdraw_update'
