@@ -17,7 +17,7 @@ ActiveAdmin.register Product do
   permit_params :genre_id, :product_name, :product_description, :product_price, :product_brand, :product_valid, :product_picture_id
   form do |f|
     f.inputs '商品登録' do
-      f.input :genre_id,as: :select, collection: Genre.product.map{|genre|[genre.genre_name,genre.id]} #productはモデルに定義
+      f.input :genre_id,as: :select, collection: Genre.product.map{|genre|[genre.genre_name,genre.id]} #productはgenreモデルに定義
       f.input :product_name
       f.input :product_description
       f.input :product_price

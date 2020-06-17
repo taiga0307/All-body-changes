@@ -20,6 +20,8 @@ Rails.application.routes.draw do
 
     get 'homes/about' => 'homes#about' #アバウト画面
 
+    get 'genres/show' => 'genres#show' #ジャンルページ
+
     post 'contacts/confirm' => 'contacts#confirm'# お問い合わせ確認画面
     get 'contacts/thanks' => 'contacts#thanks'# お問い合わせサンクス画面
     resources :contacts, only: [:index, :create, :new] # お問い合わせ履歴一覧画面、お問い合わせ入力画面

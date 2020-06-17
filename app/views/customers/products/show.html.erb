@@ -1,0 +1,31 @@
+<div class="container">
+	<div class="row">
+	<%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-2 -->
+		<div class="col-xs-8 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
+			<h1><%= @product.product_name %></h1>
+			<div class="row" style="background:#eeeeee; margin-top:40px;">
+				<div class="col-xs-5">
+					<div class="image">
+						<%= image_tag @product.product_picture_id.to_s,  size:"290x290" %><br>
+					</div>
+				</div>
+				<div class="col-xs-7">
+					<!-- 総合評価<= > --><br>
+					<div class="brand">
+						<%= @product.product_brand %><br>
+					</div>
+					<div class="description">
+					<%= @product.product_description %><br>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+					<div class="price">
+					価格相場：<%= @product.price_with_tax(@product.product_price) %>円(税込)<br>
+					</div>
+					<!-- 楽天api -->
+					<!-- amazonapi -->
+				</div>
+			</div>
+		</div>
+	</div>

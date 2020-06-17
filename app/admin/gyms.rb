@@ -17,7 +17,7 @@ ActiveAdmin.register Gym do
   permit_params :genre_id, :gym_name, :gym_description, :gym_tell, :gym_postal_code, :gym_address, :prefecture_code, :address_city, :address_street, :gym_picture_id, :gym_brand, :gym_valid
   form do |f|
     f.inputs '施設登録' do
-      f.input :genre_id,as: :select, collection: Genre.gym.map{|genre|[genre.genre_name,genre.id]} #gymはモデルに定義
+      f.input :genre_id,as: :select, collection: Genre.gym.map{|genre|[genre.genre_name,genre.id]} #gymはgenreモデルに定義
       f.input :gym_name
       f.input :gym_description
       f.input :gym_tell

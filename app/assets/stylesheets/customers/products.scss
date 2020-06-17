@@ -1,3 +1,30 @@
 // Place all the styles related to the customers::products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* index商品 */
+.productbox{
+	box-sizing :border-box;
+	padding:1%;
+	margin:10px 0;
+	background:#eeeeee;
+}
+
+/* show画像 */
+.image{
+   padding: 30px 0;
+}
+/* showブランド */
+.brand{
+   padding: 20px 10px;
+}
+/* showプライス */
+.price{
+   text-align:right;
+   font-size:30px;
+   padding: 20px 10px;
+}
+/* show紹介文 */
+.description{
+   padding-bottom: 30px;
+}

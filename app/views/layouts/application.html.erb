@@ -38,13 +38,17 @@
               <%= link_to image_tag("imagetop.jpg", size:'260x83'), root_path %>
             </a>
           </div>
-          <div class="col-xs-8">
+          <div class="col-xs-8" style="padding:20px 0 0 80px">
+            
+          </style>>
             <ul class="nav navbar-nav navbar-center">
               <% if customer_signed_in? %>
                 <li><%= link_to 'アバウト', customers_homes_about_path, class:"fas fa-cookie-bite" %></li>
                 <li><%= link_to 'マイページ', customers_mypage_path, class:"fas fa-user-cog" %></li>
                 <li><%= link_to 'ログアウト', destroy_customer_session_path, method: :delete, class:"fas fa-sign-out-alt" %></li>
-                <li><%= link_to 'お問い合わせ入力画面', new_customers_contact_path, class:"fas fa-user-cog" %></li>
+                <li><%= link_to 'お問い合わせ', new_customers_contact_path, class:"fas fa-user-cog" %></li>
+                <li><%= link_to '商品一覧', customers_products_path %></li>
+                <li><%= link_to 'ジム一覧', customers_gyms_path %></li>
                 <!-- 変更 -->
 
               <% else %>
@@ -61,4 +65,13 @@
       <%= yield %>
     </div>
   </body>
+  <footer>
+    <div class="container">
+      <%= link_to 'Top', root_path %>
+      <%= link_to 'About', customers_homes_about_path %>
+      <%= link_to 'Contact', new_customers_contact_path %>
+      <%= link_to 'Products', customers_products_path %>
+      <%= link_to 'Gyms', customers_gyms_path %>
+    </div>
+  </footer>
 </html>

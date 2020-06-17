@@ -16,6 +16,11 @@
   @import "bootstrap-sprockets";  /*Bootstrapを読み込ませる*/
   @import "bootstrap";            /*Bootstrapを読み込ませる*/
 
+
+.navbar{
+    background:#111111;
+}
+
 /* ヘッダー（紹介文） */
 .name{
 	color: #FFFF00;
@@ -48,12 +53,36 @@ h2{
    border-bottom: solid 3px #000000;
    position: relative;
 }
+/* 詳細タイトル */
+h1{
+   padding: 10px 10px 10px 10px;
+   border-bottom: solid 3px #000000;
+}
 /* 説明文 */
 p{
    padding: 10px 10px 10px 10px;
 }
 
+/* ページネーション */
+.pagination {
+  justify-content: center;
+}
 
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+/* フッター */
+footer {
+  width: 100%;
+  height: 130px;
+  background-color: #111111;
+  margin-top: auto;
+}
 
-
+/* サイドバー */
+.genre-name{
+  margin: 20px 0;
+}
