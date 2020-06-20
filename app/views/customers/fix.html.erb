@@ -4,6 +4,17 @@
       <h2>会員情報編集</h2>
       <p>会員情報を入力してください。入力後「編集内容を保存する」ボタンをクリックしてください。尚、退会をご希望される場合は「退会」ボタンをクリックしてください。</p><br>
 
+
+    <% if @customer.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <ul>
+          <% @customer.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
       <%= form_with model: @customer, url: '/customers/fix',local: true do |f| %>
       <table class="table_singup">
         <tbody>
@@ -27,13 +38,13 @@
             <td>
               <div class="field">
                 <%= f.label :セイ %>
-                <%= f.text_field :yomi_sei, autofocus: true, autocomplete: "name_sei" %>
+                <%= f.text_field :yomi_sei, autofocus: true, autocomplete: "yomi_sei" %>
               </div>
             </td>
             <td>
               <div class="field">
                 <%= f.label :メイ %>
-                <%= f.text_field :yomi_mei, autofocus: true, autocomplete: "name_mei" %>
+                <%= f.text_field :yomi_mei, autofocus: true, autocomplete: "yomi_mei" %>
               </div>
             </td>
           </tr>

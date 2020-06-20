@@ -1,3 +1,39 @@
 // Place all the styles related to the customers::gyms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* index商品 */
+.gymbox{
+	box-sizing :border-box;
+	background:#222222;
+	color: white;
+  height: 450px;
+}
+
+/* show画像 */
+.gymimage{
+   padding: 30px 0;
+}
+/* showブランド */
+.gymbrand{
+   padding: 20px 10px;
+}
+/* showプライス */
+.productprice{
+   text-align:right;
+   font-size:30px;
+   padding: 20px 10px;
+}
+/* show紹介文 */
+.gymdescription{
+   padding-bottom: 30px;
+}
+
+/* showコメント */
+.gymcomment{
+   margin: 10px 0 50px 0;
+}
+
+.gym_postal_code{
+  font-size:10px;
+}

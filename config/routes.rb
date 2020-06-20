@@ -14,34 +14,34 @@ Rails.application.routes.draw do
     get 'customers/fix' => 'customers#fix'
     patch 'customers/fix' => 'customers#fix_update'
 
-    get 'customers/search' => 'customers#search' # 検索画面
 
   namespace :customers do
 
     get 'homes/about' => 'homes#about' #アバウト画面
 
-    get 'genres/show' => 'genres#show' #ジャンルページ
+    get 'searches/search' => 'searches#search' # 検索画面
+
+    resources :genres, only: [:show] #ジャンルページ
 
     post 'contacts/confirm' => 'contacts#confirm'# お問い合わせ確認画面
     get 'contacts/thanks' => 'contacts#thanks'# お問い合わせサンクス画面
     resources :contacts, only: [:index, :create, :new] # お問い合わせ履歴一覧画面、お問い合わせ入力画面
 
     resources :products, only: [:index, :show] do # 商品一覧画面、商品詳細画面　ジャンル一覧は商品一覧と一緒
-      resources :post_comments, only: [:create, :destroy] # 商品のコメント保存、削除
+      resources :product_comments, only: [:create, :destroy] # 商品のコメント保存、削除
       resource :product_favorites, only:[:create, :destroy] # 商品のお気に入り保存、削除
     end
-    get 'product_favorites/index' => 'product_favorites#index' # 商品お気に入り一覧画面
+    resources :product_favorites, only: [:index] # 商品お気に入り一覧画面
 
     resources :gyms, only: [:index, :show] do # 施設一覧画面、商品詳細画面　ジャンル一覧は施設一覧と一緒
       resources :gym_comments, only: [:create, :destroy] # 施設のコメント保存、削除
       resource :favorites, only:[:create, :destroy] # 施設のお気に入り保存、削除
     end
-    get 'product_favorites/index' => 'product_favorites#index' # 施設お気に入り一覧画面
+    resources :gym_favorites, only: [:index] # 施設お気に入り一覧画面
 
-    get 'reservations/new' => 'reservations#new'# 施設予約入力画面
     get 'reservations/confirm' => 'reservations#confirm'# 施設予約確認画面
     get 'reservations/thanks' => 'reservations#thanks'# 施設予約サンクス画面
-    resources :reservations, only: [:index, :show, :create]# 施設予約履歴一覧画面、施設予約履歴詳細画面、施設予約保存
+    resources :reservations, only: [:index, :show, :create, :new]# 施設予約履歴一覧画面、施設予約履歴詳細画面、施設予約保存、施設予約入力画面
 
   end
 end

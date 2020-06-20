@@ -1,19 +1,21 @@
-<div class="col-xs-2">
+<div class="col-xs-3">
 	<div class="sidebar">
 
 		<h3 class="genre-title">Item Categories</h3>
 		<% products.each do |product| %>
 		<div class="genre-name">
-			<%= link_to product.genre_name, customers_products_path %>
+			<%= link_to product.genre_name, customers_genre_path(product.id) %>
 		</div>
 		<% end %>
 
 		<h3 class="genre-title">Club Categories</h3>
 		<% gyms.each do |gym| %>
 		<div class="genre-name">
-			<%= link_to gym.genre_name, customers_gyms_path %>
+			<%= link_to gym.genre_name, customers_genre_path(gym.id) %>
 		</div>
 		<% end %>
+
+
 
 	</div>
 </div>

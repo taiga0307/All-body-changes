@@ -1,0 +1,99 @@
+<!-- コメント機能（投稿フォーム） -->
+<div class="productcomment">
+	<h3>クチコミと評価を投稿する</h3>
+</div>
+<%= form_for [product, product_comment], url: customers_product_product_comments_path(product), method: :post do |f| %>
+<!-- タイトル -->
+					<div class="form-group row">
+    					<%= f.label :product_title, 'タイトル ', class:'col-md-3 col-form-label' %>
+    					<div class="col-md-9">
+      						<%= f.text_field :product_title, class: "form-control" %>
+   						</div>
+   					</div>
+					<!-- 評価 -->
+ 					<div class="form-group row" id="star">
+    					<%= f.label :product_rate,'評価 ', class:'col-md-3 col-form-label' %>
+    					<%= f.hidden_field :product_rate, id: :review_star %>
+  					</div>
+  					<!-- 評価javascript -->
+  					<script>
+  						$('#star').raty({
+    						size     : 36,
+    						starOff:  '<%= asset_path('star-off.png') %>',
+    						starOn : '<%= asset_path('star-on.png') %>',
+    						starHalf: '<%= asset_path('star-half.png') %>',
+    						scoreName: 'product_comment[product_rate]', //reviewカラムに保存するので忘れないように
+    						half: true, //★の半分の入力を行う
+  						});
+  					</script>
+					<!-- 口コミ -->
+  					<div class="form-group row">
+    					<%= f.label :product_comment, '口コミ内容 ', class:'col-md-3 col-form-label' %>
+    					<div class="col-md-9">
+      						<%= f.text_area :product_comment, class: "form-control", rows: "8", placeholder:'口コミ内容がなくても、タイトルと評価のみで投稿できます。まずは投稿してみましょう！投稿してから編集もできますよ！' %>
+    					</div>
+  		  			</div>
+ 					<!-- 確認ボタン -->
+  					<div class="form-group row justify-content-end">
+    					<div class="col-md-9">
+      						<%= f.submit '投稿する', class:"btn btn-success" %>
+    					</div>
+  					</div>
+				<% end %>
+
+          <div class="productcomment">
+            <h3>クチコミ一覧（<!-- <= product.product_comment.count %>-->）件
+            </h3>
+          </div>
+				<!-- 評価の表示 -->
+				<% if product_comment.present? %>
+  				<% product.product_comments.each do |product_comment| %>
+    				<div class="row">
+    					
+    				</style>
+      					<!-- <div class="col-md-2 posts-user">
+        					<= link_to product_comment.customer do %>
+       							<= image_tag post.user.picture.url ,width: '100px' %>
+        					< end %> -->
+    					<div class="col-md-2">
+        					<p class="posts-title"><%= product_comment.customer.nickname %></p>
+        					<!-- <p class="posts-prof"><= product_comment.customer.sex %><= product_comment.customer.age %></p> -->
+      					</div>
+      					<div class="col-md-6">
+        					<div class=" posts-content">
+          						<p>投稿日時：<%= product_comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+        						<% if current_customer == product_comment.customer %>
+          					<!-- <= link_to '口コミを編集', edit_post_path(post), method: :get, class:'btn btn-default' %> -->
+          							<%= link_to '', customers_product_product_comment_path(product, product_comment), method: :delete, class:"fas fa-trash fa-lg trash_black" %>
+        						<% end %></p>
+          						<h4 class="mb-3">評価：<%= product_comment.product_rate %>点 | <%= product_comment.product_title %></h4>
+
+          				<!--星評価-->
+         					<div id="star-rate-<%= product_comment.id %>"></div>
+          					<script>
+          						$('#star-rate-<%= product_comment.id %>').raty({
+            					size: 36,
+            					starOff:  '<%= asset_path('star-off.png') %>',
+            					starOn : '<%= asset_path('star-on.png') %>',
+            					starHalf: '<%= asset_path('star-half.png') %>',
+            					half: true,
+            					readOnly: true,
+            					score: <%= product_comment.product_rate %>,
+          						});
+          					</script>
+        				<!--/星評価-->
+          						<p><%= product_comment.product_comment %></p>
+        					</div>
+      					</div>
+      					<div class="col-md-4">
+          					<div class="product_comment-product">
+                    <%= link_to customers_product_path(product.id) do %>
+            					<%= image_tag product_comment.product.product_picture_id.to_s, size:"100x100" %>
+            					<p><%=  product_comment.product.product_name %></p>
+                    <% end %>
+          					</div>
+      					</div>
+    				</div>
+  				<% end %>
+				<% end %>
+       <!--<= paginate product_comments %>-->

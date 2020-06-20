@@ -5,26 +5,31 @@
 /* index商品 */
 .productbox{
 	box-sizing :border-box;
-	padding:1%;
-	margin:10px 0;
-	background:#eeeeee;
+	background:#CCCCCC;
+   color: #000000;
+   height: 450px;
 }
 
 /* show画像 */
-.image{
+.productimage{
    padding: 30px 0;
 }
 /* showブランド */
-.brand{
+.productbrand{
    padding: 20px 10px;
 }
 /* showプライス */
-.price{
+.productprice{
    text-align:right;
    font-size:30px;
    padding: 20px 10px;
 }
 /* show紹介文 */
-.description{
+.productdescription{
    padding-bottom: 30px;
+}
+
+/* showコメント */
+.productcomment{
+   margin: 10px 0 50px 0;
 }

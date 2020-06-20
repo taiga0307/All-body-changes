@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="row">
+		<%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-2 -->
+		<div class="col-xs-9"><!-- 左右に余白、中央に配置 -->
+			<h1><%= @gym.gym_name %></h1>
+			<div class="row" style="background:#222222; margin-top:40px; color:white;">
+				<div class="col-xs-5">
+					<div class="gymimage">
+						<%= image_tag @gym.gym_picture_id.to_s,  size:"320x320" %><br>
+					</div>
+				</div>
+				<div class="col-xs-7">
+					<!-- 総合評価<= > --><br>
+					<div class="gymbrand">
+						<%= @gym.gym_brand %><br>
+					</div>
+					<div class="gymdescription">
+						<%= @gym.gym_description %><br>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top:40px;">
+
+				<div class="col-xs-6" style=" color:white; background:red;">
+				<!-- MAP -->
+					<div class="gymmap">
+						<%= @gym.gym_brand %><br>
+					</div>
+				</div>
+				<div class="col-xs-6" style="background:green;">
+					<div class="gympostalcode">
+						<%= @gym.gym_postal_code %><br>
+					</div>
+					<div class="gymaddress">
+						<%= @gym.gym_address %><br>
+					</div>
+					<div class="gymtell">
+						電話番号：<%= @gym.gym_tell %><br>
+					</div>
+				</div>
+			</div>
+
+
+				<!-- 見学予約 -->
+
+
+				<!--<= render 'customers/product_comments/product_comment', product: @product, product_comment: @product_comment, product_comments: @product_comments  %>-->
+
+		</div>
+	</div>
+</div>

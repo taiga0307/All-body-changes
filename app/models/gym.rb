@@ -4,11 +4,11 @@ class Gym < ApplicationRecord
   has_many :reservation_managements
   belongs_to :genre
 
-
+  mount_uploader :gym_picture_id, ImageUploader #activeadminにてアップロードするため記述
 
   def Gym.search(search, genre, direction)
     if direction == "完全一致"
-         Gym.where(name: "#{search}") #where検索したものを全て取得。find,findby
+         Gym.where(gym_name: "#{search}") #where検索したものを全て取得。find,findby
       elsif direction == "前方一致"
          Gym.where(['gym_name LIKE ?', "#{search}%"])
       elsif direction == "後方一致"

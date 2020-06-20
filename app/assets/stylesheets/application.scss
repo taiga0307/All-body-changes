@@ -31,16 +31,10 @@
     height: 30px;
     padding-top: 15px;
 }
-/* ヘッダー（アイコン） */
-.navbar-brand{
-    float: left;
-    margin: 3px 8px 5px 10px;
-    width: 435px;
-}
+
 /* ヘッダー（検索） */
 .search{
-   padding: 15px 10px 10px 10px;
-   float: right;
+   padding-top: 15px;
 }
 
 /* メイン */
@@ -49,18 +43,24 @@
 }
 /* タイトル */
 h2{
-   padding: 10px 10px 10px 10px;
+   padding: 30px 10px 10px 10px;
    border-bottom: solid 3px #000000;
    position: relative;
+   font-weight: bold;
+   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
 }
+
 /* 詳細タイトル */
 h1{
    padding: 10px 10px 10px 10px;
    border-bottom: solid 3px #000000;
+   font-weight: bold;
+   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
 }
 /* 説明文 */
 p{
    padding: 10px 10px 10px 10px;
+   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
 }
 
 /* ページネーション */
@@ -82,7 +82,14 @@ footer {
   margin-top: auto;
 }
 
-/* サイドバー */
+/* サイドバー全体 */
 .genre-name{
   margin: 20px 0;
+}
+/* サイドバータイトル */
+h3{
+  padding-top:30px;
+  font-weight: bold;
+  border-bottom: solid 1px #000000;
+   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
 }

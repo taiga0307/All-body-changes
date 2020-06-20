@@ -24,6 +24,12 @@ ja:
         contact_content: お問い合わせ内容
         contact_status: お問い合わせ項目
         created_at: お問い合わせ日
+      genre:
+        genre_name: カテゴリー名
+        genre_status: カテゴリー項目
+        genre_valid: 表示ステータス
+        created_at: 登録日
+        updated_at: 更新日
       product:
         id: 商品id
         genre_id: カテゴリーid

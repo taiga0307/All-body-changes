@@ -3,6 +3,8 @@ class Product < ApplicationRecord
   has_many :product_favorites, dependent: :destroy #商品いいねが削除された際に商品いいねテーブルの商品情報も削除
   belongs_to :genre
 
+  has_many :product_favorites, dependent: :destroy
+
   validates :product_brand, presence: true, length: { maximum:15 } # 文字数最大15文字
   validates :product_name, presence: true, length: { maximum:30 } # 文字数最大30文字
   validates :product_description, presence: true, length: { maximum:800 } # 文字数最大800文字
@@ -13,13 +15,13 @@ class Product < ApplicationRecord
 
   def Product.search(search, genre, direction)
     if direction == "完全一致"
-         Product.where(name: "#{search}") #where検索したものを全て取得。find,findby
+         Product.where(product_valid: true, product_name: "#{search}") #where検索したものを全て取得。
       elsif direction == "前方一致"
-         Product.where(['product_name LIKE ?', "#{search}%"])
+         Product.where(['product_name LIKE ?', "#{search}%"]).where(product_valid: true)
       elsif direction == "後方一致"
-         Product.where(['product_name LIKE ?', "%#{search}"])
+         Product.where(['product_name LIKE ?', "%#{search}"]).where(product_valid: true)
       elsif direction == "部分一致"
-         Product.where(['product_name LIKE ?', "%#{search}%"])
+         Product.where(['product_name LIKE ?', "%#{search}%"]).where(product_valid: true)
       end
   end
 
@@ -27,4 +29,9 @@ class Product < ApplicationRecord
   def price_with_tax(price)
       (price * 1.1).to_i
   end
+
+  def product_favorited_by?(customer)
+      product_favorites.where(customer_id: customer.id).exists? # 引数で送られたuserのidがあるかどうか？ということを判定
+  end
+
 end

@@ -28,11 +28,15 @@ ja:
     models:
       admin_user: 管理者
       comment: 管理者コメント
-      customer: ユーザ
+      customer: カスタマー
       product: 商品
       contact: お問い合わせ
       gym: ジムフィットネス
       genre: カテゴリー
+      product_favorite: 商品お気に入り
+      product_comment: 商品コメント
+      gym_favorite: ジムフィットネスお気に入り
+      gym_comment: ジムフィットネスコメント
 
   devise:
     confirmations:

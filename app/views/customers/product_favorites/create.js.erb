@@ -1,0 +1,2 @@
+$("#product_favorite_btn_<%= @product.id %>").html("<%= escape_javascript(render partial: 'customers/product_favorites/product_favorite', locals: { product: @product }) %>")
+// @productはproduct_favoritesコントローラーからid取得している。
