@@ -16,9 +16,12 @@ class Customer < ApplicationRecord
 
 
   has_many :contacts
-  has_many :gym_comments, dependent: :destroy #ジムコメントが削除された際にジムコメントテーブルのユーザー情報も削除
+  has_many :gym_favorites, through: :gym_favorites, source: :gym # has many throughを使えば、カスタマーがいいねした施設を直接アソシエーションで取得が可能。sourceは「参照元のモデル」をさすオプション。
   has_many :gym_favorites, dependent: :destroy #ジムいいねが削除された際にジムいいねテーブルのユーザー情報も削除
+  has_many :gym_comments, dependent: :destroy #ジムコメントが削除された際にジムコメントテーブルのユーザー情報も削除
+
   has_many :reservations
+
   has_many :product_favorites, through: :product_favorites, source: :product # has many throughを使えば、カスタマーがいいねした商品を直接アソシエーションで取得が可能。sourceは「参照元のモデル」をさすオプション。
   has_many :product_favorites, dependent: :destroy #商品いいねが削除された際に商品いいねテーブルのユーザー情報も削除
   has_many :product_comments, dependent: :destroy #商品コメントが削除された際に商品コメントテーブルのユーザー情報も削除

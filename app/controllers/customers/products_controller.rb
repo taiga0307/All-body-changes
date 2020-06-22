@@ -13,7 +13,7 @@ class Customers::ProductsController < ApplicationController
 
  		@product = Product.find(params[:id])
  		@product_comment = ProductComment.new #商品へのコメントの為
- 		# @product_comments = @product.product_comments.page(params[:page]).per(2) #コメントのpaginateの為
+ 		@product_comments = @product.product_comments.page(params[:page]).per(2) #コメントのpaginateの為
 	end
 
   private

@@ -4,6 +4,7 @@
 </div>
 <%= form_for [product, product_comment], url: customers_product_product_comments_path(product), method: :post do |f| %>
 <!-- タイトル -->
+  <%= render "devise/shared/error_messages", resource: f.object %>
 					<div class="form-group row">
     					<%= f.label :product_title, 'タイトル ', class:'col-md-3 col-form-label' %>
     					<div class="col-md-9">
@@ -42,15 +43,13 @@
 				<% end %>
 
           <div class="productcomment">
-            <h3>クチコミ一覧（<!-- <= product.product_comment.count %>-->）件
+            <h3>クチコミ一覧（<%= product.product_comments.count %>）件
             </h3>
           </div>
 				<!-- 評価の表示 -->
 				<% if product_comment.present? %>
-  				<% product.product_comments.each do |product_comment| %>
+  				<% product_comments.each do |product_comment| %>
     				<div class="row">
-    					
-    				</style>
       					<!-- <div class="col-md-2 posts-user">
         					<= link_to product_comment.customer do %>
        							<= image_tag post.user.picture.url ,width: '100px' %>
@@ -95,5 +94,6 @@
       					</div>
     				</div>
   				<% end %>
+          <%= paginate product_comments %>
 				<% end %>
-       <!--<= paginate product_comments %>-->
+       

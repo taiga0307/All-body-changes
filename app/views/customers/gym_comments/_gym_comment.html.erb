@@ -1,0 +1,99 @@
+<!-- コメント機能（投稿フォーム） -->
+<div class="gymcomment">
+	<h3>クチコミと評価を投稿する</h3>
+</div>
+<%= form_for [gym, gym_comment], url: customers_gym_gym_comments_path(gym), method: :post do |f| %>
+<!-- タイトル -->
+  <%= render "devise/shared/error_messages", resource: f.object %>
+					<div class="form-group row">
+    					<%= f.label :gym_title, 'タイトル ', class:'col-md-3 col-form-label' %>
+    					<div class="col-md-9">
+      						<%= f.text_field :gym_title, class: "form-control" %>
+   						</div>
+   					</div>
+					<!-- 評価 -->
+ 					<div class="form-group row" id="star">
+    					<%= f.label :gym_rate,'評価 ', class:'col-md-3 col-form-label' %>
+    					<%= f.hidden_field :gym_rate, id: :review_star %>
+  					</div>
+  					<!-- 評価javascript -->
+  					<script>
+  						$('#star').raty({
+    						size     : 36,
+    						starOff:  '<%= asset_path('star-off.png') %>',
+    						starOn : '<%= asset_path('star-on.png') %>',
+    						starHalf: '<%= asset_path('star-half.png') %>',
+    						scoreName: 'gym_comment[gym_rate]', //reviewカラムに保存するので忘れないように
+    						half: true, //★の半分の入力を行う
+  						});
+  					</script>
+					<!-- 口コミ -->
+  					<div class="form-group row">
+    					<%= f.label :gym_comment, '口コミ内容 ', class:'col-md-3 col-form-label' %>
+    					<div class="col-md-9">
+      						<%= f.text_area :gym_comment, class: "form-control", rows: "8", placeholder:'口コミ内容がなくても、タイトルと評価のみで投稿できます。まずは投稿してみましょう！投稿してから編集もできますよ！' %>
+    					</div>
+  		  			</div>
+ 					<!-- 確認ボタン -->
+  					<div class="form-group row justify-content-end">
+    					<div class="col-md-9">
+      						<%= f.submit '投稿する', class:"btn btn-success" %>
+    					</div>
+  					</div>
+				<% end %>
+
+          <div class="gymcomment">
+            <h3>クチコミ一覧（<%= gym.gym_comments.count %>）件
+            </h3>
+          </div>
+				<!-- 評価の表示 -->
+				<% if gym_comment.present? %>
+  				<% gym_comments.each do |gym_comment| %>
+    				<div class="row">
+    				</style>
+      					<!-- <div class="col-md-2 posts-user">
+        					<= link_to gym_comment.customer do %>
+       							<= image_tag post.user.picture.url ,width: '100px' %>
+        					< end %> -->
+    					<div class="col-md-2">
+        					<p class="posts-title"><%= gym_comment.customer.nickname %></p>
+        					<!-- <p class="posts-prof"><= gym_comment.customer.sex %><= gym_comment.customer.age %></p> -->
+      					</div>
+      					<div class="col-md-6">
+        					<div class=" posts-content">
+          						<p>投稿日時：<%= gym_comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+        						<% if current_customer == gym_comment.customer %>
+          					<!-- <= link_to '口コミを編集', edit_post_path(post), method: :get, class:'btn btn-default' %> -->
+          							<%= link_to '', customers_gym_gym_comment_path(gym, gym_comment), method: :delete, class:"fas fa-trash fa-lg trash_black" %>
+        						<% end %></p>
+          						<h4 class="mb-3">評価：<%= gym_comment.gym_rate %>点 | <%= gym_comment.gym_title %></h4>
+
+          				<!--星評価-->
+         					<div id="star-rate-<%= gym_comment.id %>"></div>
+          					<script>
+          						$('#star-rate-<%= gym_comment.id %>').raty({
+            					size: 36,
+            					starOff:  '<%= asset_path('star-off.png') %>',
+            					starOn : '<%= asset_path('star-on.png') %>',
+            					starHalf: '<%= asset_path('star-half.png') %>',
+            					half: true,
+            					readOnly: true,
+            					score: <%= gym_comment.gym_rate %>,
+          						});
+          					</script>
+        				<!--/星評価-->
+          						<p><%= gym_comment.gym_comment %></p>
+        					</div>
+      					</div>
+      					<div class="col-md-4">
+          					<div class="gym_comment-gym">
+                    <%= link_to customers_gym_path(gym.id) do %>
+            					<%= image_tag gym_comment.gym.gym_picture_id.to_s, size:"100x100" %>
+            					<p><%=  gym_comment.gym.gym_name %></p>
+                    <% end %>
+          					</div>
+      					</div>
+    				</div>
+  				<% end %>
+				<% end %>
+       <%= paginate gym_comments %>

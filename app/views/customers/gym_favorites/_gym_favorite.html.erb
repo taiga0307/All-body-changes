@@ -1,0 +1,18 @@
+  <% if current_customer %><!--  ログインしているユーザーを指定 -->
+    <% if gym.gym_favorited_by?(current_customer) %>
+      <!-- お気に入り登録解除 -->
+      <%=link_to customers_gym_gym_favorites_path(gym.id), method: :delete, remote: true do %>
+        <i class="fa fa-heart" aria-hidden="true" style="color: #FF0461;">クリップ済み</i>
+        <!-- <%= gym.gym_favorites.count %> -->
+      <% end %>
+    <% else %>
+      <!-- お気に入り登録 -->
+      <%=link_to customers_gym_gym_favorites_path(gym.id), method: :post, remote: true do %>
+        <i class="fa fa-heart-o" aria-hidden="true">クリップする</i>
+        <!-- <%= gym.gym_favorites.count %> -->
+      <% end %>
+    <% end %>
+  <% else %>
+        <i class="fa fa-heart-o" aria-hidden="true"></i>
+        <%= gym.gym_favorites.count %>
+  <% end %>

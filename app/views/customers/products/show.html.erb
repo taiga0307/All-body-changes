@@ -23,10 +23,9 @@
 					定価：<%= @product.price_with_tax(@product.product_price) %>円(税込)<br>
 					</div>
 
-				<!-- 楽天api -->
-				<!-- amazonapi -->
-
-				<%= render 'customers/product_comments/product_comment', product: @product, product_comment: @product_comment, product_comments: @product_comments  %>
+			<!-- 楽天api -->
+			<!-- amazonapi -->
+			<%= render 'customers/product_comments/product_comment', product: @product, product_comment: @product_comment, product_comments: @product_comments  %>
 
 		</div>
 	</div>

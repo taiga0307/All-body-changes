@@ -14,28 +14,48 @@
 					<div class="gymbrand">
 						<%= @gym.gym_brand %><br>
 					</div>
+            		<!-- 平均評価、クチコミ数 -->
+            		<div id="star-rate-<%= @gym.id %>"></div>
+            		<div><%= @gym.gym_comments.average(:gym_rate) %>点</div>
+            		<div>口コミ<%= @gym.gym_comments.count.round(1) %>件</div>
+            		<script>
+              			$('#star-rate-<%= @gym.id %>').raty({
+              			size: 36,
+              			starOff: "<%= asset_path('star-off.png') %>",
+              			starOn: "<%= asset_path('star-on.png') %>",
+              			starHalf: "<%= asset_path('star-half.png') %>",
+              			half: true,
+              			readOnly: true,
+              			score: <%= @gym.gym_comments.average(:gym_rate).to_f.round(1) %>,
+              			//注目ポイント↑ 平均点を算出し、round関数で切り上げ
+              			});
+           			</script><br>
+
 					<div class="gymdescription">
 						<%= @gym.gym_description %><br>
 					</div>
 				</div>
 			</div>
+			<h3>アクセス情報</h3>
 			<div class="row" style="margin-top:40px;">
 
-				<div class="col-xs-6" style=" color:white; background:red;">
+				<div class="col-xs-6" >
 				<!-- MAP -->
 					<div class="gymmap">
-						<%= @gym.gym_brand %><br>
+            			<%= render 'customers/gyms/map', gym: @gym %>
 					</div>
 				</div>
-				<div class="col-xs-6" style="background:green;">
+				<div class="col-xs-6">
 					<div class="gympostalcode">
-						<%= @gym.gym_postal_code %><br>
+						〒 <%= @gym.gym_postal_code %><br>
 					</div>
 					<div class="gymaddress">
-						<%= @gym.gym_address %><br>
+						<%= @gym.prefecture_code %>
+						<%= @gym.address_city %>
+						<%= @gym.address_street %>
 					</div>
 					<div class="gymtell">
-						電話番号：<%= @gym.gym_tell %><br>
+						TEL：<%= @gym.gym_tell %><br>
 					</div>
 				</div>
 			</div>
@@ -44,7 +64,7 @@
 				<!-- 見学予約 -->
 
 
-				<!--<= render 'customers/product_comments/product_comment', product: @product, product_comment: @product_comment, product_comments: @product_comments  %>-->
+				<%= render 'customers/gym_comments/gym_comment', gym: @gym, gym_comment: @gym_comment, gym_comments: @gym_comments  %>
 
 		</div>
 	</div>

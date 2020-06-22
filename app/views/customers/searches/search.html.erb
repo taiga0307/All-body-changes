@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-2 -->
-		<div class="col-xs-8 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
+		<div class="col-xs-9"><!-- 左右に余白、中央に配置 -->
 			<% if params[:genre] == "item" %><!-- 検索フォームのプルダウンでITEMを選択した場合表示 -->
 			<h2>Items</h2>
 			<%= link_to "全#{@products.count}件" %>
@@ -9,14 +9,17 @@
 			<div class="row">
 				<% @products.each do |product| %>
 				<%= link_to customers_product_path(product.id) do %>
-				<div class="col-xs-4" style="border:1px solid #ddd; background:#eeeeee;">
+				<div class="col-xs-4" style="border:1px solid #ddd; background:#CCCCCC; padding: 3px; margin-top: 3px;">
 					<div class="productbox">
-						<%= image_tag product.product_picture_id.to_s,  size:"223x223" %><br>
+						<%= image_tag product.product_picture_id.to_s,  size:"285x285" %><br>
 						<%= product.product_brand.truncate(15) %><br>
 						<%= product.product_name.truncate(30) %><br>
 						<!-- 評価<= > --><br>
 						<!-- 口コミ合計数<= > --><br>
-						<!-- お気に入り<= > --><br>
+						<!-- お気に入り<= > -->
+						<div id = "product_favorite_btn_<%= product.id %>"><!-- create.jsとdestroy.jsに範囲を送るための記述 -->
+							<%= render "customers/product_favorites/product_favorite", product: product %><br>
+						</div>
 						価格相場：<%= product.price_with_tax(product.product_price) %>円(税込)<br>
 					</div>
 				</div>
@@ -33,14 +36,17 @@
 			<div class="row">
 				<% @gyms.each do |gym| %>
 				<%= link_to customers_gym_path(gym.id) do %>
-				<div class="col-xs-4" style="border:1px solid #ddd; background:#eeeeee;">
-					<div class="productbox">
-						<%= image_tag gym.gym_picture_id.to_s,  size:"223x223" %><br>
+				<div class="col-xs-4" style="border:1px solid #444444; background:#222222;  padding: 3px; margin-top: 3px;">
+					<div class="gymbox">
+						<%= image_tag gym.gym_picture_id.to_s,  size:"285x285" %><br>
 						<%= gym.gym_brand.truncate(15) %><br>
 						<%= gym.gym_name.truncate(30) %><br>
 						<!-- 評価<= > --><br>
 						<!-- 口コミ合計数<= > --><br>
 						<!-- お気に入り<= > --><br>
+						<div id = "gym_favorite_btn_<%= gym.id %>"><!-- create.jsとdestroy.jsに範囲を送るための記述 -->
+							<%= render "customers/gym_favorites/gym_favorite", gym: gym %><br>
+						</div>
 					</div>
 				</div>
 				<% end %>

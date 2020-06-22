@@ -17,4 +17,15 @@ class Gym < ApplicationRecord
          Gym.where(['gym_name LIKE ?', "%#{search}%"])
       end
   end
+
+  def price_with_tax(price)
+      (price * 1.1).to_i
+  end
+
+  def gym_favorited_by?(customer)
+      gym_favorites.where(customer_id: customer.id).exists? # 引数で送られたcustomerのidがあるかどうか？ということを判定
+  end
+
+
+
 end

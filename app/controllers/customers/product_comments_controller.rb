@@ -8,6 +8,8 @@ class Customers::ProductCommentsController < ApplicationController
   	 flash[:notice] = "success!"
      redirect_to request.referer#成功
    else
+    @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
+    @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
    	render 'customers/products/show' #失敗
    end
  end
@@ -15,7 +17,7 @@ class Customers::ProductCommentsController < ApplicationController
   def destroy
     comment = ProductComment.find(params[:id])
     comment.destroy
-    redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root_path) #直前のページに遷移、できなければトップに遷移。
   end
 
  private

@@ -1,9 +1,7 @@
 class Product < ApplicationRecord
   has_many :product_comments, dependent: :destroy #商品コメントが削除された際に商品コメントテーブルの商品情報も削除
-  has_many :product_favorites, dependent: :destroy #商品いいねが削除された際に商品いいねテーブルの商品情報も削除
+  has_many :product_favorites, dependent: :destroy #商品いいねが削除された際に商品いいねテーブルの商品情報も削除  belongs_to :genre
   belongs_to :genre
-
-  has_many :product_favorites, dependent: :destroy
 
   validates :product_brand, presence: true, length: { maximum:15 } # 文字数最大15文字
   validates :product_name, presence: true, length: { maximum:30 } # 文字数最大30文字
@@ -31,7 +29,7 @@ class Product < ApplicationRecord
   end
 
   def product_favorited_by?(customer)
-      product_favorites.where(customer_id: customer.id).exists? # 引数で送られたuserのidがあるかどうか？ということを判定
+      product_favorites.where(customer_id: customer.id).exists? # 引数で送られたcustomerのidがあるかどうか？ということを判定
   end
 
 end

@@ -155,6 +155,7 @@ GEM
       jquery-rails (>= 4.0.5, < 5.0.0)
       jquery-ui-rails (>= 5.0.2)
       momentjs-rails (>= 2.9.0)
+    geocoder (1.6.3)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     has_scope (0.7.2)
@@ -384,6 +385,7 @@ DEPENDENCIES
   dotenv-rails
   enum_help
   fullcalendar-rails
+  geocoder
   jbuilder (~> 2.5)
   jp_prefecture
   jquery-rails

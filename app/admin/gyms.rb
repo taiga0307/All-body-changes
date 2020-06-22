@@ -14,7 +14,7 @@ ActiveAdmin.register Gym do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  permit_params :genre_id, :gym_name, :gym_description, :gym_tell, :gym_postal_code, :gym_address, :prefecture_code, :address_city, :address_street, :gym_picture_id, :gym_brand, :gym_valid
+  permit_params :genre_id, :gym_name, :gym_description, :gym_tell, :gym_postal_code, :prefecture_code, :address_city, :address_street, :gym_picture_id, :gym_brand, :gym_valid, :latitude, :longitude
   form do |f|
     f.inputs '施設登録' do
       f.input :genre_id,as: :select, collection: Genre.club.map{|genre|[genre.genre_name,genre.id]} #clubはgenreモデルに定義
@@ -22,7 +22,6 @@ ActiveAdmin.register Gym do
       f.input :gym_description
       f.input :gym_tell
       f.input :gym_postal_code
-      f.input :gym_address
       f.input :prefecture_code
       f.input :address_city
       f.input :address_street
@@ -41,7 +40,6 @@ ActiveAdmin.register Gym do
       column :gym_name
       column :gym_tell
       column :gym_postal_code
-      column :gym_address
       column :prefecture_code
       column :address_city
       column :address_street
@@ -63,7 +61,6 @@ ActiveAdmin.register Gym do
         row :gym_description
         row :gym_tell
         row :gym_postal_code
-        row :gym_address
         row :prefecture_code
         row :address_city
         row :address_street
@@ -75,4 +72,33 @@ ActiveAdmin.register Gym do
         end
       end
   end
+
+  controller do
+    def create
+      gym = Gym.new(permitted_params[:gym])
+      geoinfo = Geocoder.coordinates(permitted_params[:gym][:prefecture_code]+ permitted_params[:gym][:address_city] + permitted_params[:gym][:address_street])
+      gym.latitude = geoinfo[0]
+      gym.longitude = geoinfo[1]
+      if gym.save
+        redirect_to admin_gym_path(gym)
+      else
+        redirect_to request.referrer
+      end
+    end
+
+    def update
+      gym = Gym.find(params[:id])
+      geoinfo = Geocoder.coordinates(permitted_params[:gym][:prefecture_code]+ permitted_params[:gym][:address_city] + permitted_params[:gym][:address_street])
+      gym.latitude = geoinfo[0]
+      gym.longitude = geoinfo[1]
+      if gym.update(permitted_params[:gym])
+        redirect_to admin_gym_path(gym)
+      else
+        redirect_to request.referrer
+      end
+    end
+  end
+
+
+
 end

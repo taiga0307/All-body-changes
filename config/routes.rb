@@ -14,7 +14,6 @@ Rails.application.routes.draw do
     get 'customers/fix' => 'customers#fix'
     patch 'customers/fix' => 'customers#fix_update'
 
-
   namespace :customers do
 
     get 'homes/about' => 'homes#about' #アバウト画面
@@ -35,7 +34,7 @@ Rails.application.routes.draw do
 
     resources :gyms, only: [:index, :show] do # 施設一覧画面、商品詳細画面　ジャンル一覧は施設一覧と一緒
       resources :gym_comments, only: [:create, :destroy] # 施設のコメント保存、削除
-      resource :favorites, only:[:create, :destroy] # 施設のお気に入り保存、削除
+      resource :gym_favorites, only:[:create, :destroy] # 施設のお気に入り保存、削除
     end
     resources :gym_favorites, only: [:index] # 施設お気に入り一覧画面
 

@@ -97,3 +97,5 @@ gem 'jquery-rails' #jquery-rails
 gem 'fullcalendar-rails' #カレンダー
 
 gem 'dotenv-rails' # 環境変数を管理するため
+
+gem "geocoder" #map

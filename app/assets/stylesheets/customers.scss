@@ -12,14 +12,14 @@
     height: 200px;
 }
 .box1-title{
-    font-size: 1.2em;
-    background: #440000;
+    background: #000033;
     padding: 4px;
     text-align: center;
     color: white;
     font-weight: bold;
     letter-spacing: 0.05em;
     font-size: 15px;
+    height:50px;
 }
 .box1 p {
     padding: 15px 20px;
@@ -30,8 +30,8 @@
   padding: 0.3em 1em;
   margin: 15px 0 0 5px;
   text-decoration: none;
-  color: #440000;
-  border: solid 2px #440000;
+  color: #000033;
+  border: solid 2px #000033;
   border-radius: 3px;
   transition: .4s;
   width:140px;
@@ -39,7 +39,7 @@
   font-weight:bold;
 }
 .btn1:hover {
-  background: #440000;
+  background: #000033;
   color: white;
 }
 
@@ -51,14 +51,14 @@
     height: 200px;
 }
 .box2-title{
-    font-size: 1.2em;
-    background: #440000;
+    background: #003300;
     padding: 4px;
     text-align: center;
     color: #FFF;
     font-weight: bold;
     letter-spacing: 0.05em;
-    font-size: 13px;
+    font-size: 12px;
+    height:50px;
 }
 .box2 p {
     padding: 15px 20px;
@@ -69,8 +69,8 @@
   padding: 0.3em 1em;
   margin: 15px 0 0 80px;
   text-decoration: none;
-  color: #440000;
-  border: solid 2px #440000;
+  color: #003300;
+  border: solid 2px #003300;
   border-radius: 3px;
   transition: .4s;
   width:140px;
@@ -78,7 +78,7 @@
   font-weight:bold;
 }
 .btn2:hover {
-  background: #440000;
+  background: #003300;
   color: white;
 }
 
@@ -90,14 +90,14 @@
     height: 200px;
 }
 .box3-title{
-    font-size: 1.2em;
-    background: #440000;
+    background: #330000;
     padding: 4px;
     text-align: center;
     color: #FFF;
     font-weight: bold;
     letter-spacing: 0.05em;
-    font-size: 11px;
+    font-size: 13px;
+    height:50px;
 }
 .box3 p {
     padding: 15px 20px;
@@ -108,8 +108,8 @@
   padding: 0.3em 1em;
   margin: 15px 0 0 5px;
   text-decoration: none;
-  color: #440000;
-  border: solid 2px #440000;
+  color: #330000;
+  border: solid 2px #330000;
   border-radius: 3px;
   transition: .4s;
   width:140px;
@@ -117,6 +117,6 @@
   font-weight:bold;
 }
 .btn3:hover {
-  background: #440000;
+  background: #330000;
   color: white;
 }

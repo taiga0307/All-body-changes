@@ -2,7 +2,7 @@
   <div class="row">
     <%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-2 -->
     <div class="col-xs-9"><!-- 左右に余白、中央に配置 -->
-      <h2>Gyms</h2>
+      <h2>Clubs</h2>
       <%= link_to "全#{@gyms_all.count}件" %>
       <%= paginate @gyms %>
 
@@ -14,11 +14,26 @@
                 <%= image_tag gym.gym_picture_id.to_s,  size:"285x285" %><br>
                 <%= gym.gym_brand.truncate(15) %><br><br>
                 <%= gym.gym_name.truncate(30) %><br>
-                <!-- 評価 --><br>
-                <!-- 口コミ合計数--><br>
-                <!-- お気に入り -->
+                <br>
+            <!-- 平均評価、クチコミ数 -->
+            <div id="star-rate-<%= gym.id %>"></div>
+            <div><%= gym.gym_comments.average(:gym_rate) %>点</div>
+            <div>口コミ<%= gym.gym_comments.count.round(1) %>件</div>
+            <script>
+              $('#star-rate-<%= gym.id %>').raty({
+              size: 36,
+              starOff: "<%= asset_path('star-off.png') %>",
+              starOn: "<%= asset_path('star-on.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
+              half: true,
+              readOnly: true,
+              score: <%= gym.gym_comments.average(:gym_rate).to_f.round(1) %>,
+              //注目ポイント↑ 平均点を算出し、round関数で切り上げ
+              });
+            </script>
+
                 <div id = "gym_favorite_btn_<%= gym.id %>"><!-- create.jsとdestroy.jsに範囲を送るための記述 -->
-                  <!-- <= render "customers/product_favorites/product_favorite", product: product %><br> -->
+                  <%= render "customers/gym_favorites/gym_favorite", gym: gym %><br>
                 </div>
                 <!-- 価格相場：<= product.price_with_tax(product.product_price) %>円(税込)<br> -->
               </div>

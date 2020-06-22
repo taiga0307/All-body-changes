@@ -1,0 +1,2 @@
+$("#gym_favorite_btn_<%= @gym.id %>").html("<%= escape_javascript(render partial: 'customers/gym_favorites/gym_favorite', locals: { gym: @gym }) %>")
+// @gymはgym_favoritesコントローラーからid取得している。
