@@ -1,5 +1,14 @@
 class Customers::GymCommentsController < ApplicationController
 
+  def index
+    @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
+    @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
+
+    @customer = current_customer
+    @gym_comment = @customer.gym_comments # current_customerのクチコミを全件取得
+    @gyms = Gym.where(gym_valid: true, id: @gym_comment.pluck(:gym_id)) # 特定のカラムの値を限定して取れる
+  end
+
   def create
     @gym = Gym.find(params[:gym_id])
     @gym_comment = current_customer.gym_comments.new(gym_comment_params)

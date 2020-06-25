@@ -1,19 +1,54 @@
 <div class="col-xs-3">
 	<div class="sidebar">
+   	<% if customer_signed_in? %>
+   	<% else %>
+			<table class="table-side">
+				<thead>
+					<tr>
+						<td>
+							<!-- 会員登録 -->
+							<p class="sidetext">まだ会員登録をされていない方は<br>こちらから</p>
+							<%= link_to "会員登録",new_customer_registration_path, {class: 'btn-push1'} %>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<!-- ログイン -->
+							<p class="sidetext">会員登録をされている方は<br>こちらから</p>
+							<%= link_to "ログイン",new_customer_session_path, {class: 'btn-push2'} %>
+						</td>
+					</tr>
+				</thead>
+			</table>
+		<% end %>
 
-		<h3 class="genre-title">Item Categories</h3>
+	<h3 class="genre-title">Item Categories</h3>
 		<% products.each do |product| %>
-		<div class="genre-name">
-			<%= link_to product.genre_name, customers_genre_path(product.id) %>
-		</div>
+			<div class="genre-box">
+				<%= link_to product.genre_name, customers_genre_path(product.id), {class: "genre-name"} %>
+			</div>
 		<% end %>
 
-		<h3 class="genre-title">Club Categories</h3>
+	<h3 class="genre-title">Club Categories</h3>
 		<% gyms.each do |gym| %>
-		<div class="genre-name">
-			<%= link_to gym.genre_name, customers_genre_path(gym.id) %>
-		</div>
+			<div class="genre-box">
+				<%= link_to gym.genre_name, customers_genre_path(gym.id), {class: "genre-name"} %>
+			</div>
 		<% end %>
+
+			<table class="table-side">
+				<thead>
+					<tr>
+						<td class="frame-side">
+							<!-- 会員登録 -->
+							<p class="sidetext">お問い合わせは<br>下記からお願いします</p>
+							<%= link_to "お問い合わせ",new_customers_contact_path, {class: 'btn-push3'} %>
+						</td>
+					</tr>
+				</thead>
+			</table>
+
+
 
 
 

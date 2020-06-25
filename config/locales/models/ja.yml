@@ -23,6 +23,7 @@ ja:
         contact_email: メールアドレス
         contact_content: お問い合わせ内容
         contact_status: お問い合わせ項目
+        task_status: 対応完了
         created_at: お問い合わせ日
       genre:
         genre_name: カテゴリー名
@@ -41,11 +42,26 @@ ja:
         product_valid: 表示ステータス
         created_at: 登録日
         updated_at: 更新日
+      product_comment:
+        id: 商品評価id
+        customer: 会員
+        product: 商品
+        product_title: タイトル
+        product_comment: コメント
+        product_rate: 評価
+        created_at: 登録日
+        updated_at: 更新日
+      product_favorite:
+        id: 商品お気に入りid
+        customer: 会員
+        product: 商品
+        created_at: 登録日
+        updated_at: 更新日
       gym:
-        id: 施設id
+        id: ジムフィットネスid
         genre_id: カテゴリーid
-        gym_name: 施設名
-        gym_description: 施設紹介
+        gym_name: ジムフィットネス名
+        gym_description: ジムフィットネス紹介
         gym_tell: 電話番号
         gym_postal_code: 郵便番号
         gym_address: 住所
@@ -57,13 +73,34 @@ ja:
         gym_valid: 表示ステータス
         created_at: 登録日
         updated_at: 更新日
+      gym_comment:
+        id: ジムフィットネスレビューid
+        customer: 会員
+        gym: ジムフィットネス
+        gym_title: タイトル
+        gym_comment: コメント
+        gym_rate: 評価
+        created_at: 登録日
+        updated_at: 更新日
+      gym_favorite:
+        id: ジムフィットネスお気に入りid
+        customer: 会員
+        gym: ジムフィットネス
+        created_at: 登録日
+        updated_at: 更新日
   enums:
     contact:
       contact_status:
         gym: "ジム・フィットネスについて"
         product: "商品について"
         other: "その他"
-
+  views:
+    pagination:
+      first: "&laquo; 最初"
+      last: "最後 &raquo;"
+      previous: "&lsaquo; 前"
+      next: "次 &rsaquo;"
+      truncate: "..."
 
 
 

@@ -34,9 +34,9 @@ ja:
       gym: ジムフィットネス
       genre: カテゴリー
       product_favorite: 商品お気に入り
-      product_comment: 商品コメント
+      product_comment: 商品評価
       gym_favorite: ジムフィットネスお気に入り
-      gym_comment: ジムフィットネスコメント
+      gym_comment: ジムフィットネス評価
 
   devise:
     confirmations:

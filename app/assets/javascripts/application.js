@@ -14,6 +14,9 @@
 //= require activestorage
 //= require turbolinks
 //= require jquery
+//= require jquery.jpostal
+//= require moment
+//= require fullcalendar
 //= require bootstrap-sprockets
 //= require_tree .
 
@@ -28,6 +31,8 @@
  * version: 2.9.0
  *
  */
+
+
 
 (function($) {
   'use strict';

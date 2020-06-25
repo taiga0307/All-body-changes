@@ -1,8 +1,9 @@
 class Gym < ApplicationRecord
   has_many :gym_comments, dependent: :destroy #ジムコメントが削除された際にジムコメントテーブルのジム情報も削除
   has_many :gym_favorites, dependent: :destroy #ジムいいねが削除された際にジムいいねテーブルのジム情報も削除
-  has_many :reservation_managements
+  has_many :reservations #ジムの予約は多数のため
   belongs_to :genre
+  belongs_to :admin_user, optional: true # 外部キーは必ず紐づかないといけないため外部キーがnillでも大丈夫。1対1
 
   mount_uploader :gym_picture_id, ImageUploader #activeadminにてアップロードするため記述
 

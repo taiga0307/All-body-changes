@@ -14,7 +14,7 @@ ActiveAdmin.register Contact do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-permit_params :customer_id, :contact_name, :contact_email, :contact_content, :contact_status
+permit_params :customer_id, :contact_name, :contact_email, :contact_content, :contact_status, :task_status
 
   index do
     selectable_column
@@ -26,6 +26,7 @@ permit_params :customer_id, :contact_name, :contact_email, :contact_content, :co
     column(:contact_status) do |contact|
       contact.contact_status_i18n
     end
+    column :task_status
     column :created_at
     actions #閲覧、編集、削除が可能に
   end
@@ -40,6 +41,7 @@ permit_params :customer_id, :contact_name, :contact_email, :contact_content, :co
         row(:contact_status) do |contact|
           contact.contact_status_i18n
         end
+        row :task_status
         row :created_at
       end
   end

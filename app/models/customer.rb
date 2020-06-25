@@ -8,12 +8,13 @@ class Customer < ApplicationRecord
   validates :yomi_sei, presence: true, length: { maximum:8 } # 文字数最大8文字
   validates :yomi_mei, presence: true, length: { maximum:8 } # 文字数最大8文字
   validates :nickname, presence: true, length: { minimum:2, maximum:8 } # 文字数最小2文字、最大8文字
-  validates :postal_code, presence: true, format: { with: /\A\d{3}[-]\d{4}\z/ } # 郵便番号の形式のみ許可(◯◯◯-◯◯◯◯)
+  validates :postal_code, presence: true, numericality: { only_integer: true } # 数字のみ許可
   validates :prefecture_code, presence: true
   validates :address_city, presence: true
   validates :address_street, presence: true
   validates :tell, presence: true, numericality: { only_integer: true } # 数字のみ許可
 
+  mount_uploader :customer_picture_id, ImageUploader #activeadminにてアップロードするため記述
 
   has_many :contacts
   has_many :gym_favorites, through: :gym_favorites, source: :gym # has many throughを使えば、カスタマーがいいねした施設を直接アソシエーションで取得が可能。sourceは「参照元のモデル」をさすオプション。
@@ -25,4 +26,17 @@ class Customer < ApplicationRecord
   has_many :product_favorites, through: :product_favorites, source: :product # has many throughを使えば、カスタマーがいいねした商品を直接アソシエーションで取得が可能。sourceは「参照元のモデル」をさすオプション。
   has_many :product_favorites, dependent: :destroy #商品いいねが削除された際に商品いいねテーブルのユーザー情報も削除
   has_many :product_comments, dependent: :destroy #商品コメントが削除された際に商品コメントテーブルのユーザー情報も削除
+
+  # 住所自動入力の為下記記述
+  include JpPrefecture
+  jp_prefecture :prefecture_code
+
+  def prefecture_name
+    JpPrefecture::Prefecture.find(code: prefecture_code).try(:name)
+  end
+
+  def prefecture_name=(prefecture_name)
+    self.prefecture_code = JpPrefecture::Prefecture.find(name: prefecture_name).code
+  end
+
 end

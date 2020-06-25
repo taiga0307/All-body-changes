@@ -1,0 +1,53 @@
+<!-- 評価の表示 -->
+<% if gym_comment.present? %>
+  <% gym_comments.each do |gym_comment| %>
+  <div class="row">
+    <div class="gymcomment-customer">
+      <!-- ジム名 -->
+<!--       <= link_to customers_gym_path(gym.id), {class: "gymcomment-name"} do %>
+        <%=  gym_comment.gym.gym_name %>
+      < end %> -->
+      <!-- 投稿日時 -->
+      <div class="gymcomment-time">
+        投稿日時：<%= gym_comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+      </div>
+      <!-- ニックネーム -->
+        投稿者：<%= gym_comment.customer.nickname %>さん　
+      <% if current_customer == gym_comment.customer %>
+          <!-- <= link_to '口コミを編集', edit_post_path(post), method: :get, class:'btn btn-default' %> -->
+        <%= link_to '', customers_gym_gym_comment_path(gym, gym_comment), method: :delete, class:"fas fa-trash fa-lg trash_black" %>
+      <% end %>
+      <!-- カスタマー画像 -->
+      <div class="gymcomment-image">
+        <%= image_tag gym_comment.customer.customer_picture_id.to_s, size:"100x100" %>
+      </div>
+    </div>
+
+
+    <div class="gymcomment-all">
+      <!-- 評価 -->
+        <h4>評価：<%= gym_comment.gym_rate %>点 | <%= gym_comment.gym_title %></h4>
+        <!--星評価-->
+      <div id="star-rate-<%= gym_comment.id %>"></div>
+        <script>
+          // turbolinks:loadはページの切り替えを検知するイベント
+          $(document).on('turbolinks:load', function() {
+            $('#star-rate-<%= gym_comment.id %>').raty({
+              size: 36,
+              starOff: "<%= asset_path('star-off.png') %>",
+              starOn: "<%= asset_path('star-on.png') %>",
+              starHalf: "<%= asset_path('star-half.png') %>",
+              half: true,
+              readOnly: true,
+              score: <%= gym_comment.gym_rate %>,
+            });
+          });
+        </script>
+      <!--コメント-->
+      <div class="gymcomment-comment">
+        <%= gym_comment.gym_comment %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>

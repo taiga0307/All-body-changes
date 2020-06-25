@@ -9,7 +9,7 @@ before_action :configure_permitted_parameters, if: :devise_controller? #devise„Å
     root_path
   end
   def after_sign_out_path_for(resource)
-    new_customer_registration_path
+    root_path
   end
 
 protected

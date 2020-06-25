@@ -7,7 +7,6 @@ class CustomersController < ApplicationController
   def fix_update
     @customer = current_customer
      if @customer.update(customer_params)
-      buybag
         redirect_to customers_mypage_path
       else
         render "fix"
@@ -27,6 +26,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:name_sei, :name_mei, :yomi_sei, :yomi_mei, :nickname, :postal_code, :prefecture_code, :address_city, :address_street, :tell, :email)
+    params.require(:customer).permit(:name_sei, :name_mei, :yomi_sei, :yomi_mei, :nickname, :postal_code, :prefecture_code, :address_city, :address_street, :tell, :email, :customer_picture_id)
   end
 end

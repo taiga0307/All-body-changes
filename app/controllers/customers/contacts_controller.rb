@@ -1,4 +1,6 @@
 class Customers::ContactsController < ApplicationController
+
+  before_action :authenticate_customer!# ログインしているユーザーのみ入れる
   def index
     @contact = current_customer.contacts #has_many :contactでcustomerとアソシエーションされているため情報を呼び出せる。
   end

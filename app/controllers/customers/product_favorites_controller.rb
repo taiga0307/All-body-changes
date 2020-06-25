@@ -1,6 +1,6 @@
 class Customers::ProductFavoritesController < ApplicationController
 
-	before_action :authenticate_customer!
+  before_action :authenticate_customer!# ログインしているユーザーのみ入れる
 
   def index
     @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に

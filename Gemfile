@@ -73,8 +73,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'devise-i18n' # deviseを日本語化するため
-gem 'devise-i18n-views'
-gem 'enum_help'
+gem 'devise-i18n-views'# deviseを日本語化するため
+gem 'enum_help' #enumの日本語化
 
 gem 'activeadmin' # 管理画面作成のため
 gem 'carrierwave' # activeadmin画像アップロード用
@@ -90,11 +90,8 @@ gem 'kaminari','~> 1.1.1' #ページ区切る為
 
 gem 'jp_prefecture' # 住所機能
 
-gem 'enum_help' #enumの日本語化
-
-gem 'jquery-rails' #jquery-rails
-
-gem 'fullcalendar-rails' #カレンダー
+gem 'fullcalendar-rails' #RailsでFullCalendarというjQueryのプラグインをしようするためのGem
+gem 'momentjs-rails' #日付の解析、操作、および書式設定のための軽量なJavaScript日付ライブラリをインストールするGem
 
 gem 'dotenv-rails' # 環境変数を管理するため
 

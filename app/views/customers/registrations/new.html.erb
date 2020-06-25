@@ -12,13 +12,13 @@
             <th class="pa10px40px">お名前</th>
             <td>
               <div class="field">
-                <%= f.label :姓 %>
+                <%= f.label :姓 %><br>
                 <%= f.text_field :name_sei, autofocus: true, autocomplete: "name_sei" %>
               </div>
             </td>
             <td>
               <div class="field">
-                <%= f.label :名 %>
+                <%= f.label :名 %><br>
                 <%= f.text_field :name_mei, autofocus: true, autocomplete: "name_mei" %>
               </div>
             </td>
@@ -28,13 +28,13 @@
             <th class="pa10px40px">お名前(フリガナ)</th>
             <td>
               <div class="field">
-                <%= f.label :セイ %>
+                <%= f.label :セイ %><br>
                 <%= f.text_field :yomi_sei, autofocus: true, autocomplete: "name_sei" %>
               </div>
             </td>
             <td>
               <div class="field">
-                <%= f.label :メイ %>
+                <%= f.label :メイ %><br>
                 <%= f.text_field :yomi_mei, autofocus: true, autocomplete: "name_mei" %>
               </div>
             </td>
@@ -54,8 +54,8 @@
             <th class="pa10px40px", rowspan="4"><%= f.label :ご住所 %></th>
             <td colspan="2">
               <div class="field">
-                <%= f.label :郵便番号 %>
-                <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code" %>
+                <%= f.label :郵便番号 %><br>
+                <%= f.text_field :postal_code, autofocus: true, autocomplete: "postal_code", id: "customer_postal_code" %>
               </div>
             </td>
             <td></td>
@@ -63,8 +63,8 @@
           <tr>
             <td colspan="2">
               <div class="field">
-                <%= f.label :都道府県 %>
-                <%= f.text_field :prefecture_code, autofocus: true, autocomplete: "prefecture_code" %>
+                <%= f.label :都道府県 %><br>
+                <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,  :name, :name, autofocus: true, autocomplete: "prefecture_code", id: "customer_prefecture_code" %>
               </div>
             </td>
             <td></td>
@@ -72,8 +72,8 @@
           <tr>
             <td colspan="2">
               <div class="field">
-                <%= f.label :市区町村 %>
-                <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city" %>
+                <%= f.label :市区町村 %><br>
+                <%= f.text_field :address_city, autofocus: true, autocomplete: "address_city", id: "customer_address_city" %>
               </div>
             </td>
             <td></td>
@@ -81,8 +81,8 @@
           <tr>
             <td colspan="2">
               <div class="field">
-                <%= f.label :町名番地 %>
-                <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street" %>
+                <%= f.label :町名番地 %><br>
+                <%= f.text_field :address_street, autofocus: true, autocomplete: "address_street", id: "customer_address_street" %>
               </div>
             </td>
             <td></td>

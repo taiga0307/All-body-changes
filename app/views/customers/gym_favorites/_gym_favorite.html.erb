@@ -1,18 +1,27 @@
-  <% if current_customer %><!--  ログインしているユーザーを指定 -->
-    <% if gym.gym_favorited_by?(current_customer) %>
-      <!-- お気に入り登録解除 -->
-      <%=link_to customers_gym_gym_favorites_path(gym.id), method: :delete, remote: true do %>
-        <i class="fa fa-heart" aria-hidden="true" style="color: #FF0461;">クリップ済み</i>
-        <!-- <%= gym.gym_favorites.count %> -->
-      <% end %>
-    <% else %>
-      <!-- お気に入り登録 -->
-      <%=link_to customers_gym_gym_favorites_path(gym.id), method: :post, remote: true do %>
-        <i class="fa fa-heart-o" aria-hidden="true">クリップする</i>
-        <!-- <%= gym.gym_favorites.count %> -->
-      <% end %>
+<% if current_customer %><!--  ログインしているユーザーを指定 -->
+  <% if gym.gym_favorited_by?(current_customer) %>
+    <!-- お気に入り登録解除 -->
+    <%=link_to customers_gym_gym_favorites_path(gym.id), method: :delete, remote: true do %>
+      <!-- アイコン重ねるためspan使用 -->
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x" aria-hidden="true" style="color: #330000  ;"></i>
+        <i class="fa fa-heart fa-stack-1x" aria-hidden="true" style="color: #FF0461;"></i>
+      </span>
     <% end %>
   <% else %>
-        <i class="fa fa-heart-o" aria-hidden="true"></i>
-        <%= gym.gym_favorites.count %>
+    <!-- お気に入り登録 -->
+    <%=link_to customers_gym_gym_favorites_path(gym.id), method: :post, remote: true do %>
+      <!-- アイコン重ねるためspan使用 -->
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x" aria-hidden="true" style="color: #330000  ;"></i>
+        <i class="fa fa-heart-o fa-stack-1x" aria-hidden="true"></i>
+      </span>
+    <% end %>
   <% end %>
+<% else %>
+      <!-- アイコン重ねるためspan使用 -->
+      <span class="fa-stack fa-lg">
+        <i class="fa fa-circle fa-stack-2x" aria-hidden="true" style="color: #330000  ;"></i>
+        <i class="fa fa-heart-o fa-stack-1x" aria-hidden="true"></i>
+      </span>
+<% end %>

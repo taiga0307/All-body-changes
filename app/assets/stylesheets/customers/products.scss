@@ -6,30 +6,99 @@
 .productbox{
 	box-sizing :border-box;
 	background:#CCCCCC;
-   color: #000000;
-   height: 450px;
+  color: #000000;
+  height: 450px;
+}
+/* index全件カウント */
+.productsallcount{
+  float:left;
+  margin:22px 20px 0 0;
+  font-size:20px;
+}
+/* indexリンク */
+.product-link{
+  color: black;
+}
+/* indexリンク */
+.product-link:hover{
+  color: black;
+  text-decoration: none;
+}
+/* index画像とお気に入りボタン */
+.image-favorite-positon{
+  position: relative;
+  width: 300px;
+}
+.productfavorite-index{
+  position: absolute;
+  right: 20px;
+  bottom: 5px;
+}
+/* indexブランド */
+.productbrand-index{
+  margin:10px 0;
+  text-align:center;
+}
+/* index紹介文 */
+.productdescription-index{
+  margin:10px 5px 0 5px;
+  font-size: 15px;
+}
+/* index評価スター */
+.productstar-index{
+  margin:5px 5px 0 20px;
+  float:left;
+}
+/* index平均評価数 */
+.productaverage-index{
+  margin:5px 5px 0 20px;
+  float:left;
+}
+/* indexクチコミ合計数 */
+.reviewcount-index{
+  margin-top:5px;
+  text-align:center;
+}
+/* index価格 */
+.productprice-index{
+  margin:15px 5px 0 0;
+  text-align:right;
 }
 
-/* show画像 */
+/* show画像、お気に入り */
 .productimage{
    padding: 30px 0;
+   position: relative;
+   width: 300px;
 }
+.product-favorite-show{
+  position: absolute;
+  right: 35px;
+  bottom: 35px;
+}
+
 /* showブランド */
-.productbrand{
+.productbrand-show{
    padding: 20px 10px;
 }
-/* showプライス */
-.productprice{
-   text-align:right;
-   font-size:30px;
-   padding: 20px 10px;
+/* show評価スター */
+.productstar-show{
+  float:left;
+  margin-right:20px;
+}
+/* show平均評価数 */
+.productaverage-show{
+  float:left;
+  margin-right:20px;
 }
 /* show紹介文 */
 .productdescription{
-   padding-bottom: 30px;
+   padding-bottom:30px;
+   margin-top:20px;
 }
-
-/* showコメント */
-.productcomment{
-   margin: 10px 0 50px 0;
+/* show価格 */
+.productprice-show{
+   text-align:right;
+   font-size:30px;
+   padding: 20px 10px;
 }

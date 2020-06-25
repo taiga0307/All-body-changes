@@ -31,14 +31,15 @@ Rails.application.routes.draw do
       resource :product_favorites, only:[:create, :destroy] # 商品のお気に入り保存、削除
     end
     resources :product_favorites, only: [:index] # 商品お気に入り一覧画面
+    resources :product_comments, only: [:index] # 商品コメント一覧画面
 
     resources :gyms, only: [:index, :show] do # 施設一覧画面、商品詳細画面　ジャンル一覧は施設一覧と一緒
       resources :gym_comments, only: [:create, :destroy] # 施設のコメント保存、削除
       resource :gym_favorites, only:[:create, :destroy] # 施設のお気に入り保存、削除
     end
     resources :gym_favorites, only: [:index] # 施設お気に入り一覧画面
-
-    get 'reservations/confirm' => 'reservations#confirm'# 施設予約確認画面
+    resources :gym_comments, only: [:index] # 施設コメント一覧画面
+    post 'reservations/confirm' => 'reservations#confirm'# 施設予約確認画面
     get 'reservations/thanks' => 'reservations#thanks'# 施設予約サンクス画面
     resources :reservations, only: [:index, :show, :create, :new]# 施設予約履歴一覧画面、施設予約履歴詳細画面、施設予約保存、施設予約入力画面
 
