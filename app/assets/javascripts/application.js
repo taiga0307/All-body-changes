@@ -15,7 +15,6 @@
 //= require turbolinks
 //= require jquery
 //= require jquery.jpostal
-//= require moment
 //= require bootstrap-sprockets
 //= require_tree .
 
