@@ -17,31 +17,34 @@
   @import "bootstrap";            /*Bootstrapを読み込ませる*/
 
 /* TOP画像 */
+.container1{
+  margin-top:30px;
+  position: relative;
+  height: 300px;
+}
 .top1 {
-background-image: url(top1.jpg);
+  background-image: url(top1.jpg);
 }
-.top2 {
-background-image: url(top2.jpg);
-}
+
 .top3 {
-background-image: url(top3.jpg);
+  background-image: url(top3.jpg);
 }
 .top4 {
-background-image: url(top4.jpg);
+  background-image: url(top4.jpg);
 }
 
 .navbar{
-    background:#111111;
+  background:#111111;
 }
 /* ヘッダー（紹介文） */
 .name{
 	color: #FFFF00;
-    font-size: 10px;
-    float: left;
-    margin: 5px 8px 5px 10px;
-    width: 800px;
-    height: 30px;
-    padding-top: 15px;
+  font-size: 10px;
+  float: left;
+  margin: 5px 8px 5px 10px;
+  width: 800px;
+  height: 30px;
+  padding-top: 15px;
 }
 /* ヘッダー（検索） */
 .search{
@@ -60,7 +63,7 @@ background-image: url(top4.jpg);
 
 /* メイン */
 .main{
-   margin-top: 150px;
+  margin-top: 150px;
 }
 /* タイトル */
 h2{

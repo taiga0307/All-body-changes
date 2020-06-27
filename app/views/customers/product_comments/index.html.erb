@@ -5,7 +5,8 @@
 			<h1>商品 クチコミ投稿一覧</h1>
 	          <p>ご掲載いただいた口コミを確認、削除することができます。
 	          </p>
-			<% @product_comment.each do |product_comment| %>
+			<%= paginate @product_comments %>
+			<% @product_comments.each do |product_comment| %>
 				<div class="row">
 		      <div class="productcomment-customer">
 	    			<!-- 投稿日時 -->
@@ -14,10 +15,8 @@
 		      	</div>
 		      	<!-- ニックネーム -->
 		        	投稿者：<%= product_comment.customer.nickname %>さん　
-		      <% if current_customer == product_comment.customer %>
 		        <!-- <= link_to '口コミを編集', edit_post_path(post), method: :get, class:'btn btn-default' %> -->
-		        <%= link_to '', customers_product_product_comment_path(@products, product_comment), method: :delete, class:"fas fa-trash fa-lg trash_black" %>
-		      <% end %>
+		        <%= link_to '', customers_product_product_comment_path(product_comment.product.id, product_comment), method: :delete, class:"fas fa-trash fa-lg trash_black" %>
 		      	<!-- カスタマー画像 -->
 		      	<div class="productcomment-image">
 		        	<%= image_tag product_comment.customer.customer_picture_id.to_s, size:"100x100" %>
@@ -50,6 +49,7 @@
 		      </div>
 		    </div>
 		  <% end %>
+			<%= paginate @product_comments %>
 		</div>
 	</div>
 </div>

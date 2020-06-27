@@ -4,9 +4,10 @@ class Customers::ProductCommentsController < ApplicationController
     @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
     @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
 
-    @customer = current_customer
-    @product_comment = @customer.product_comments # current_customerのクチコミを全件取得
-    @products = Product.where(product_valid: true, id: @product_comment.pluck(:product_id)) # 特定のカラムの値を限定して取れる
+    @product_comments = ProductComment.joins(:product).where(customer_id: current_customer.id, products: {product_valid: true}).order(created_at: :desc).page(params[:page]).per(2) 
+    # joinsでGymCommentテーブルとgymテーブルの二つを組み合わせる。
+    # whereでGymCommentのcustomer_idとgymsのなかのgym_validを探す。
+    # orderでGymCommentのcreated_atを降順で取得。
   end
 
 
@@ -20,6 +21,9 @@ class Customers::ProductCommentsController < ApplicationController
    else
     @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
     @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
+    @product = Product.find(params[:product_id])
+    @product_comment = ProductComment.new #商品へのコメントの為
+    @product_comments = @product.product_comments.page(params[:page]).per(2) #コメントのpaginateの為
    	render 'customers/products/show' #失敗
    end
  end

@@ -5,7 +5,8 @@
 			<h1>フィットネスクラブ クチコミ投稿一覧</h1>
 	          <p>ご掲載いただいた口コミを確認、削除することができます。
 	          </p>
-			  <% @gym_comment.each do |gym_comment| %>
+				<%= paginate @gym_comments %>
+			  <% @gym_comments.each do |gym_comment| %>
 			  <div class="row">
 			    <div class="gymcomment-customer">
 			      <!-- 投稿日時 -->
@@ -13,18 +14,14 @@
 			        投稿日時：<%= gym_comment.created_at.strftime('%Y/%m/%d %H:%M') %>
 			      </div>
 			      <!-- ニックネーム -->
-			        投稿者：<%= gym_comment.customer.nickname %>さん　
-			      <% if current_customer == gym_comment.customer %>
+			        投稿者：<%= current_customer.nickname %>さん　
 			          <!-- <= link_to '口コミを編集', edit_post_path(post), method: :get, class:'btn btn-default' %> -->
-			        <%= link_to '', customers_gym_gym_comment_path(@gyms, gym_comment), method: :delete, class:"fas fa-trash fa-lg trash_black" %>
-			      <% end %>
+			        <%= link_to '', customers_gym_gym_comment_path(gym_comment.gym.id, gym_comment), method: :delete, class:"fas fa-trash fa-lg trash_black" %>
 			      <!-- カスタマー画像 -->
 			      <div class="gymcomment-image">
-			        <%= image_tag gym_comment.customer.customer_picture_id.to_s, size:"100x100" %>
+			        <%= image_tag current_customer.customer_picture_id.to_s, size:"100x100" %>
 			      </div>
 			    </div>
-
-
 			    <div class="gymcomment-all">
 			      <!-- 評価 -->
 			        <h4>評価：<%= gym_comment.gym_rate %>点 | <%= gym_comment.gym_title %></h4>
@@ -55,8 +52,7 @@
 			    </div>
 			  </div>
 			  <% end %>
-					<!-- <= paginate @gym_comments %>-->
-					<!-- 表示できない -->
+				<%= paginate @gym_comments %>
 		</div>
 	</div>
 </div>

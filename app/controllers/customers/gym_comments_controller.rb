@@ -4,10 +4,10 @@ class Customers::GymCommentsController < ApplicationController
     @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
     @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
 
-    @customer = current_customer
-    @gym_comment = @customer.gym_comments # current_customerのクチコミを全件取得
-    @gyms = Gym.where(gym_valid: true, id: @gym_comment.pluck(:gym_id)) # 特定のカラムの値を限定して取れる
-    #@gym_comments = Gym.where(gym_valid: true, id: @gym_comment.pluck(:gym_id)).page(params[:page]).per(2) #コメントのpaginateうまくいかない
+    @gym_comments = GymComment.joins(:gym).where(customer_id: current_customer.id, gyms: {gym_valid: true}).order(created_at: :desc).page(params[:page]).per(2) 
+    # joinsでGymCommentテーブルとgymテーブルの二つを組み合わせる。
+    # whereでGymCommentのcustomer_idとgymsのなかのgym_validを探す。
+    # orderでGymCommentのcreated_atを降順で取得。
   end
 
   def create
@@ -20,6 +20,9 @@ class Customers::GymCommentsController < ApplicationController
    else
     @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
     @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
+    @gym = Gym.find(params[:id])
+    @gym_comment = GymComment.new #施設へのコメントの為
+    @gym_comments = @gym.gym_comments.page(params[:page]).per(2) #コメントのpaginateの為
    	render 'customers/gyms/show' #失敗
    end
  end

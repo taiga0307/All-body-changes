@@ -32,9 +32,9 @@
 
 // オプションを指定してSkipprの実行
 $(document).ready(function () {
-  $(".theTarget").skippr({
+  $("#theTarget").skippr({
     // スライドショーの変化（"fade" or "slide"）
-    transition : 'fade',
+    transition : 'slide',
     // 変化にかかる時間（ミリ秒）
     speed : 1000,
     // easingの種類
