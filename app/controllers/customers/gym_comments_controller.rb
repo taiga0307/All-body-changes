@@ -7,6 +7,7 @@ class Customers::GymCommentsController < ApplicationController
     @customer = current_customer
     @gym_comment = @customer.gym_comments # current_customerのクチコミを全件取得
     @gyms = Gym.where(gym_valid: true, id: @gym_comment.pluck(:gym_id)) # 特定のカラムの値を限定して取れる
+    #@gym_comments = Gym.where(gym_valid: true, id: @gym_comment.pluck(:gym_id)).page(params[:page]).per(2) #コメントのpaginateうまくいかない
   end
 
   def create

@@ -1,5 +1,15 @@
 class Customers::ProductCommentsController < ApplicationController
 
+  def index
+    @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
+    @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
+
+    @customer = current_customer
+    @product_comment = @customer.product_comments # current_customerのクチコミを全件取得
+    @products = Product.where(product_valid: true, id: @product_comment.pluck(:product_id)) # 特定のカラムの値を限定して取れる
+  end
+
+
   def create
     @product = Product.find(params[:product_id])
     @product_comment = current_customer.product_comments.new(product_comment_params)

@@ -21,7 +21,6 @@
 				</thead>
 			</table>
 		<% end %>
-
 	<h3 class="genre-title">Item Categories</h3>
 		<% products.each do |product| %>
 			<div class="genre-box">
@@ -36,21 +35,19 @@
 			</div>
 		<% end %>
 
+   	<% if customer_signed_in? %>
 			<table class="table-side">
 				<thead>
 					<tr>
 						<td class="frame-side">
-							<!-- 会員登録 -->
+							<!-- お問い合わせ -->
 							<p class="sidetext">お問い合わせは<br>下記からお願いします</p>
 							<%= link_to "お問い合わせ",new_customers_contact_path, {class: 'btn-push3'} %>
 						</td>
 					</tr>
 				</thead>
 			</table>
-
-
-
-
-
+   	<% else %>
+		<% end %>
 	</div>
 </div>

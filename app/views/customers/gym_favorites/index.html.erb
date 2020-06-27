@@ -2,7 +2,7 @@
   <div class="row">
     <%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-2 -->
     <div class="col-xs-9"><!-- 左右に余白、中央に配置 -->
-      <h2>お気に入りフィットネスクラブ一覧</h2>
+      <h1>お気に入りフィットネスクラブ一覧</h1>
       <div class="row">
         <div class="gymsallcount">
           全<%= @gyms_all.count %>件
@@ -11,12 +11,12 @@
       </div>
       <div class="row">
         <% @gyms.each do |gym| %>
-          <div class="col-xs-4" style="border:1px solid #444444; background:#222222;  padding: 3px; margin-top: 3px;">
+          <div class="col-xs-6 col-lg-3" style="border:1px solid #444444; background:#222222;  padding: 3px; margin-top: 3px;">
             <div class="gymbox">
               <!-- 画像 -->
               <div class="gym-image-favorite-positon">
               <%= link_to customers_gym_path(gym.id), {class: "gym-link"} do %>
-                <%= image_tag gym.gym_picture_id.to_s,  size:"285x285" %>
+                <%= image_tag gym.gym_picture_id.to_s,  size:"210x210" %>
               <% end %>
               </div>
           <%= link_to customers_gym_path(gym.id), {class: "gym-link"} do %>
@@ -56,7 +56,7 @@
               </div>
               <!-- クチコミ合計数 -->
               <div class="gymreviewcount-index">
-                　口コミ<%= gym.gym_comments.count %>件
+                口コミ<%= gym.gym_comments.count %>件
               </div>
           <% end %>
             </div>

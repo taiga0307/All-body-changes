@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="row">
+		<%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-3 -->
+		<div class="col-xs-9"><!-- 左右に余白、中央に配置 -->
+			<h1>商品 クチコミ投稿一覧</h1>
+	          <p>ご掲載いただいた口コミを確認、削除することができます。
+	          </p>
+			<% @product_comment.each do |product_comment| %>
+				<div class="row">
+		      <div class="productcomment-customer">
+	    			<!-- 投稿日時 -->
+	    			<div class="productcomment-time">
+	      			投稿日時：<%= product_comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+		      	</div>
+		      	<!-- ニックネーム -->
+		        	投稿者：<%= product_comment.customer.nickname %>さん　
+		      <% if current_customer == product_comment.customer %>
+		        <!-- <= link_to '口コミを編集', edit_post_path(post), method: :get, class:'btn btn-default' %> -->
+		        <%= link_to '', customers_product_product_comment_path(@products, product_comment), method: :delete, class:"fas fa-trash fa-lg trash_black" %>
+		      <% end %>
+		      	<!-- カスタマー画像 -->
+		      	<div class="productcomment-image">
+		        	<%= image_tag product_comment.customer.customer_picture_id.to_s, size:"100x100" %>
+		      	</div>
+		    	</div>
+
+		    	<div class="productcomment-all">
+		      	<!-- 評価 -->
+		      	<h4>評価：<%= product_comment.product_rate %>点 | <%= product_comment.product_title %></h4>
+		      	<!--星評価-->
+		      	<div id="star-rate-<%= product_comment.id %>"></div>
+		        <script>
+		          // turbolinks:loadはページの切り替えを検知するイベント
+		          $(document).on('turbolinks:load', function() {
+		            $('#star-rate-<%= product_comment.id %>').raty({
+		              size: 36,
+		              starOff: "<%= asset_path('star-off.png') %>",
+		              starOn: "<%= asset_path('star-on.png') %>",
+		              starHalf: "<%= asset_path('star-half.png') %>",
+		              half: true,
+		              readOnly: true,
+		              score: <%= product_comment.product_rate %>,
+		            });
+		          });
+		        </script>
+		      	<!--コメント-->
+		      	<div class="productcomment-comment">
+		        	<%= product_comment.product_comment %>
+		      	</div>
+		      </div>
+		    </div>
+		  <% end %>
+		</div>
+	</div>
+</div>

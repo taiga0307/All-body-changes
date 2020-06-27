@@ -17,11 +17,23 @@
   @import "bootstrap-sprockets";  /*Bootstrapを読み込ませる*/
   @import "bootstrap";            /*Bootstrapを読み込ませる*/
 
+/* TOP画像 */
+.top1 {
+background-image: url(top1.jpg);
+}
+.top2 {
+background-image: url(top2.jpg);
+}
+.top3 {
+background-image: url(top3.jpg);
+}
+.top4 {
+background-image: url(top4.jpg);
+}
 
 .navbar{
     background:#111111;
 }
-
 /* ヘッダー（紹介文） */
 .name{
 	color: #FFFF00;
@@ -32,7 +44,6 @@
     height: 30px;
     padding-top: 15px;
 }
-
 /* ヘッダー（検索） */
 .search{
    padding-top: 15px;
@@ -79,11 +90,12 @@ p{
   justify-content: center;
 }
 
+/* ボディ */
 body{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #FFFFFF;
+  background-color: #f2f2f2;
 }
 
 /* フッター */
@@ -169,7 +181,7 @@ h3{
   padding: 10px 24px;
   margin:10px;
   border-radius: 4px;
-  border-bottom: 4px solid #996600 ;
+  border-bottom: 4px solid #333300 ;
   height:50px;
 }
 .btn-push3:hover{
@@ -179,9 +191,9 @@ h3{
   padding: 0.5em 1em;
   margin: 2em 0;
   color: #474747;
-  background: whitesmoke;/*背景色*/
-  border-left: double 7px #4ec4d3;/*左線*/
-  border-right: double 7px #4ec4d3;/*右線*/
+  background: #f7f6fb;/*背景色*/
+  border-left: double 7px #000055;/*左線*/
+  border-right: double 7px #000055;/*右線*/
 }
 
 

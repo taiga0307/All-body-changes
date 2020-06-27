@@ -7,7 +7,7 @@
 	box-sizing :border-box;
 	background:#222222;
 	color: white;
-  height: 450px;
+  height: 335px;
 }
 /* index全件カウント */
 .gymsallcount{
@@ -27,37 +27,40 @@
 /* index画像とお気に入りボタン */
 .gym-image-favorite-positon{
   position: relative;
-  width: 300px;
+  width: 210px;
 }
 .gym-favorite-index{
   position: absolute;
-  right: 20px;
-  bottom: 5px;
+  right: 2px;
+  bottom: 2px;
 }
 /* indexブランド */
 .gymbrand-index{
-  margin:10px 0;
+  margin:5px 0;
   text-align:center;
+  font-size:11px;
 }
 /* index紹介文 */
 .gymdescription-index{
-  margin:10px 5px 0 5px;
-  font-size: 15px;
+  margin:0 5px;
+  font-size: 13px;
 }
 /* index評価スター */
 .gymstar-index{
-  margin:5px 5px 0 20px;
+  margin:0 5px;
   float:left;
 }
 /* index平均評価数 */
 .gymaverage-index{
-  margin:5px 5px 0 20px;
+  margin:3px 5px 5px 5px;
   float:left;
+  font-size: 13px;
 }
 /* indexクチコミ合計数 */
 .gymreviewcount-index{
-  margin-top:5px;
+  margin:3px 5px 5px 5px;
   text-align:center;
+  font-size: 13px;
 }
 /* show画像、お気に入り */
 .gymimage{
