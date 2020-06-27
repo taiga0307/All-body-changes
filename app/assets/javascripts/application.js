@@ -16,7 +16,6 @@
 //= require jquery
 //= require jquery.jpostal
 //= require moment
-//= require fullcalendar
 //= require bootstrap-sprockets
 //= require_tree .
 

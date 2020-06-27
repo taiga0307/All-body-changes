@@ -90,9 +90,6 @@ gem 'kaminari','~> 1.1.1' #ページ区切る為
 
 gem 'jp_prefecture' # 住所機能
 
-gem 'fullcalendar-rails' #RailsでFullCalendarというjQueryのプラグインをしようするためのGem
-gem 'momentjs-rails' #日付の解析、操作、および書式設定のための軽量なJavaScript日付ライブラリをインストールするGem
-
 gem 'dotenv-rails' # 環境変数を管理するため
 
 gem "geocoder" #map
