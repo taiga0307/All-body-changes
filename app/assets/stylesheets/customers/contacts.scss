@@ -2,41 +2,43 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+/* thanksタイトル */
 .thanks{
-    padding: 10px 10px 10px 10px;
-    border-bottom: solid 3px #000000;
-    position: relative;
-    font-size:50px;
-    font-weight: bold;
-    text-align: center;
+  padding: 10px 10px 10px 10px;
+  border-bottom: solid 3px #000000;
+  position: relative;
+  font-size:50px;
+  font-weight: bold;
+  text-align: center;
 }
-
+/* thanks説明文 */
 .thanks2 {
 	font-size: 30px;
-    text-align: center;
-   	margin-top: 30px;
+  text-align: center;
+ 	margin-top: 30px;
 }
-
+/* thanks説明文 */
 .btntop {
-   display: inline-block;
-   padding: 0.3em 1em;
-   margin: 100px 0 0 0;
-   text-decoration: none;
-   color: #FF4F02;
-   border: solid 2px #FF4F02;
-   border-radius: 3px;
-   transition: .4s;
-   width:200px;
-   height:50px;
-   line-height: 40px;
-   text-align: center;
-   font-weight:bold;
+  display: inline-block;
+  padding: 0.3em 1em;
+  margin: 100px 0 0 0;
+  text-decoration: none;
+  color: #FF4F02;
+  border: solid 2px #FF4F02;
+  border-radius: 3px;
+  transition: .4s;
+  width:200px;
+  height:50px;
+  line-height: 40px;
+  text-align: center;
+  font-weight:bold;
 }
+/* thanksトップページボタン */
 .btntop:hover {
   background: #FF4F02;
   color: white;
 }
+/* thanksトップページボタン */
 .btntop-area{
-   text-align:center;
+  text-align:center;
 }

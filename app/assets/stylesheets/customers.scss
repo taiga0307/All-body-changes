@@ -4,6 +4,7 @@
   @import "bootstrap-sprockets";  /*Bootstrapを読み込ませる*/
   @import "bootstrap";            /*Bootstrapを読み込ませる*/
 
+/* マイページ（左） */
 .box1{
     margin: 2em 0;
     background: #f1f1f1;
@@ -43,6 +44,7 @@
   color: white;
 }
 
+/* マイページ（真ん中） */
 .box2{
     margin: 2em 0;
     background: #f1f1f1;
@@ -82,6 +84,7 @@
   color: white;
 }
 
+/* マイページ（右） */
 .box3{
     margin: 2em 0;
     background: #f1f1f1;

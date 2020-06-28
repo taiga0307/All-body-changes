@@ -16,23 +16,7 @@
   @import "bootstrap-sprockets";  /*Bootstrapを読み込ませる*/
   @import "bootstrap";            /*Bootstrapを読み込ませる*/
 
-/* TOP画像 */
-.container1{
-  margin-top:30px;
-  position: relative;
-  height: 300px;
-}
-.top1 {
-  background-image: image-url("top1.jpg");
-}
-
-.top3 {
-  background-image: image-url("top3.jpg");
-}
-.top4 {
-  background-image: image-url("top4.jpg");
-}
-
+/* ヘッダー（色） */
 .navbar{
   background:#111111;
 }

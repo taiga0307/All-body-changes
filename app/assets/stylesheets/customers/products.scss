@@ -7,7 +7,7 @@
 	box-sizing :border-box;
 	background:#CCCCCC;
   color: #000000;
-  height: 335px;             /**/
+  height: 335px;
 }
 /* index全件カウント */
 .productsallcount{
@@ -27,46 +27,46 @@
 /* index画像とお気に入りボタン */
 .image-favorite-positon{
   position: relative;
-  width: 210px;             /**/
+  width: 210px;
 }
 .productfavorite-index{
   position: absolute;
-  right: 2px;             /**/
-  bottom: 2px;             /**/
+  right: 2px;
+  bottom: 2px;
 }
 /* indexブランド */
 .productbrand-index{
-  margin:5px 0;             /**/
+  margin:5px 0;
   text-align:center;
-  font-size:11px;             /**/
+  font-size:11px;
 }
 /* index名前 */
 .productdescription-index{
-  margin:0 5px;             /**/
-  font-size: 13px;             /**/
+  margin:0 5px;
+  font-size: 13px;
 }
 /* index評価スター */
 .productstar-index{
-  margin:0 5px;             /**/
+  margin:0 5px;
   float:left;
 }
 /* index平均評価数 */
 .productaverage-index{
-  margin:3px 5px 5px 5px;             /**/
+  margin:3px 5px 5px 5px;
   float:left;
-  font-size: 13px;             /**/
+  font-size: 13px;
 }
 /* indexクチコミ合計数 */
 .reviewcount-index{
-  margin:3px 5px 5px 5px;             /**/
+  margin:3px 5px 5px 5px;
   text-align:center;
-  font-size: 13px;             /**/
+  font-size: 13px;
 }
 /* index価格 */
 .productprice-index{
   margin:0 5px;
   text-align:right;
-  font-size: 13px;             /**/
+  font-size: 13px;
 }
 
 /* show画像、お気に入り */

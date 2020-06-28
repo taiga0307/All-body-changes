@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* TOP画像 */
+/* TOPスライド画像 */
 .container1 {
   margin-top:30px;
   position: relative;
@@ -12,6 +12,20 @@
   text-align: center;
   color: #419be0;
   background: white;
+}
+.container1{
+  margin-top:30px;
+  position: relative;
+  height: 300px;
+}
+.top1 {
+  background-image: image-url("top1.jpg");
+}
+.top3 {
+  background-image: image-url("top3.jpg");
+}
+.top4 {
+  background-image: image-url("top4.jpg");
 }
 /* TOP商品ランキング */
 .product-ranking{
@@ -48,28 +62,32 @@
   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
   line-height: 50px;
 }
+/* アバウト機能タイトル */
 .about-function{
   font-size:30px;
   text-align: center;
   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
   margin:50px 0;
 }
+/* アバウト機能サブタイトル */
 .about-function1{
   font-size:20px;
   font-weight: bold;
   margin:10px 0;
 }
+/* アバウト機能説明文 */
 .about-function1-comment{
   font-size:15px;
   line-height: 25px;
 }
+/* アバウト最終文章 */
 .about-last{
   font-size:33px;
   text-align: center;
   line-height: px;
   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
 }
-
+/* アバウトトップページリンクボタン */
 .about-btn {
   display: inline-block;
   padding: 1em 1em;
