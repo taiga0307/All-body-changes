@@ -23,6 +23,12 @@
 			      </div>
 			    </div>
 			    <div class="gymcomment-all">
+		      	<!-- 商品名 -->
+		      		<%= link_to customers_gym_path(gym_comment.gym.id) do %>
+			      		<div class= "gymcomment-name">
+			      			<%= gym_comment.gym.gym_name.truncate(30) %>
+			      		</div>
+			      	<% end %>
 			      <!-- 評価 -->
 			        <h4>評価：<%= gym_comment.gym_rate %>点 | <%= gym_comment.gym_title %></h4>
 			        <!--星評価-->

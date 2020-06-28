@@ -12,14 +12,7 @@
   text-align:center;
   float:left;
 }
-/* ジム名 */
-.gymcomment-name{
-	color: #330000;
-}
-.gymcomment-name:hover{
-  color: #330000;
-	text-decoration: none;
-}
+
 /* 投稿時間 */
 .gymcomment-time{
   margin:5px 0;
@@ -69,4 +62,12 @@
   border: 14px solid transparent;
   border-right: 14px solid #330000;
   z-index: 1;
+}
+
+/* ジム名 */
+.gymcomment-name{
+  color: #330000;
+}
+.gymcomment-name:hover{
+  color: #330000;
 }

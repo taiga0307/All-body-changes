@@ -24,6 +24,12 @@
 		    	</div>
 
 		    	<div class="productcomment-all">
+		      	<!-- 商品名 -->
+		      		<%= link_to customers_product_path(product_comment.product.id) do %>
+			      		<div class= "productcomment-name">
+			      			<%= product_comment.product.product_name.truncate(30) %>
+			      		</div>
+			      	<% end %>
 		      	<!-- 評価 -->
 		      	<h4>評価：<%= product_comment.product_rate %>点 | <%= product_comment.product_title %></h4>
 		      	<!--星評価-->
