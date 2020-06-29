@@ -93,3 +93,5 @@ gem 'jp_prefecture' # 住所機能
 gem 'dotenv-rails' # 環境変数を管理するため
 
 gem "geocoder" #map
+
+gem 'rakuten_web_service'

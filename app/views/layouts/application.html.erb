@@ -19,11 +19,28 @@
   </body>
   <footer>
     <div class="container">
-      <%= link_to 'Top', root_path %>
-      <%= link_to 'About', customers_homes_about_path %>
-      <%= link_to 'Contact', new_customers_contact_path %>
-      <%= link_to 'Products', customers_products_path %>
-      <%= link_to 'Gyms', customers_gyms_path %>
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="footer-btn">
+            <%= link_to 'Top', root_path %>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="footer-btn">
+            <%= link_to 'About', customers_homes_about_path %>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="footer-btn">
+            <%= link_to 'Products', customers_products_path %>
+          </div>
+        </div>
+        <div class="col-xs-3">
+          <div class="footer-btn">
+            <%= link_to 'Gyms', customers_gyms_path %>
+          </div>
+        </div>
+      </div>
     </div>
   </footer>
 </html>
