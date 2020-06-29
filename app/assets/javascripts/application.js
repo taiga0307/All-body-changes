@@ -506,6 +506,7 @@ $(document).ready(function () {
     },
 
     _nameForIndex: function(i) {
+      console.log(this.opt.score)
       return this.opt.score && this.opt.score >= i ? 'starOn' : 'starOff';
     },
 

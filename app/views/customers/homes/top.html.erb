@@ -143,7 +143,7 @@
                     half: true,
                     readOnly: true,
                     score: <%= gym.gym_comments.average(:gym_rate).to_f.round(1) %>,
-                    //注目ポイント↑ 平均点を算出し、round関数で切り上げ
+                    //注目ポイント↑ 平均点を算出し、round関数で四捨五入
                   });
                 });
               </script>
