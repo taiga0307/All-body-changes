@@ -4,7 +4,7 @@ class Customers::GymsController < ApplicationController
 		@genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
 
 		@gyms_all = Gym.where(gym_valid: true) # trueの件数表示のみカウント
-		@gyms = Gym.where(gym_valid: true).page(params[:page]).per(3) #trueのみ表示＋ページ数指定
+		@gyms = Gym.where(gym_valid: true).page(params[:page]).per(4) #trueのみ表示＋ページ数指定
 	end
 	def show
 		@genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
