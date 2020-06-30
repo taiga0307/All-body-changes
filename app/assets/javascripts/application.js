@@ -31,7 +31,7 @@
  */
 
 // オプションを指定してSkipprの実行
-$(document).on("ready turbolinks:load",function () {
+$(document).ready(function () {
   $("#theTarget").skippr({
     // スライドショーの変化（"fade" or "slide"）
     transition : 'slide',
