@@ -16,6 +16,17 @@ ActiveAdmin.register Contact do
   # end
 permit_params :customer_id, :contact_name, :contact_email, :contact_content, :contact_status, :task_status
 
+  form do |f|
+    f.inputs 'お問い合わせ登録' do
+      f.input :contact_name
+      f.input :contact_email
+      f.input :contact_content
+      f.input :contact_status
+      f.input :task_status
+    end
+    f.button "Create"
+  end
+
   index do
     selectable_column
     id_column
@@ -45,5 +56,4 @@ permit_params :customer_id, :contact_name, :contact_email, :contact_content, :co
         row :created_at
       end
   end
-
 end
