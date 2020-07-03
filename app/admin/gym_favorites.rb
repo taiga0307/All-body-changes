@@ -14,5 +14,13 @@ ActiveAdmin.register GymFavorite do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+permit_params :customer_id, :gym_id
+
+  form do |f|
+    f.inputs 'ジムお気に入り登録' do
+      f.input :customer_id
+      f.input :gym_id
+    end
+    f.button "Create"
+  end
 end

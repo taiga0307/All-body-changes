@@ -56,4 +56,5 @@ permit_params :customer_id, :contact_name, :contact_email, :contact_content, :co
         row :created_at
       end
   end
+
 end

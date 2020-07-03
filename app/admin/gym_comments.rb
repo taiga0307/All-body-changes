@@ -14,5 +14,14 @@ ActiveAdmin.register GymComment do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+permit_params :gym_title, :gym_comment, :gym_rate
+
+  form do |f|
+    f.inputs 'ジム評価' do
+      f.input :gym_title
+      f.input :gym_comment
+      f.input :gym_rate
+    end
+    f.button "Create"
+  end
 end

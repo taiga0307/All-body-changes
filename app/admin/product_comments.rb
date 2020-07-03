@@ -14,5 +14,14 @@ ActiveAdmin.register ProductComment do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+permit_params :product_title, :product_comment, :product_rate
 
+  form do |f|
+    f.inputs '商品評価' do
+      f.input :product_title
+      f.input :product_comment
+      f.input :product_rate
+    end
+    f.button "Create"
+  end
 end

@@ -14,5 +14,13 @@ ActiveAdmin.register ProductFavorite do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+permit_params :customer_id, :product_id
+
+  form do |f|
+    f.inputs '商品お気に入り登録' do
+      f.input :customer_id
+      f.input :product_id
+    end
+    f.button "Create"
+  end
 end
