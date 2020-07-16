@@ -2,136 +2,484 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* index商品 */
-.gymbox{
-	box-sizing :border-box;
-	background:#222222;
-	color: white;
-  height: 335px;
+/*992px以上*/
+@media screen and (min-width: 992px) {
+  #gym-index{
+    border:1px solid #444444;/* 追加 */
+    background:#222222;/* 追加 */
+    padding: 3px;/* 追加 */
+    margin-top: 3px;/* 追加 */
+  }
+
+  /* index商品 */
+  .gymimagebox{ /* 追加 */
+    box-sizing :border-box; /* 追加 */
+    background:white; /* 追加 */
+    color: white; /* 追加 */
+  }
+  .gymbox{
+  	box-sizing :border-box;
+  	background:#222222;
+  	color: white;
+    height: 130px; /* 追加 */
+  }
+  /* index全件カウント */
+  .gymsallcount{
+    float:left;
+    margin:22px 20px 0 0;
+    font-size:20px;
+  }
+  /* indexリンク */
+  .gym-link{
+    color: white;
+  }
+  /* indexリンク */
+  .gym-link:hover{
+    color: white;
+    text-decoration: none;
+  }
+  /* index画像とお気に入りボタン */
+  .gym-image-favorite-positon{
+    position: relative;
+    width: 210px;
+  }
+  .gym-favorite-index{
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+  }
+  /* indexブランド */
+  .gymbrand-index{
+    margin:5px 0;
+    text-align:center;
+    font-size:11px;
+  }
+  /* index名前 */
+  .gymdescription-index{
+    margin:0 5px;
+    font-size: 13px;
+  }
+  /* index評価スター */
+  .gymstar-index{
+    margin:0 5px;
+    float:left;
+  }
+  /* index平均評価数 */
+  .gymaverage-index{
+    margin:3px 5px 5px 5px;
+    float:left;
+    font-size: 13px;
+  }
+  /* indexクチコミ合計数 */
+  .gymreviewcount-index{
+    margin:3px 5px 5px 5px;
+    text-align:center;
+    font-size: 13px;
+  }
+  #gym-show{
+    background:#222222;
+    color:white;
+  }
+  #gym-show-img{
+    width:320px;
+    height:320px;
+  }
+  /* show画像、お気に入り */
+  .gymimage{
+     padding: 30px 0;
+     position: relative;
+     width: 300px;
+  }
+  .gym-favorite-show{
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+  }
+  /* showブランド */
+  .gymbrand-show{
+     margin: 30px 0 10px 10px;
+  }
+  /* show評価スター */
+  .gymstar-show{
+    float:left;
+    margin-right:20px;
+  }
+  /* show平均評価数 */
+  .gymaverage-show{
+    float:left;
+    margin-right:20px;
+  }
+  /* show紹介文 */
+  .gymdescription{
+     padding-bottom: 30px;
+     margin-top:20px;
+  }
+  /* show見学予約 */
+  .btn-reservation {
+     display: inline-block;
+     margin: 10px 0 0 0;
+     text-decoration: none;
+     color: #00CC00;
+     border: solid 2px #00CC00;
+     border-radius: 3px;
+     transition: .4s;
+     width:125px;
+     height:50px;
+     line-height: 40px;
+     text-align: center;
+     font-weight:bold;
+  }
+  /* show見学予約 */
+  .btn-reservation:hover {
+    background: #00CC00;
+    color: white;
+  }
+  /* show見学予約 */
+  .btn-reservation-area{
+     text-align:right;
+  }
+  /* showアクセステーブル */
+  .table_access{
+    color: #5E6469;
+    border: 1px solid #dedede;
+    background: #f9f9f5;
+    width:340px;
+  }
+  /* show郵便番号 */
+  .gympostalcode{
+    font-size:15px;
+  }
+  /* show住所 */
+  .gymaddress{
+    font-size:15px;
+  }
+  /* show電話番号 */
+  .gymtell{
+    font-size:15px;
+  }
 }
-/* index全件カウント */
-.gymsallcount{
-  float:left;
-  margin:22px 20px 0 0;
-  font-size:20px;
+
+/*768px以上991px以下*/
+@media screen and (min-width: 768px)and(max-width: 991px) {
+  #gym-index{
+    border:1px solid #444444;/* 追加 */
+    background:#222222;/* 追加 */
+    padding: 3px;/* 追加 */
+    margin-top: 3px;/* 追加 */
+  }
+
+  /* index商品 */
+  .gymimagebox{ /* 追加 */
+    box-sizing :border-box; /* 追加 */
+    background:white; /* 追加 */
+    color: white; /* 追加 */
+  }
+  .gymbox{
+    box-sizing :border-box;
+    background:#222222;
+    color: white;
+    height: 130px; /* 追加 */
+  }
+  /* index全件カウント */
+  .gymsallcount{
+    float:left;
+    margin:22px 20px 0 0;
+    font-size:20px;
+  }
+  /* indexリンク */
+  .gym-link{
+    color: white;
+  }
+  /* indexリンク */
+  .gym-link:hover{
+    color: white;
+    text-decoration: none;
+  }
+  /* index画像とお気に入りボタン */
+  .gym-image-favorite-positon{
+    position: relative;
+    width: 210px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+  }
+  .gym-favorite-index{
+    position: absolute;
+    right: -60px;
+    bottom: 10px;
+  }
+  /* indexブランド */
+  .gymbrand-index{
+    margin:5px 0;
+    text-align:center;
+    font-size:11px;
+  }
+  /* index名前 */
+  .gymdescription-index{
+    margin:0 5px;
+    font-size: 13px;
+  }
+  /* index評価スター */
+  .gymstar-index{
+    margin:0 5px;
+    float:left;
+  }
+  /* index平均評価数 */
+  .gymaverage-index{
+    margin:3px 5px 5px 5px;
+    float:left;
+    font-size: 13px;
+  }
+  /* indexクチコミ合計数 */
+  .gymreviewcount-index{
+    margin:3px 5px 5px 5px;
+    text-align:center;
+    font-size: 13px;
+  }
+  /* showrow */
+  #gym-show{
+    background:#222222;
+    color:white;
+  }
+  #gym-show-img{
+    width:320px;
+    height:320px;
+  }
+  /* show画像、お気に入り */
+  .gymimage{
+     padding: 30px 0;
+     position: relative;
+     width: 300px;
+  }
+  .gym-favorite-show{
+    position: absolute;
+    right: -15px;
+    bottom: 35px;
+  }
+  /* showブランド */
+  .gymbrand-show{
+     margin: 30px 0 10px 30px;
+  }
+  /* show評価スター */
+  .gymstar-show{
+    float:left;
+    margin-right:20px;
+    margin-left:30px
+  }
+  /* show平均評価数 */
+  .gymaverage-show{
+    float:left;
+    margin-right:20px;
+  }
+  /* show紹介文 */
+  .gymdescription{
+    padding-bottom: 30px;
+    margin-top:20px;
+    margin-left:30px
+  }
+  /* show見学予約 */
+  .btn-reservation {
+     display: inline-block;
+     margin: 10px 0 0 0;
+     text-decoration: none;
+     color: #00CC00;
+     border: solid 2px #00CC00;
+     border-radius: 3px;
+     transition: .4s;
+     width:125px;
+     height:50px;
+     line-height: 40px;
+     text-align: center;
+     font-weight:bold;
+  }
+  /* show見学予約 */
+  .btn-reservation:hover {
+    background: #00CC00;
+    color: white;
+  }
+  /* show見学予約 */
+  .btn-reservation-area{
+     text-align:right;
+  }
+  /* showアクセステーブル */
+  .table_access{
+    color: #5E6469;
+    border: 1px solid #dedede;
+    background: #f9f9f5;
+    width:300px;
+    margin-top:20px;
+  }
+  /* show郵便番号 */
+  .gympostalcode{
+    font-size:15px;
+  }
+  /* show住所 */
+  .gymaddress{
+    font-size:15px;
+  }
+  /* show電話番号 */
+  .gymtell{
+    font-size:15px;
+  }
 }
-/* indexリンク */
-.gym-link{
-  color: white;
-}
-/* indexリンク */
-.gym-link:hover{
-  color: white;
-  text-decoration: none;
-}
-/* index画像とお気に入りボタン */
-.gym-image-favorite-positon{
-  position: relative;
-  width: 210px;
-}
-.gym-favorite-index{
-  position: absolute;
-  right: 2px;
-  bottom: 2px;
-}
-/* indexブランド */
-.gymbrand-index{
-  margin:5px 0;
-  text-align:center;
-  font-size:11px;
-}
-/* index名前 */
-.gymdescription-index{
-  margin:0 5px;
-  font-size: 13px;
-}
-/* index評価スター */
-.gymstar-index{
-  margin:0 5px;
-  float:left;
-}
-/* index平均評価数 */
-.gymaverage-index{
-  margin:3px 5px 5px 5px;
-  float:left;
-  font-size: 13px;
-}
-/* indexクチコミ合計数 */
-.gymreviewcount-index{
-  margin:3px 5px 5px 5px;
-  text-align:center;
-  font-size: 13px;
-}
-/* show画像、お気に入り */
-.gymimage{
-   padding: 30px 0;
-   position: relative;
-   width: 300px;
-}
-.gym-favorite-show{
-  position: absolute;
-  right: 35px;
-  bottom: 35px;
-}
-/* showブランド */
-.gymbrand-show{
-   margin: 30px 0 10px 10px;
-}
-/* show評価スター */
-.gymstar-show{
-  float:left;
-  margin-right:20px;
-}
-/* show平均評価数 */
-.gymaverage-show{
-  float:left;
-  margin-right:20px;
-}
-/* show紹介文 */
-.gymdescription{
-   padding-bottom: 30px;
-   margin-top:20px;
-}
-/* show見学予約 */
-.btn-reservation {
-   display: inline-block;
-   margin: 10px 0 0 0;
-   text-decoration: none;
-   color: #00CC00;
-   border: solid 2px #00CC00;
-   border-radius: 3px;
-   transition: .4s;
-   width:125px;
-   height:50px;
-   line-height: 40px;
-   text-align: center;
-   font-weight:bold;
-}
-/* show見学予約 */
-.btn-reservation:hover {
-  background: #00CC00;
-  color: white;
-}
-/* show見学予約 */
-.btn-reservation-area{
-   text-align:right;
-}
-/* showアクセステーブル */
-.table_access{
-  color: #5E6469;
-  border: 1px solid #dedede;
-  background: #f9f9f5;
-  width:340px;
-}
-/* show郵便番号 */
-.gympostalcode{
-  font-size:15px;
-}
-/* show住所 */
-.gymaddress{
-  font-size:15px;
-}
-/* show電話番号 */
-.gymtell{
-  font-size:15px;
+
+/*767px以下*/
+@media screen and (max-width: 767px) {
+  #gym-index{
+    border:1px solid #444444;/* 追加 */
+    background:#222222;/* 追加 */
+    padding: 3px;/* 追加 */
+    margin-top: 3px;/* 追加 */
+  }
+
+  /* index商品 */
+  .gymimagebox{ /* 追加 */
+    box-sizing :border-box; /* 追加 */
+    background:white; /* 追加 */
+    color: white; /* 追加 */
+  }
+  .gymbox{
+    box-sizing :border-box;
+    background:#222222;
+    color: white;
+    height: 130px; /* 追加 */
+  }
+  /* index全件カウント */
+  .gymsallcount{
+    float:left;
+    margin:22px 20px 0 0;
+    font-size:20px;
+  }
+  /* indexリンク */
+  .gym-link{
+    color: white;
+  }
+  /* indexリンク */
+  .gym-link:hover{
+    color: white;
+    text-decoration: none;
+  }
+  /* index画像とお気に入りボタン */
+  .gym-image-favorite-positon{
+    position: relative;
+    width: 210px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+  }
+  .gym-favorite-index{
+    position: absolute;
+    right: -60px;
+    bottom: 10px;
+  }
+  /* indexブランド */
+  .gymbrand-index{
+    margin:5px 0;
+    text-align:center;
+    font-size:11px;
+  }
+  /* index名前 */
+  .gymdescription-index{
+    margin:0 5px;
+    font-size: 13px;
+  }
+  /* index評価スター */
+  .gymstar-index{
+    margin:0 5px;
+    float:left;
+  }
+  /* index平均評価数 */
+  .gymaverage-index{
+    margin:3px 5px 5px 5px;
+    float:left;
+    font-size: 13px;
+  }
+  /* indexクチコミ合計数 */
+  .gymreviewcount-index{
+    margin:3px 5px 5px 5px;
+    text-align:center;
+    font-size: 13px;
+  }
+  #gym-show{
+    background:#222222;
+    color:white;
+  }
+  #gym-show-img{
+    width:340px;
+    height:340px;
+  }
+  /* show画像、お気に入り */
+  .gymimage{
+     padding: 30px 0;
+     position: relative;
+     width: 350px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+  }
+  .gym-favorite-show{
+    position: absolute;
+    left: 320px;
+    bottom: 35px;
+  }
+  /* showブランド */
+  .gymbrand-show{
+     margin: 30px 0 10px 10px;
+  }
+  /* show評価スター */
+  .gymstar-show{
+    float:left;
+    margin-right:20px;
+  }
+  /* show平均評価数 */
+  .gymaverage-show{
+    float:left;
+    margin-right:20px;
+  }
+  /* show紹介文 */
+  .gymdescription{
+     padding-bottom: 30px;
+     margin-top:20px;
+  }
+  /* show見学予約 */
+  .btn-reservation {
+     display: inline-block;
+     margin: 10px 0 0 0;
+     text-decoration: none;
+     color: #00CC00;
+     border: solid 2px #00CC00;
+     border-radius: 3px;
+     transition: .4s;
+     width:125px;
+     height:50px;
+     line-height: 40px;
+     text-align: center;
+     font-weight:bold;
+  }
+  /* show見学予約 */
+  .btn-reservation:hover {
+    background: #00CC00;
+    color: white;
+  }
+  /* show見学予約 */
+  .btn-reservation-area{
+     text-align:right;
+  }
+  /* showアクセステーブル */
+  .table_access{
+    color: #5E6469;
+    border: 1px solid #dedede;
+    background: #f9f9f5;
+    width:340px;
+    margin-top:20px;
+  }
+  /* show郵便番号 */
+  .gympostalcode{
+    font-size:15px;
+  }
+  /* show住所 */
+  .gymaddress{
+    font-size:15px;
+  }
+  /* show電話番号 */
+  .gymtell{
+    font-size:15px;
+  }
 }

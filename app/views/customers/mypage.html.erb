@@ -10,8 +10,8 @@
     							<p class="fas fa-user-edit fa-lg"> 登録内容確認変更</p>
     						</div>
     						<p>氏名、ご住所、電話番号、メールアドレス、パスワードなど変更ができます。</p>
-    						<a><%= link_to '編集する', customers_fix_path, class:"btn1" %></a>
-    						<a><%= link_to 'パスワード変更', edit_customer_registration_path, class:"btn1" %></a>
+    						<a><%= link_to '編集する', customers_fix_path, data: {"turbolinks" => false}, class:"btn1" %></a>
+    						<a><%= link_to 'パスワード変更', edit_customer_registration_path, data: {"turbolinks" => false}, class:"btn1" %></a>
 							</div>
 						</div>
 
@@ -21,8 +21,8 @@
     							<p class="fas fa-comment-dots fa-lg"> クチコミ一覧</p>
     						</div>
     						<p>ご掲載頂いたクチコミを一覧確認、削除ができます。</p>
-    						<a><%= link_to 'CLUB', customers_gym_comments_path, class:"btn2" %></a>
-                            <a><%= link_to 'ITEM', customers_product_comments_path, class:"btn2" %></a>
+    						<a><%= link_to 'CLUB', customers_gym_comments_path, data: {"turbolinks" => false}, class:"btn2" %></a>
+                            <a><%= link_to 'ITEM', customers_product_comments_path, data: {"turbolinks" => false}, class:"btn2" %></a>
 							</div>
 						</div>
 
@@ -32,8 +32,8 @@
     							<p class="fas fa-heart fa-lg"> お気に入り一覧</p>
     						</div>
     						<p>お気に入りいただいたジムの一覧や商品の一覧を確認できます。</p>
-    						<a><%= link_to 'CLUB', customers_gym_favorites_path, class:"btn3" %></a>
-    						<a><%= link_to 'ITEM', customers_product_favorites_path, class:"btn3" %></a>
+    						<a><%= link_to 'CLUB', customers_gym_favorites_path, data: {"turbolinks" => false}, class:"btn3" %></a>
+    						<a><%= link_to 'ITEM', customers_product_favorites_path, data: {"turbolinks" => false}, class:"btn3" %></a>
 							</div>
 						</div>
 					</div>

@@ -10,26 +10,24 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require jquery
 //= require jquery.jpostal
 //= require bootstrap-sprockets
 //= require_tree .
 
+// ハンバーガーメニュー
+$(function() {
+  var hamburger = document.getElementById('Hamburger');
+  var header_nav = document.getElementById('Header-Nav');
+  hamburger.addEventListener('click', function () {
+    header_nav.classList.toggle("active");
+  });
+});
 
-/*!
- * jQuery Raty - A Star Rating Plugin
- *
- * The MIT License
- *
- * author:  Washington Botelho
- * github:  wbotelhos/raty
- * version: 2.9.0
- *
- */
-
+// スライド画像
 // オプションを指定してSkipprの実行
 $(document).ready(function () {
   $("#theTarget").skippr({
@@ -55,6 +53,17 @@ $(document).ready(function () {
     hidePrevious : false
   });
 });
+
+/*!
+ * jQuery Raty - A Star Rating Plugin
+ *
+ * The MIT License
+ *
+ * author:  Washington Botelho
+ * github:  wbotelhos/raty
+ * version: 2.9.0
+ *
+ */
 
 (function($) {
   'use strict';

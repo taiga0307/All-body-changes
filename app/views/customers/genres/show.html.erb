@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
-    <%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-3 -->
-    <div class="col-xs-9"><!-- 左右に余白、中央に配置 -->
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
       <h1><%= @genre.genre_status %>Categories　|　<%= @genre.genre_name %></h1>
       <div class="row">
         <div class="productsgyms-allcount">
@@ -13,13 +12,12 @@
       <!-- 商品一覧 -->
       <div class="row">
         <% @products.each do |product| %>
-          <div class="col-xs-6 col-lg-3" style="border:1px solid #ddd; background:#CCCCCC; padding: 3px; margin-top: 3px;">
-            <div class="productbox">
-
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="product-index">
+            <div class="productimagebox">
               <!-- 画像 -->
               <div class="image-favorite-positon">
               <%= link_to customers_product_path(product.id), {class: "product-link"} do %>
-                <%= image_tag product.product_picture_id.to_s,  size:"210x210" %>
+                <%= image_tag product.product_picture_id.to_s,  size:"212x212" %>
               <% end %>
                 <!-- お気に入り -->
                 <div class="productfavorite-index">
@@ -29,19 +27,17 @@
                   </div>
                 </div>
               </div>
-
           <%= link_to customers_product_path(product.id), {class: "product-link"} do %>
-
+            </div>
+            <div class="productbox">
               <!-- ブランド -->
               <div class="productbrand-index">
                 <%= product.product_brand.truncate(15) %>
               </div>
-
               <!-- 名前 -->
               <div class="productdescription-index">
                 <%= product.product_name.truncate(30) %><br>
               </div>
-
               <!-- スター平均 -->
               <div class="productstar-index" id="star-rate-<%= product.id %>">
               </div>
@@ -61,7 +57,6 @@
                     });
                   });
               </script>
-
               <!-- 平均評価数 -->
               <div class="productaverage-index">
                 <% if product.product_comments.average(:product_rate).to_i == 0  %>
@@ -70,12 +65,10 @@
                 <%= product.product_comments.average(:product_rate).round(1) %>点
                 <% end %>
               </div>
-
               <!-- クチコミ合計数 -->
               <div class="reviewcount-index">
                 口コミ<%= product.product_comments.count %>件
               </div>
-
                 <!-- 価格 -->
                 <div class="productprice-index">
                   価格相場：<%= product.price_with_tax(product.product_price) %>円(税込)
@@ -88,13 +81,12 @@
       <!-- ジム一覧 -->
       <div class="row">
         <% @gyms.each do |gym| %>
-          <div class="col-xs-6 col-lg-3" style="border:1px solid #444444; background:#222222;  padding: 3px; margin-top: 3px;">
-            <div class="gymbox">
-
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="gym-index">
+            <div class="gymimagebox">
               <!-- 画像 -->
               <div class="gym-image-favorite-positon">
               <%= link_to customers_gym_path(gym.id), {class: "gym-link"} do %>
-                <%= image_tag gym.gym_picture_id.to_s,  size:"210x210" %>
+                <%= image_tag gym.gym_picture_id.to_s,  size:"212x212" %>
               <% end %>
                 <!-- お気に入り -->
                 <div class="gym-favorite-index">
@@ -103,19 +95,17 @@
                   </div>
                 </div>
               </div>
-
           <%= link_to customers_gym_path(gym.id), {class: "gym-link"} do %>
-
+            </div>
+            <div class="gymbox">
               <!-- ブランド -->
               <div class="gymbrand-index">
                 <%= gym.gym_brand.truncate(15) %>
               </div>
-
               <!-- 名前 -->
               <div class="gymdescription-index">
                 <%= gym.gym_name.truncate(30) %><br>
               </div>
-
               <!-- スター平均 -->
               <div class="gymstar-index" id="star-rate-<%= gym.id %>">
               </div>
@@ -134,7 +124,6 @@
                   });
                 });
               </script>
-
               <!-- 平均評価数 -->
               <div class="gymaverage-index">
                 <% if gym.gym_comments.average(:gym_rate).to_i == 0  %>
@@ -143,12 +132,10 @@
                   <%= gym.gym_comments.average(:gym_rate).round(1) %>点
                 <% end %>
               </div>
-
               <!-- クチコミ合計数 -->
               <div class="gymreviewcount-index">
                 口コミ<%= gym.gym_comments.count %>件
               </div>
-
           <% end %>
             </div>
           </div>
@@ -160,5 +147,6 @@
       <%= paginate @products %>
       <%= paginate @gyms %>
     </div>
+    <%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-md-3 col-lg-3 -->
   </div>
 </div>

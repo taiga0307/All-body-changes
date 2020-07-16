@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row">
-    <%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-3 -->
-    <div class="col-xs-9"><!-- 左右に余白、中央に配置 -->
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
       <h1>Items</h1>
         <% if customer_signed_in? %>
           <p>スポーツ商品の一覧を表示しております。
@@ -18,12 +17,12 @@
       </div>
       <div class="row">
         <% @products.each do |product| %>
-          <div class="col-xs-6 col-lg-3" style="border:1px solid #ddd; background:#CCCCCC; padding: 3px; margin-top: 3px;">
-            <div class="productbox">
+          <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3" id="product-index">
+            <div class="productimagebox">
               <!-- 画像 -->
               <div class="image-favorite-positon">
               <%= link_to customers_product_path(product.id), {class: "product-link"} do %>
-                <%= image_tag product.product_picture_id.to_s,  size:"210x210" %>
+                <%= image_tag product.product_picture_id.to_s,  size:"212x212" %>
               <% end %>
                 <!-- お気に入り -->
                 <div class="productfavorite-index">
@@ -34,6 +33,8 @@
                 </div>
               </div>
           <%= link_to customers_product_path(product.id), {class: "product-link"} do %>
+            </div>
+            <div class="productbox">
               <!-- ブランド -->
               <div class="productbrand-index">
                 <%= product.product_brand.truncate(15) %>
@@ -89,5 +90,6 @@
         <%= paginate @products %>
       </div>
     </div>
+    <%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-md-3 col-lg-3 -->
   </div>
 </div>

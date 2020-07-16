@@ -2,107 +2,299 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* TOPスライド画像 */
-.container1 {
-  margin-top:30px;
-  position: relative;
-  height: 300px;
-}
-.slick-slide {
-  text-align: center;
-  color: #419be0;
-  background: white;
-}
-.container1{
-  margin-top:30px;
-  position: relative;
-  height: 300px;
-}
-.top1 {
-  background-image: image-url("top1.jpg");
-}
-.top3 {
-  background-image: image-url("top3.jpg");
-}
-.top4 {
-  background-image: image-url("top4.jpg");
-}
-/* TOP商品ランキング */
-.product-ranking{
-  position: absolute;
-  left: 3px;
-  top: 3px;
-  font-size:15px;
-  background: #CCCCCC;
-  border-radius: 10px;/*角の丸み*/
-  padding: 0.5em 1em;
-  font-weight:bold;
-}
-/* TOPジムランキング */
-.gym-ranking{
-  position: absolute;
-  left: 3px;
-  top: 3px;
-  font-size:15px;
-  background: #222222;
-  border-radius: 10px;/*角の丸み*/
-  padding: 0.5em 1em;
-  font-weight:bold;
+/*992px以上*/
+@media screen and (min-width: 992px) {
+  /* TOPスライド画像 */
+  .container1 {
+    margin-top:30px;
+    position: relative;
+    height: 300px;
+  }
+  .top1 {
+    background-image: image-url("top1.jpg");
+  }
+  .top3 {
+    background-image: image-url("top3.jpg");
+  }
+  .top4 {
+    background-image: image-url("top4.jpg");
+  }
+  /* TOP商品ランキング */
+  .product-ranking{
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    font-size:15px;
+    background: #CCCCCC;
+    border-radius: 10px;/*角の丸み*/
+    padding: 0.5em 1em;
+    font-weight:bold;
+  }
+  /* TOPジムランキング */
+  .gym-ranking{
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    font-size:15px;
+    background: #222222;
+    border-radius: 10px;/*角の丸み*/
+    padding: 0.5em 1em;
+    font-weight:bold;
+  }
+
+  /* アバウトタイトル */
+  .about-title{
+    padding-top:120px;
+    text-align: center;
+  }
+  /* アバウトサブタイトル */
+  .about-subtitle{
+    padding:70px 0 150px 0;
+    text-align: center;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+    line-height: 50px;
+  }
+  /* アバウト機能タイトル */
+  .about-function{
+    font-size:30px;
+    text-align: center;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+    margin:50px 0;
+  }
+  /* アバウト機能サブタイトル */
+  .about-function1{
+    font-size:20px;
+    font-weight: bold;
+    margin:10px 0;
+  }
+  /* アバウト機能説明文 */
+  .about-function1-comment{
+    font-size:15px;
+    line-height: 25px;
+  }
+  /* アバウト最終文章 */
+  .about-last{
+    font-size:33px;
+    text-align: center;
+    line-height: px;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+  }
+  /* アバウトトップページリンクボタン */
+  .about-btn {
+    display: inline-block;
+    padding: 1em 1em;
+    margin: 100px 0 0 5px;
+    text-decoration: none;
+    color: #006699;
+    border: solid 2px #006699;
+    border-radius: 3px;
+    transition: .4s;
+    width:300px;
+    height:60px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .about-btn:hover {
+    background: #006699;
+    color: white;
+  }
 }
 
-/* アバウトタイトル */
-.about-title{
-  padding-top:120px;
-  text-align: center;
+/*768px以上991px以下*/
+@media screen and (min-width: 768px)and(max-width: 991px) {
+  /* TOPスライド画像 */
+  .container1 {
+    margin-top:30px;
+    position: relative;
+    height: 300px;
+  }
+  .top1 {
+    background-image: image-url("top1.jpg");
+  }
+  .top3 {
+    background-image: image-url("top3.jpg");
+  }
+  .top4 {
+    background-image: image-url("top4.jpg");
+  }
+  /* TOP商品ランキング */
+  .product-ranking{
+    position: absolute;
+    left: -67px;
+    top: 10px;
+    font-size:15px;
+    background: #CCCCCC;
+    border-radius: 10px;/*角の丸み*/
+    padding: 0.5em 1em;
+    font-weight:bold;
+  }
+  /* TOPジムランキング */
+  .gym-ranking{
+    position: absolute;
+    left: -67px;
+    top: 10px;
+    font-size:15px;
+    background: #222222;
+    border-radius: 10px;/*角の丸み*/
+    padding: 0.5em 1em;
+    font-weight:bold;
+  }
+
+  /* アバウトタイトル */
+  .about-title{
+    padding-top:120px;
+    text-align: center;
+  }
+  /* アバウトサブタイトル */
+  .about-subtitle{
+    padding:70px 0 150px 0;
+    text-align: center;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+    line-height: 50px;
+  }
+  /* アバウト機能タイトル */
+  .about-function{
+    font-size:30px;
+    text-align: center;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+    margin:50px 0;
+  }
+  /* アバウト機能サブタイトル */
+  .about-function1{
+    font-size:20px;
+    font-weight: bold;
+    margin:10px 0;
+  }
+  /* アバウト機能説明文 */
+  .about-function1-comment{
+    font-size:15px;
+    line-height: 25px;
+  }
+  /* アバウト最終文章 */
+  .about-last{
+    font-size:33px;
+    text-align: center;
+    line-height: px;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+  }
+  /* アバウトトップページリンクボタン */
+  .about-btn {
+    display: inline-block;
+    padding: 1em 1em;
+    margin: 100px 0 0 5px;
+    text-decoration: none;
+    color: #006699;
+    border: solid 2px #006699;
+    border-radius: 3px;
+    transition: .4s;
+    width:300px;
+    height:60px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .about-btn:hover {
+    background: #006699;
+    color: white;
+  }
 }
-/* アバウトサブタイトル */
-.about-subtitle{
-  padding:70px 0 150px 0;
-  text-align: center;
-  font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
-  line-height: 50px;
-}
-/* アバウト機能タイトル */
-.about-function{
-  font-size:30px;
-  text-align: center;
-  font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
-  margin:50px 0;
-}
-/* アバウト機能サブタイトル */
-.about-function1{
-  font-size:20px;
-  font-weight: bold;
-  margin:10px 0;
-}
-/* アバウト機能説明文 */
-.about-function1-comment{
-  font-size:15px;
-  line-height: 25px;
-}
-/* アバウト最終文章 */
-.about-last{
-  font-size:33px;
-  text-align: center;
-  line-height: px;
-  font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
-}
-/* アバウトトップページリンクボタン */
-.about-btn {
-  display: inline-block;
-  padding: 1em 1em;
-  margin: 100px 0 0 5px;
-  text-decoration: none;
-  color: #006699;
-  border: solid 2px #006699;
-  border-radius: 3px;
-  transition: .4s;
-  width:300px;
-  height:60px;
-  text-align: center;
-  font-weight:bold;
-}
-.about-btn:hover {
-  background: #006699;
-  color: white;
+
+/*767px以下*/
+@media screen and (max-width: 767px) {
+  /* TOPスライド画像 */
+  .container1 {
+    margin-top:30px;
+    position: relative;
+    height: 200px;
+  }
+  .skippr-nav-element-block {
+    display: none;  /* TOPスライド画像のみの表示にするため */
+  }
+  .top1 {
+    background-image: image-url("top1.jpg");
+  }
+  .top3 {
+    background-image: image-url("top3.jpg");
+  }
+  .top4 {
+    background-image: image-url("top4.jpg");
+  }
+  /* TOP商品ランキング */
+  .product-ranking{
+    position: absolute;
+    left: -67px;
+    top: 10px;
+    font-size:15px;
+    background: #CCCCCC;
+    border-radius: 10px;/*角の丸み*/
+    padding: 0.5em 1em;
+    font-weight:bold;
+  }
+  /* TOPジムランキング */
+  .gym-ranking{
+    position: absolute;
+    left: -67px;
+    top: 10px;
+    font-size:15px;
+    background: #222222;
+    border-radius: 10px;/*角の丸み*/
+    padding: 0.5em 1em;
+    font-weight:bold;
+  }
+
+  /* アバウトタイトル */
+  .about-title{
+    padding-top:70px;
+    text-align: center;
+  }
+  /* アバウトサブタイトル */
+  .about-subtitle{
+    padding:70px 0 150px 0;
+    text-align: center;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+    line-height: 50px;
+  }
+  /* アバウト機能タイトル */
+  .about-function{
+    font-size:30px;
+    text-align: center;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+    margin:50px 0;
+  }
+  /* アバウト機能サブタイトル */
+  .about-function1{
+    font-size:20px;
+    font-weight: bold;
+    margin:10px 0;
+  }
+  /* アバウト機能説明文 */
+  .about-function1-comment{
+    font-size:15px;
+    line-height: 25px;
+  }
+  /* アバウト最終文章 */
+  .about-last{
+    font-size:20px;
+    text-align: center;
+    line-height: px;
+    font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
+  }
+  /* アバウトトップページリンクボタン */
+  .about-btn {
+    display: inline-block;
+    padding: 1em 1em;
+    margin: 100px 0 0 5px;
+    text-decoration: none;
+    color: #006699;
+    border: solid 2px #006699;
+    border-radius: 3px;
+    transition: .4s;
+    width:300px;
+    height:60px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .about-btn:hover {
+    background: #006699;
+    color: white;
+  }
 }

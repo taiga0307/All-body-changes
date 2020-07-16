@@ -16,197 +16,802 @@
   @import "bootstrap-sprockets";  /*Bootstrapを読み込ませる*/
   @import "bootstrap";            /*Bootstrapを読み込ませる*/
 
-/* ヘッダー（色） */
-.navbar{
-  background:#111111;
-}
-/* ヘッダー（紹介文） */
-.name{
-	color: #FFFF00;
-  font-size: 10px;
-  float: left;
-  margin: 5px 8px 5px 10px;
-  width: 800px;
-  height: 30px;
-  padding-top: 15px;
-}
-/* ヘッダー（検索） */
-.search{
-   padding-top: 15px;
-}
-#direction{
-  height:30px;
-  padding-top:1px;
-}
-#genre{
-  height:30px;
-}
-#search{
-  height:30px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*paddingとborderを幅と高さに含める*/
 }
 
-/* メイン */
-.main{
-  margin-top: 150px;
-}
-/* タイトル */
-h2{
-   padding: 60px 10px 10px 10px;
-   border-bottom: solid 3px #000000;
-   position: relative;
-   font-weight: bold;
-   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+/*992px以上*/
+@media screen and (min-width: 992px) {
+  /*ヘッダー*/
+  header {
+    background-color: #111111;
+    width:100%;
+  }
+  /*ヘッダー1行目*/
+  .container-name{
+    display: flex; /*子要素を横並びに*/
+    justify-content: space-between; /*各アイテムを均等に配置し各アイテムの両側に半分の大きさの間隔を置く*/
+    align-items: center; /*子要素を中央付近にまとめる*/
+    margin: 0 75px;
+  }
+  /* ヘッダー（紹介文） */
+  .name{
+    color: #FFFF00;
+    font-size: 10px;
+  }
+  /* ヘッダー（検索） */
+  .search{
+    padding-top: 15px;
+  }
+  #direction{
+    height:30px;
+    padding-top:1px;
+  }
+  #genre{
+    height:30px;
+  }
+  #search{
+    height:30px;
+  }
+  #search-box{
+    height:30px;
+    width:30px;
+    padding-top:2px;
+  }
+
+  /*ヘッダー2行目*/
+  .container-header {
+    display: flex; /*子要素を横並びに*/
+    justify-content: space-between; /*各アイテムを均等に配置し各アイテムの両側に半分の大きさの間隔を置く*/
+    align-items: center; /*子要素を中央付近にまとめる*/
+    margin: 0 100px;
+    height: 120px;
+  }
+  /*アイコン*/
+  #topaicon{
+    width: 200px;
+    height: 100px;
+  }
+  /*ヘッダーリンク*/
+  .header-nav {
+    display: flex; /*子要素を横並びに*/
+    background-color: #111111;
+  }
+  /*ヘッダーリンク*/
+  .nav-list a {
+    margin: 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap; /*改行させないよう固定*/
+  }
+  .nav-list a:hover {
+    color: #FFFF00;
+    text-decoration: none;
+  }
+  /*ヘッダーハンバーガーアイコン*/
+  .hamburger {
+    display: none; /*PC画面では非表示にするため*/
+    width: 32px;
+    cursor: pointer; /*カーソルを乗せた時指差しの手に変更*/
+  }
+  /*ヘッダーハンバーガーアイコン横棒*/
+  .hamburger div {
+    background-color: #fafafa;
+    border-radius: 20px; /* 半径を全4角に設定 */
+    padding: 2px 5px;
+    margin: 4px 0;
+  }
+  /*ヘッダーメニュー*/
+  .menu {
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+  }
+
+  /* ボディ */
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+  }
+  /* タイトル */
+  h2{
+     padding: 60px 10px 10px 10px;
+     border-bottom: solid 3px #000000;
+     position: relative;
+     font-weight: bold;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* 詳細タイトル */
+  h1{
+     padding: 60px 10px 10px 10px;
+     border-bottom: solid 3px #000000;
+     font-weight: bold;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* 説明文 */
+  p{
+     padding: 20px 10px 20px 10px;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* ページネーション */
+  .pagination {
+    justify-content: center;
+  }
+
+  /* フッター */
+  footer {
+    width: 100%;
+    height: 130px;
+    background-color: #111111;
+    margin-top: 190px;
+  }
+  .footer-btn{
+    padding:40px;
+    text-align: center;
+    color: #FFFFFF!important;
+  }
+  .footer-btn:hover {
+    color: #FFFFFF!important;
+  }
+  /* サイドバージャンル */
+  .genre-title{
+    text-align: center;
+  }
+  .genre-box{
+    margin: 35px 0;
+    font-size:15px;
+    text-align: center;
+  }
+  .genre-name{
+    color: black;
+  }
+  .genre-name:hover{
+    color: black;
+  }
+  /* サイドバータイトル */
+  h3{
+    padding-top:45px;
+    font-weight: bold;
+    border-bottom: solid 1px #000000;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* サイドバーテーブル */
+  .table-side{
+    margin:50px 0 30px 5px;
+  }
+  .sidetext{
+    font-size:15px;
+    padding:0 auto;
+    margin:15px 0 0 0;
+    font-family:sans-serif;
+  }
+
+  /* サイドバー会員登録ボタン */
+  .btn-push1 {
+    display: inline-block;
+    max-width: 180px;
+    text-align: center;
+    background-color: #008080;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:5px 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #004400;
+  }
+  .btn-push1:hover{
+    color: white;
+  }
+  /* サイドバーログインボタン */
+  .btn-push2 {
+    display: inline-block;
+    max-width: 180px;
+    text-align: center;
+    background-color: #0066CC;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:5px 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #000044;
+  }
+  .btn-push2:hover{
+    color: white;
+  }
+  /* お問い合わせボタン */
+  .btn-push3 {
+    display: inline-block;
+    width: 180px;
+    text-align: center;
+    background-color: #999966;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #333300 ;
+    height:50px;
+  }
+  .btn-push3:hover{
+    color: white;
+  }
+  .frame-side{
+    padding: 10px 20px;
+    color: #474747;
+    background: #f7f6fb;/*背景色*/
+    border-left: double 7px #000055;/*左線*/
+    border-right: double 7px #000055;/*右線*/
+  }
+
+
+  /*ページネーション自体のデザイン*/
+  .pagination>li>a {
+    color: #696969;   /*文字の色を変える*/
+  }
+  /* 表示しているページ番号のデザイン */
+  .pagination>.active>a {
+    background: #93c9ff;     /*背景の色を変える*/
+  }
+  /*ホバー時のデザイン*/
+  .pagination>li>a:hover {
+    border-radius: 15px;    /*角を丸くする*/
+  }
+
+  /*ジム、商品クチコミ一覧　タイトル*/
+  h4{
+    color: #111111;
+  }
+  .sp_br{
+    display: none;
+  }
 }
 
-/* 詳細タイトル */
-h1{
-   padding: 60px 10px 10px 10px;
-   border-bottom: solid 3px #000000;
-   font-weight: bold;
-   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
-}
-/* 説明文 */
-p{
-   padding: 20px 10px 20px 10px;
-   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+
+/*768px以上991px以下*/
+@media screen and (min-width: 768px)and(max-width: 991px) {
+  /*ヘッダー*/
+  header {
+    background-color: #111111;
+    width:100%;
+  }
+  /*ヘッダー1行目*/
+  .container-name{
+    display: flex; /*子要素を横並びに*/
+    justify-content: space-between; /*各アイテムを均等に配置し各アイテムの両側に半分の大きさの間隔を置く*/
+    align-items: center; /*子要素を中央付近にまとめる*/
+    margin: 0 75px;
+  }
+  /* ヘッダー（紹介文） */
+  .name{
+    color: #FFFF00;
+    font-size: 10px;
+  }
+  /* ヘッダー（検索） */
+  .search{
+    padding-top: 15px;
+  }
+  #direction{
+    height:30px;
+    padding-top:1px;
+  }
+  #genre{
+    height:30px;
+  }
+  #search{
+    height:30px;
+  }
+  #search-box{
+    height:30px;
+    width:30px;
+    padding-top:2px;
+  }
+
+  /*ヘッダー2行目*/
+  .container-header {
+    display: flex; /*子要素を横並びに*/
+    justify-content: space-between; /*各アイテムを均等に配置し各アイテムの両側に半分の大きさの間隔を置く*/
+    align-items: center; /*子要素を中央付近にまとめる*/
+    margin: 0 100px;
+    height: 120px;
+  }
+  /*アイコン*/
+  #topaicon{
+    width: 200px;
+    height: 100px;
+  }
+  /*ヘッダーリンク*/
+  .header-nav {
+    background-color: #111111;
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 160px;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;/*先頭に表示*/
+  }
+  /*ヘッダーリンク*/
+  .nav-list a {
+    margin: 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap; /*改行させないよう固定*/
+  }
+  .nav-list a:hover {
+    color: #FFFF00;
+  }
+  /*ヘッダーハンバーガーアイコン*/
+  .hamburger {
+    display: block;
+    z-index: 1001;/*先頭に表示*/
+    width: 32px;
+    cursor: pointer; /*カーソルを乗せた時指差しの手に変更*/
+  }
+  /*ヘッダーハンバーガーアイコン横棒*/
+  .hamburger div {
+    background-color: #fafafa;
+    border-radius: 20px; /* 半径を全4角に設定 */
+    padding: 2px 5px;
+    margin: 4px 0;
+  }
+  /*ヘッダーメニュー*/
+  .menu {
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+  }
+  .active {
+    display: flex;
+  }
+  .nav-list {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  /* ボディ */
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+  }
+  /* タイトル */
+  h2{
+     padding: 60px 10px 10px 10px;
+     border-bottom: solid 3px #000000;
+     position: relative;
+     font-weight: bold;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* 詳細タイトル */
+  h1{
+     padding: 60px 10px 10px 10px;
+     border-bottom: solid 3px #000000;
+     font-weight: bold;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* 説明文 */
+  p{
+     padding: 20px 10px 20px 10px;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* ページネーション */
+  .pagination {
+    justify-content: center;
+  }
+
+  /* フッター */
+  footer {
+    width: 100%;
+    height: 130px;
+    background-color: #111111;
+    margin-top: 190px;
+  }
+  .footer-btn{
+    padding:40px;
+    text-align: center;
+    color: #FFFFFF!important;
+  }
+  .footer-btn:hover {
+    color: #FFFFFF!important;
+  }
+
+
+  /* サイドバージャンル */
+  .genre-box{
+    margin: 35px 0;
+    font-size:15px;
+  }
+  .genre-name{
+    color: black;
+  }
+  .genre-name:hover{
+    color: black;
+  }
+  /* サイドバータイトル */
+  h3{
+    padding-top:45px;
+    font-weight: bold;
+    border-bottom: solid 1px #000000;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* サイドバーテーブル */
+  .table-side{
+    margin:50px 0 30px 0;
+  }
+  .sidetext{
+    font-size:15px;
+    padding:0 auto;
+    margin:15px 0 0 0;
+    font-family:sans-serif;
+  }
+
+  /* サイドバー会員登録ボタン */
+  .btn-push1 {
+    display: inline-block;
+    max-width: 180px;
+    text-align: center;
+    background-color: #008080;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:5px 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #004400;
+  }
+  .btn-push1:hover{
+    color: white;
+  }
+  /* サイドバーログインボタン */
+  .btn-push2 {
+    display: inline-block;
+    max-width: 180px;
+    text-align: center;
+    background-color: #0066CC;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:5px 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #000044;
+  }
+  .btn-push2:hover{
+    color: white;
+  }
+  /* お問い合わせボタン */
+  .btn-push3 {
+    display: inline-block;
+    max-width: 180px;
+    text-align: center;
+    background-color: #999966;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #333300 ;
+    height:50px;
+  }
+  .btn-push3:hover{
+    color: white;
+  }
+  .frame-side{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #474747;
+    background: #f7f6fb;/*背景色*/
+    border-left: double 7px #000055;/*左線*/
+    border-right: double 7px #000055;/*右線*/
+  }
+
+
+  /*ページネーション自体のデザイン*/
+  .pagination>li>a {
+    color: #696969;   /*文字の色を変える*/
+  }
+  /* 表示しているページ番号のデザイン */
+  .pagination>.active>a {
+    background: #93c9ff;     /*背景の色を変える*/
+  }
+  /*ホバー時のデザイン*/
+  .pagination>li>a:hover {
+    border-radius: 15px;    /*角を丸くする*/
+  }
+
+  /*ジム、商品クチコミ一覧　タイトル*/
+  h4{
+    color: #111111;
+  }
+  .sp_br{
+    display: none;
+  }
 }
 
-/* ページネーション */
-.pagination {
-  justify-content: center;
-}
 
-/* ボディ */
-body{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  background-color: #f2f2f2;
-}
+/*767px以下*/
+@media screen and (max-width: 767px) {
+  /*ヘッダー*/
+  header {
+    background-color: #111111;
+    width:100%;
+  }
+  /*ヘッダー1行目*/
+  .container-name{
+    text-align: right;
+  }
+  /* ヘッダー（紹介文） */
+  .name{
+    display: none; /*非表示にするため*/
+  }
+  /* ヘッダー（検索） */
+  .search{
+    padding-top: 5px;
+    margin-right:5px;
+  }
+  #direction{
+    height:20px;
+    width:50px;
+    padding-top:1px;
+    font-size:1px;
+  }
+  #genre{
+    height:20px;
+    width:50px;
+    font-size:1px;
+  }
+  #search{
+    height:20px;
+    width:90px;
+    font-size:5px;
+  }
+  #search-box{
+    height:20px;
+    width:20px;
+  }
 
-/* フッター */
-footer {
-  width: 100%;
-  height: 130px;
-  background-color: #111111;
-  margin-top: 190px;
-}
-.footer-btn{
-  padding:40px;
-  text-align: center;
-  color: #FFFFFF!important;
-}
-.footer-btn:hover {
-  color: #FFFFFF!important;
-}
+  /*ヘッダー2行目*/
+  .container-header {
+    display: flex; /*子要素を横並びに*/
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+  }
+  /*アイコン*/
+  #topaicon{
+    width: 140px;
+    height: 70px;
+  }
+  /*ヘッダーリンク*/
+  .header-nav {
+    background-color: #111111;
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    height: auto;
+    z-index: 1000;/*先頭に表示*/
+  }
+  /*ヘッダーリンク*/
+  .nav-list a {
+    margin: 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    white-space: nowrap; /*改行させないよう固定*/
+  }
+  .nav-list a:hover {
+    color: #FFFF00;
+    text-decoration: none;
+  }
+  /*ヘッダーハンバーガーアイコン*/
+  .hamburger {
+    display: block;
+    z-index: 1001;/*先頭に表示*/
+    width: 32px;
+    cursor: pointer; /*カーソルを乗せた時指差しの手に変更*/
+    margin-top:20px;
+    margin-right:15px;
+  }
+  /*ヘッダーハンバーガーアイコン横棒*/
+  .hamburger div {
+    background-color: #fafafa;
+    border-radius: 20px; /* 半径を全4角に設定 */
+    padding: 2px 5px;
+    margin: 4px 0;
+  }
+  /*ヘッダーメニュー*/
+  .menu {
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+  }
+  .active {
+    display: flex;
+  }
+  .nav-list {
+    text-align: center;
+    margin: 20px 0;
+    width: 100%;
+  }
+
+  /* ボディ */
+  body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f2f2f2;
+  }
+  /* タイトル */
+  h2{
+     padding: 60px 10px 10px 10px;
+     border-bottom: solid 3px #000000;
+     position: relative;
+     font-weight: bold;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+  }
+  /* 詳細タイトル */
+  h1{
+     padding: 60px 10px 10px 10px;
+     border-bottom: solid 3px #000000;
+     font-weight: bold;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+     text-align: center;  /* 追加 */
+     font-size:27px;
+  }
+  /* 説明文 */
+  p{
+     padding: 20px 10px 20px 10px;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+     text-align: center;  /* 追加 */
+  }
+  /* ページネーション */
+  .pagination {
+    justify-content: center;
+  }
+
+  /* フッター */
+  footer {
+    width: 100%;
+    height: 130px;
+    background-color: #111111;
+    margin-top: 190px;
+  }
+  .footer-btn{
+    padding:40px;
+    text-align: center;
+    color: #FFFFFF!important;
+  }
+  .footer-btn:hover {
+    color: #FFFFFF!important;
+  }
 
 
+  /* サイドバージャンル */
+  .genre-box{
+    margin: 35px 0;
+    font-size:15px;
+    text-align: center;  /* 追加 */
+  }
+  .genre-name{
+    color: black;
+  }
+  .genre-name:hover{
+    color: black;
+  }
+  /* サイドバータイトル */
+  h3{
+    padding-top:45px;
+    font-weight: bold;
+    border-bottom: solid 1px #000000;
+     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
+     text-align: center; /* 追加 */
+  }
+  /* サイドバーテーブル */
+  .table-side{
+    margin:50px 0 30px 0;
+  }
+  .sidetext{
+    font-size:15px;
+    padding:0 auto;
+    margin:15px 0 0 0;
+    font-family:sans-serif;
+  }
 
-/* サイドバージャンル */
-.genre-box{
-  margin: 35px 0;
-  font-size:15px;
-}
-.genre-name{
-  color: black;
-}
-.genre-name:hover{
-  color: black;
-}
-/* サイドバータイトル */
-h3{
-  padding-top:45px;
-  font-weight: bold;
-  border-bottom: solid 1px #000000;
-   font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
-}
-/* サイドバーテーブル */
-.table-side{
-  margin:50px 0 30px 0;
-}
-.sidetext{
-  font-size:15px;
-  padding:0 auto;
-  margin:15px 0 0 0;
-  font-family:sans-serif;
-}
-
-/* サイドバー会員登録ボタン */
-.btn-push1 {
-  display: inline-block;
-  max-width: 180px;
-  text-align: center;
-  background-color: #008080;
-  font-size: 17px;
-  color: #FFF;
-  text-decoration: none;
-  padding: 10px 24px;
-  margin:5px 10px;
-  border-radius: 4px;
-  border-bottom: 4px solid #004400;
-}
-.btn-push1:hover{
-  color: white;
-}
-/* サイドバーログインボタン */
-.btn-push2 {
-  display: inline-block;
-  max-width: 180px;
-  text-align: center;
-  background-color: #0066CC;
-  font-size: 17px;
-  color: #FFF;
-  text-decoration: none;
-  padding: 10px 24px;
-  margin:5px 10px;
-  border-radius: 4px;
-  border-bottom: 4px solid #000044;
-}
-.btn-push2:hover{
-  color: white;
-}
-/* お問い合わせボタン */
-.btn-push3 {
-  display: inline-block;
-  max-width: 180px;
-  text-align: center;
-  background-color: #999966;
-  font-size: 17px;
-  color: #FFF;
-  text-decoration: none;
-  padding: 10px 24px;
-  margin:10px;
-  border-radius: 4px;
-  border-bottom: 4px solid #333300 ;
-  height:50px;
-}
-.btn-push3:hover{
-  color: white;
-}
-.frame-side{
-  padding: 0.5em 1em;
-  margin: 2em 0;
-  color: #474747;
-  background: #f7f6fb;/*背景色*/
-  border-left: double 7px #000055;/*左線*/
-  border-right: double 7px #000055;/*右線*/
-}
+  /* サイドバー会員登録ボタン */
+  .btn-push1 {
+    display: inline-block;
+    max-width: 180px;
+    text-align: center;
+    background-color: #008080;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:5px 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #004400;
+  }
+  .btn-push1:hover{
+    color: white;
+  }
+  /* サイドバーログインボタン */
+  .btn-push2 {
+    display: inline-block;
+    max-width: 180px;
+    text-align: center;
+    background-color: #0066CC;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:5px 10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #000044;
+  }
+  .btn-push2:hover{
+    color: white;
+  }
+  /* お問い合わせボタン */
+  .btn-push3 {
+    display: inline-block;
+    max-width: 180px;
+    text-align: center;
+    background-color: #999966;
+    font-size: 17px;
+    color: #FFF;
+    text-decoration: none;
+    padding: 10px 24px;
+    margin:10px;
+    border-radius: 4px;
+    border-bottom: 4px solid #333300 ;
+    height:50px;
+  }
+  .btn-push3:hover{
+    color: white;
+  }
+  .frame-side{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #474747;
+    background: #f7f6fb;/*背景色*/
+    border-left: double 7px #000055;/*左線*/
+    border-right: double 7px #000055;/*右線*/
+  }
 
 
-/*ページネーション自体のデザイン*/
-.pagination>li>a {
-  color: #696969;   /*文字の色を変える*/
-}
-/* 表示しているページ番号のデザイン */
-.pagination>.active>a {
-  background: #93c9ff;     /*背景の色を変える*/
-}
-/*ホバー時のデザイン*/
-.pagination>li>a:hover {
-  border-radius: 15px;    /*角を丸くする*/
-}
+  /*ページネーション自体のデザイン*/
+  .pagination>li>a {
+    color: #696969;   /*文字の色を変える*/
+  }
+  /* 表示しているページ番号のデザイン */
+  .pagination>.active>a {
+    background: #93c9ff;     /*背景の色を変える*/
+  }
+  /*ホバー時のデザイン*/
+  .pagination>li>a:hover {
+    border-radius: 15px;    /*角を丸くする*/
+  }
 
-/*ジム、商品クチコミ一覧　タイトル*/
-h4{
-  color: #111111;
+  /*ジム、商品クチコミ一覧　タイトル*/
+  h4{
+    color: #111111;
+  }
+  .pc_br{
+    display: none;  }
 }
