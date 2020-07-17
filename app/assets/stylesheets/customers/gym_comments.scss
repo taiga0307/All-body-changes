@@ -73,17 +73,22 @@
   .new_gym_comment{
     margin:0 10px;
   }
+  /*ジムコメントPC横幅調整*/
+  #gymcomment-pc-position{
+    width:100%;
+  }
 }
 
 /*768px以上991px以下*/
 @media screen and (min-width: 768px)and(max-width: 991px) {
   /* カスタマー情報 */
   .gymcomment-customer{
-    padding: 0.5em 1em;
-    margin: 2em 0;
+    padding: 8px;
+    margin: 2.3em 0 0 2em;
     color: #330000;/*文字色*/
     background: #FFF;
     width: 30%;
+    height: 160px;
     text-align:center;
     float:left;
   }
@@ -103,7 +108,7 @@
   .gymcomment-all {
     position: relative;
     display: inline-block;
-    margin: 2em 0 1.5em 15px;
+    margin: 2em 0 1em 15px;
     padding: 7px 10px;
     min-width: 120px;
     max-width: 100%;
@@ -152,11 +157,12 @@
 @media screen and (max-width: 767px) {
   /* カスタマー情報 */
   .gymcomment-customer{
-    padding: 0.5em 1em;
-    margin: 2em 0;
+    padding: 8px;
+    margin: 2.3em 0 0 1em;
     color: #330000;/*文字色*/
     background: #FFF;
     width: 30%;
+    height: 250px;
     text-align:center;
     float:left;
   }
@@ -176,7 +182,7 @@
   .gymcomment-all {
     position: relative;
     display: inline-block;
-    margin: 2em 0 1.5em 15px;
+    margin: 2em 0 1em 15px;
     padding: 7px 10px;
     min-width: 120px;
     max-width: 100%;
@@ -215,8 +221,5 @@
   }
   .gymcomment-name:hover{
     color: #330000;
-  }
-  .new_gym_comment{
-    margin:0 10px;
   }
 }

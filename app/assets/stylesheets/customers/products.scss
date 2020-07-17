@@ -82,7 +82,13 @@
     text-align:right;
     font-size: 13px;
   }
-
+  #product-show{
+    background:#CCCCCC;
+  }
+  #product-show-img{
+    width:320px;
+    height:320px;
+  }
   /* show画像、お気に入り */
   .productimage{
      padding: 30px 0;
@@ -94,10 +100,9 @@
     right: 35px;
     bottom: 35px;
   }
-
   /* showブランド */
   .productbrand-show{
-     padding: 20px 10px;
+     margin: 30px 0 10px 10px;
   }
   /* show評価スター */
   .productstar-show{
@@ -119,6 +124,7 @@
      text-align:right;
      font-size:30px;
      padding: 20px 10px;
+     font-weight:bold;
   }
 }
 
@@ -204,7 +210,13 @@
     text-align:right;
     font-size: 13px;
   }
-
+  #product-show{
+    background:#CCCCCC;
+  }
+  #product-show-img{
+    width:320px;
+    height:320px;
+  }
   /* show画像、お気に入り */
   .productimage{
      padding: 30px 0;
@@ -213,18 +225,19 @@
   }
   .product-favorite-show{
     position: absolute;
-    right: 35px;
+    right: -15px;
     bottom: 35px;
   }
 
   /* showブランド */
   .productbrand-show{
-     padding: 20px 10px;
+    margin: 30px 0 10px 30px;
   }
   /* show評価スター */
   .productstar-show{
     float:left;
     margin-right:20px;
+    margin-left:30px;
   }
   /* show平均評価数 */
   .productaverage-show{
@@ -233,14 +246,16 @@
   }
   /* show紹介文 */
   .productdescription{
-     padding-bottom:30px;
-     margin-top:20px;
+    padding-bottom:30px;
+    margin-top:20px;
+    margin-left:30px;
   }
   /* show価格 */
   .productprice-show{
      text-align:right;
      font-size:30px;
      padding: 20px 10px;
+     font-weight:bold;
   }
 }
 
@@ -326,22 +341,30 @@
     text-align:right;
     font-size: 13px;
   }
-
+  #product-show{
+    background:#CCCCCC;
+  }
   /* show画像、お気に入り */
   .productimage{
      padding: 30px 0;
      position: relative;
-     width: 300px;
+  }
+  #product-show-img{
+    width:340px;
+    height:340px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    position: absolute;
+    position: relative;
   }
   .product-favorite-show{
     position: absolute;
-    right: 35px;
+    left: 320px;
     bottom: 35px;
   }
-
   /* showブランド */
   .productbrand-show{
-     padding: 20px 10px;
+     margin: 10px 0 10px 10px;
   }
   /* show評価スター */
   .productstar-show{
@@ -360,8 +383,9 @@
   }
   /* show価格 */
   .productprice-show{
-     text-align:right;
-     font-size:30px;
+     text-align:center;
+     font-size:20px;
      padding: 20px 10px;
+     font-weight:bold;
   }
 }

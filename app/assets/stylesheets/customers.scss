@@ -4,122 +4,371 @@
   @import "bootstrap-sprockets";  /*Bootstrapを読み込ませる*/
   @import "bootstrap";            /*Bootstrapを読み込ませる*/
 
-/* マイページ（左） */
-.box1{
-    margin: 2em 0;
-    background: #f1f1f1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-    width: 300px;
-    height: 200px;
-}
-.box1-title{
+/*992px以上*/
+@media screen and (min-width: 992px) {
+  /* マイページ（左） */
+  .box1{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box1-title{
+      background: #000033;
+      padding: 4px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 15px;
+      height:50px;
+  }
+  .box1 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn1 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #000033;
+    border: solid 2px #000033;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .btn1:hover {
     background: #000033;
-    padding: 4px;
-    text-align: center;
     color: white;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    font-size: 15px;
-    height:50px;
-}
-.box1 p {
-    padding: 15px 20px;
-    margin: 0;
-}
-.btn1 {
-  display: inline-block;
-  padding: 0.3em 1em;
-  margin: 15px 0 0 5px;
-  text-decoration: none;
-  color: #000033;
-  border: solid 2px #000033;
-  border-radius: 3px;
-  transition: .4s;
-  width:140px;
-  text-align: center;
-  font-weight:bold;
-}
-.btn1:hover {
-  background: #000033;
-  color: white;
-}
+  }
 
-/* マイページ（真ん中） */
-.box2{
-    margin: 2em 0;
-    background: #f1f1f1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-    width: 300px;
-    height: 200px;
-}
-.box2-title{
+  /* マイページ（真ん中） */
+  .box2{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box2-title{
+      background: #003300;
+      padding: 4px;
+      text-align: center;
+      color: #FFF;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 13px;
+      height:50px;
+  }
+  .box2 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn2 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #003300;
+    border: solid 2px #003300;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .btn2:hover {
     background: #003300;
-    padding: 4px;
+    color: white;
+  }
+
+  /* マイページ（右） */
+  .box3{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box3-title{
+      background: #330000;
+      padding: 4px;
+      text-align: center;
+      color: #FFF;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 13px;
+      height:50px;
+  }
+  .box3 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn3 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #330000;
+    border: solid 2px #330000;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
     text-align: center;
-    color: #FFF;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    font-size: 13px;
-    height:50px;
-}
-.box2 p {
-    padding: 15px 20px;
-    margin: 0;
-}
-.btn2 {
-  display: inline-block;
-  padding: 0.3em 1em;
-  margin: 15px 0 0 5px;
-  text-decoration: none;
-  color: #003300;
-  border: solid 2px #003300;
-  border-radius: 3px;
-  transition: .4s;
-  width:140px;
-  text-align: center;
-  font-weight:bold;
-}
-.btn2:hover {
-  background: #003300;
-  color: white;
+    font-weight:bold;
+  }
+  .btn3:hover {
+    background: #330000;
+    color: white;
+  }
 }
 
-/* マイページ（右） */
-.box3{
-    margin: 2em 0;
-    background: #f1f1f1;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
-    width: 300px;
-    height: 200px;
-}
-.box3-title{
-    background: #330000;
-    padding: 4px;
+/*768px以上991px以下*/
+@media screen and (min-width: 768px)and(max-width: 991px) {
+  /* マイページ（左） */
+  .box1{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box1-title{
+      background: #000033;
+      padding: 4px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 15px;
+      height:50px;
+  }
+  .box1 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn1 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #000033;
+    border: solid 2px #000033;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
     text-align: center;
-    color: #FFF;
-    font-weight: bold;
-    letter-spacing: 0.05em;
-    font-size: 13px;
-    height:50px;
+    font-weight:bold;
+  }
+  .btn1:hover {
+    background: #000033;
+    color: white;
+  }
+
+  /* マイページ（真ん中） */
+  .box2{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box2-title{
+      background: #003300;
+      padding: 4px;
+      text-align: center;
+      color: #FFF;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 13px;
+      height:50px;
+  }
+  .box2 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn2 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #003300;
+    border: solid 2px #003300;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .btn2:hover {
+    background: #003300;
+    color: white;
+  }
+
+  /* マイページ（右） */
+  .box3{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box3-title{
+      background: #330000;
+      padding: 4px;
+      text-align: center;
+      color: #FFF;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 13px;
+      height:50px;
+  }
+  .box3 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn3 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #330000;
+    border: solid 2px #330000;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .btn3:hover {
+    background: #330000;
+    color: white;
+  }
 }
-.box3 p {
-    padding: 15px 20px;
-    margin: 0;
-}
-.btn3 {
-  display: inline-block;
-  padding: 0.3em 1em;
-  margin: 15px 0 0 5px;
-  text-decoration: none;
-  color: #330000;
-  border: solid 2px #330000;
-  border-radius: 3px;
-  transition: .4s;
-  width:140px;
-  text-align: center;
-  font-weight:bold;
-}
-.btn3:hover {
-  background: #330000;
-  color: white;
+
+/*767px以下*/
+@media screen and (max-width: 767px) {
+ /* マイページ（左） */
+  .box1{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box1-title{
+      background: #000033;
+      padding: 4px;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 15px;
+      height:50px;
+  }
+  .box1 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn1 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #000033;
+    border: solid 2px #000033;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .btn1:hover {
+    background: #000033;
+    color: white;
+  }
+
+  /* マイページ（真ん中） */
+  .box2{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box2-title{
+      background: #003300;
+      padding: 4px;
+      text-align: center;
+      color: #FFF;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 13px;
+      height:50px;
+  }
+  .box2 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn2 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #003300;
+    border: solid 2px #003300;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .btn2:hover {
+    background: #003300;
+    color: white;
+  }
+
+  /* マイページ（右） */
+  .box3{
+      margin: 2em 0;
+      background: #f1f1f1;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.22);
+      width: 300px;
+      height: 200px;
+  }
+  .box3-title{
+      background: #330000;
+      padding: 4px;
+      text-align: center;
+      color: #FFF;
+      font-weight: bold;
+      letter-spacing: 0.05em;
+      font-size: 13px;
+      height:50px;
+  }
+  .box3 p {
+      padding: 15px 20px;
+      margin: 0;
+  }
+  .btn3 {
+    display: inline-block;
+    padding: 0.3em 1em;
+    margin: 15px 0 0 5px;
+    text-decoration: none;
+    color: #330000;
+    border: solid 2px #330000;
+    border-radius: 3px;
+    transition: .4s;
+    width:140px;
+    text-align: center;
+    font-weight:bold;
+  }
+  .btn3:hover {
+    background: #330000;
+    color: white;
+  }
 }

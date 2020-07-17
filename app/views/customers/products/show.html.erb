@@ -1,10 +1,6 @@
 <div class="container">
 	<div class="row">
-
-		<%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-xs-3 -->
-
-		<div class="col-xs-9"><!-- 左右に余白、中央に配置 -->
-
+    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 			<h1><%= @product.product_name %></h1>
         <% if customer_signed_in? %>
           <p>スポーツ商品の詳細を表示しております。
@@ -13,11 +9,11 @@
           <p>お気に入りやコメントはログイン後追加することができます。
           </p>
         <% end %>
-			<div class="row" style="background:#CCCCCC;">
-				<div class="col-xs-5">
+			<div class="row" id="product-show">
+        <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
           <!-- 画像 -->
 					<div class="productimage">
-						<%= image_tag @product.product_picture_id.to_s,  size:"320x320" %><br>
+						<%= image_tag @product.product_picture_id.to_s, id:"product-show-img" %><br>
 					</div>
           <!-- お気に入り -->
           <div class="product-favorite-show">
@@ -27,7 +23,7 @@
             </div>
           </div>
 				</div>
-				<div class="col-xs-7">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-7">
 					<!-- ブランド -->
 					<div class="productbrand-show">
 						<%= @product.product_brand %><br>
@@ -91,5 +87,6 @@
       </div>
           <%= paginate @product_comments %>
 		</div>
+    <%= render 'layouts/sidebar', products: @genre_status_products, gyms: @genre_status_gyms %><!-- サイドバーcol-md-3 col-lg-3 -->
 	</div>
 </div>

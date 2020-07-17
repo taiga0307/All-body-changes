@@ -1,45 +1,52 @@
 <!-- コメント機能（投稿フォーム） -->
-<%= form_for [product, product_comment], url: customers_product_product_comments_path(product), method: :post do |f| %>
-<!-- タイトル -->
-  <%= render "devise/shared/error_messages", resource: f.object %>
-	<div class="form-group row">
-  	<%= f.label :product_title, 'タイトル ', class:'col-md-3 col-form-label' %>
-  	<div class="col-md-9">
-    	<%= f.text_field :product_title, class: "form-control" %>
- 		</div>
-  </div>
-	<!-- 評価 -->
-  <div class="form-group row" id="star">
-    <%= f.label :product_rate,'評価 ', class:'col-md-3 col-form-label' %>
-    <%= f.hidden_field :product_rate, id: :review_star %>
-	</div>
-	<!-- 評価javascript -->
-	<script>
-		$('#star').raty({
-			size     : 36,
-			starOff:  '<%= asset_path('star-off.png') %>',
-			starOn : '<%= asset_path('star-on.png') %>',
-			starHalf: '<%= asset_path('star-half.png') %>',
-			scoreName: 'product_comment[product_rate]', //reviewカラムに保存するので忘れないように
-			half: true, //★の半分の入力を行う
-		});
-	</script>
-	<!-- 口コミ -->
-	<div class="form-group row">
-		<%= f.label :product_comment, '口コミ内容 ', class:'col-md-3 col-form-label' %>
-		<div class="col-md-9">
-				<%= f.text_area :product_comment, class: "form-control", rows: "8", placeholder:'まずはクチコミを投稿してみましょう！投稿してから削除もできますよ！' %>
-		</div>
-	</div>
-	<!-- 確認ボタン -->
-		<div class="form-group row justify-content-end">
-			<div class="col-md-12" style="text-align: right;">
-			<% if current_customer %>
-				<%= f.submit '投稿する', class:"btn btn-success" %>
-			<% else %>
-				<p>※ログイン後投稿することができます。</p>
-			<% end %>
-			</div>
-		</div>
-<% end %>
-
+<div class="container" id="gymcomment-pc-position">
+  <%= form_for [product, product_comment], url: customers_product_product_comments_path(product), method: :post do |f| %>
+  <!-- タイトル -->
+    <%= render "devise/shared/error_messages", resource: f.object %>
+  	<div class="form-group row">
+    	<%= f.label :product_title, 'タイトル ', class:'col-xs-12 col-sm-12 col-md-3 col-lg-3 col-form-label' %>
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+      	<%= f.text_field :product_title, class: "form-control" %>
+   		</div>
+    </div>
+  	<!-- 評価 -->
+    <div class="form-group row">
+      <%= f.label :product_rate,'評価 ', class:'col-xs-12 col-sm-12 col-md-3 col-lg-3 col-form-label' %>
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+        <div  id="star">
+          <%= f.hidden_field :product_rate, id: :review_star %>
+        </div>
+      </div>
+    </div>
+  	<!-- 評価javascript -->
+  	<script>
+      $(document).on('turbolinks:load', function() {
+    		$('#star').raty({
+    			size     : 36,
+    			starOff:  '<%= asset_path('star-off.png') %>',
+    			starOn : '<%= asset_path('star-on.png') %>',
+    			starHalf: '<%= asset_path('star-half.png') %>',
+    			scoreName: 'product_comment[product_rate]', //reviewカラムに保存するので忘れないように
+    			half: true, //★の半分の入力を行う
+    		});
+      });
+  	</script>
+  	<!-- 口コミ -->
+  	<div class="form-group row">
+  		<%= f.label :product_comment, '口コミ内容 ', class:'col-xs-12 col-sm-12 col-md-3 col-lg-3 col-form-label' %>
+      <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+  				<%= f.text_area :product_comment, class: "form-control", rows: "8", placeholder:'まずはクチコミを投稿してみましょう！投稿してから削除もできますよ！' %>
+  		</div>
+  	</div>
+  	<!-- 確認ボタン -->
+  		<div class="form-group row justify-content-end">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="text-align: right;">
+  			<% if current_customer %>
+  				<%= f.submit '投稿する', class:"btn btn-success" %>
+  			<% else %>
+  				<p>※ログイン後投稿することができます。</p>
+  			<% end %>
+  			</div>
+  		</div>
+  <% end %>
+</div>
