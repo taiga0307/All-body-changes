@@ -2,32 +2,207 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-/* table */
-.table_singup{
-    border: 1px solid #dedede;
-    background: #f9f9f5;
-    margin: 0 auto;
-    width: 800px;
-    color: #5E6469;
-    margin-bottom:30px;
-}
-th{
-  text-align: center;
-  border-bottom: 1px solid #dedede;
-  font-size: 110%;
-}
-td {
-  text-align: center;
-  border-bottom: 1px solid #dedede;
-  font-size: 80%;
-}
-.pa10px40px{
-  padding: 10px 40px;
-}
-.actions{
-  padding: 10px;
-}
-.field{
-  padding: 10px;
+/*992px以上*/
+@media screen and (min-width: 992px) {
+  /* table */
+  .table_singup{
+      border: 1px solid #dedede;
+      background: #f9f9f5;
+      margin: 0 auto;
+      color: #5E6469;
+      margin-bottom:30px;
+      width:100%;
+  }
+  .required{
+      color: red;
+      font-size:10px;
+  }
+  th{
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    font-size: 110%;
+    color: white;
+    background: #333333;
+  }
+  td {
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    font-size: 80%;
+  }
+  .table-title{
+    padding: 10px;
+    text-align: center;
+    width: 35%;
+  }
+  .confirm-btn{
+    padding-top:15px;
+    padding-bottom:5px;
+  }
+  .withdrawal-btn{
+    padding-bottom:15px;
+  }
+  .changepassword-btn{
+    padding-top:15px;
+    padding-bottom:15px;
+  }
+  .field{
+    padding: 10px;
+  }
+  input[type="text"]{
+    height:30px;
+    border-radius: 5px;
+  }
+  input[type="email"]{
+    height:30px;
+    border-radius: 5px;
+  }
+  input[type="password"]{
+    height:30px;
+    border-radius: 5px;
+  }
+  #customer_prefecture_code{
+    height:30px;
+    border-radius: 5px;
+  }
+  #customer_customer_picture_id{
+    margin-left:150px;
+  }
 }
 
+/*768px以上991px以下*/
+@media screen and (min-width: 768px)and(max-width: 991px) {
+  /* table */
+  .table_singup{
+      border: 1px solid #dedede;
+      background: #f9f9f5;
+      margin: 0 auto;
+      color: #5E6469;
+      margin-bottom:30px;
+      width:100%;
+  }
+  .required{
+      color: red;
+      font-size:10px;
+  }
+  th{
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    font-size: 110%;
+    color: white;
+    background: #333333;
+  }
+  td {
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    font-size: 80%;
+  }
+  .table-title{
+    padding: 10px;
+    text-align: center;
+    width: 35%;
+  }
+  .confirm-btn{
+    padding-top:15px;
+    padding-bottom:5px;
+  }
+  .withdrawal-btn{
+    padding-bottom:15px;
+  }
+  .changepassword-btn{
+    padding-top:15px;
+    padding-bottom:15px;
+  }
+  .field{
+    padding: 10px;
+  }
+  input[type="text"]{
+    height:30px;
+    border-radius: 5px;
+  }
+  input[type="email"]{
+    height:30px;
+    border-radius: 5px;
+  }
+  input[type="password"]{
+    height:30px;
+    border-radius: 5px;
+  }
+  #customer_prefecture_code{
+    height:30px;
+    border-radius: 5px;
+  }
+  #customer_customer_picture_id{
+    margin-left:50px;
+  }
+}
+
+/*767px以下*/
+@media screen and (max-width: 767px) {
+  /* table */
+  .table_singup{
+      border: 1px solid #dedede;
+      background: #f9f9f5;
+      color: #5E6469;
+      margin-bottom:30px;
+      width:100%;
+  }
+  .required{
+      color: red;
+      font-size:10px;
+  }
+  th{
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    font-size: 110%;
+    display:block;
+    color: white;
+    background: #333333;
+  }
+  td {
+    text-align: center;
+    border-bottom: 1px solid #dedede;
+    font-size: 80%;
+    display:block;
+  }
+  .table-title{
+    padding: 10px 40px;
+    text-align: center;
+  }
+  .confirm-btn{
+    padding-top:15px;
+    padding-bottom:5px;
+  }
+  .withdrawal-btn{
+    padding-bottom:15px;
+  }
+  .changepassword-btn{
+    padding-top:15px;
+    padding-bottom:15px;
+  }
+  .field{
+    padding: 15px;
+  }
+  input[type="text"]{
+    width: 80%;
+    height:30px;
+    border-radius: 5px;
+  }
+  input[type="email"]{
+    width: 80%;
+    height:30px;
+    border-radius: 5px;
+  }
+  input[type="password"]{
+    width: 80%;
+    height:30px;
+    border-radius: 5px;
+  }
+  #customer_prefecture_code{
+    width: 80%;
+    height:30px;
+    border-radius: 5px;
+  }
+  #customer_customer_picture_id{
+    margin-left:50px;
+  }
+}

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1"><!-- 左右に余白、中央に配置 -->
       <h1>会員情報編集</h1>
       <p>会員情報を入力してください。入力後「編集内容を保存する」ボタンをクリックしてください。尚、退会をご希望される場合は「退会」ボタンをクリックしてください。</p><br>
 
@@ -18,10 +18,9 @@
       <%= form_with model: @customer, url: '/customers/fix',local: true do |f| %>
       <table class="table_singup">
         <tbody>
-
           <tr>
-            <th class="pa10px40px"><%= f.label :プロフィール画像 %></th>
-            <td colspan="2">
+            <th class="table-title"><%= f.label :プロフィール画像 %></th>
+            <td>
               <div class="field">
                 <%= f.file_field :customer_picture_id %>
               </div>
@@ -30,7 +29,7 @@
           </tr>
 
           <tr>
-            <th class="pa10px40px">お名前</th>
+            <th class="table-title">お名前<span class="required">【必須】</span></th>
             <td>
               <div class="field">
                 <%= f.label :姓 %><br>
@@ -40,89 +39,89 @@
             <td>
               <div class="field">
                 <%= f.label :名 %><br>
-                <%= f.text_field :name_mei, autofocus: true %>
+                <%= f.text_field :name_mei %>
               </div>
             </td>
           </tr>
           <tr>
-            <th class="pa10px40px">お名前(フリガナ)</th>
+            <th class="table-title">お名前(フリガナ)<span class="required">【必須】</span></th>
             <td>
               <div class="field">
                 <%= f.label :セイ %><br>
-                <%= f.text_field :yomi_sei, autofocus: true %>
+                <%= f.text_field :yomi_sei %>
               </div>
             </td>
             <td>
               <div class="field">
                 <%= f.label :メイ %><br>
-                <%= f.text_field :yomi_mei, autofocus: true %>
+                <%= f.text_field :yomi_mei %>
               </div>
             </td>
           </tr>
 
           <tr>
-            <th class="pa10px40px"><%= f.label :ニックネーム %></th>
-            <td colspan="2">
+            <th class="table-title"><%= f.label :ニックネーム %><span class="required">【必須】</span></th>
+            <td>
               <div class="field">
-                <%= f.text_field :nickname, autofocus: true %>
+                <%= f.text_field :nickname %>
               </div>
             </td>
             <td></td>
           </tr>
 
           <tr>
-            <th class="pa10px40px", rowspan="4"><%= f.label :ご住所 %></th>
-            <td colspan="2">
+            <th class="table-title", rowspan="4"><%= f.label :ご住所 %><span class="required">【必須】</span></th>
+            <td>
               <div class="field">
                 <%= f.label :郵便番号 %><br>
-                <%= f.text_field :postal_code, autofocus: true, id: "customer_postal_code"  %>
+                <%= f.text_field :postal_code, id: "customer_postal_code"  %><br>半角数字で入力してください(ハイフン不要)
               </div>
             </td>
             <td></td>
           </tr>
           <tr>
-            <td colspan="2">
+            <td>
               <div class="field">
                 <%= f.label :都道府県 %><br>
-                <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,  :name, :name, autofocus: true, id: "customer_prefecture_code" %>
+                <%= f.collection_select :prefecture_code, JpPrefecture::Prefecture.all,  :name, :name, id: "customer_prefecture_code" %>
               </div>
             </td>
             <td></td>
           </tr>
           <tr>
-            <td colspan="2">
+            <td>
               <div class="field">
                 <%= f.label :市区町村 %><br>
-                <%= f.text_field :address_city, autofocus: true, id: "customer_address_city" %>
+                <%= f.text_field :address_city, id: "customer_address_city" %>
               </div>
             </td>
             <td></td>
           </tr>
           <tr>
-            <td colspan="2">
+            <td>
               <div class="field">
                 <%= f.label :町名番地 %><br>
-                <%= f.text_field :address_street, autofocus: true, id: "customer_address_street" %>
+                <%= f.text_field :address_street, id: "customer_address_street" %>
               </div>
             </td>
             <td></td>
           </tr>
 
           <tr>
-            <th class="pa10px40px"><%= f.label :電話番号 %></th>
-            <td colspan="2">
+            <th class="table-title"><%= f.label :電話番号 %><span class="required">【必須】</span></th>
+            <td>
               <div class="field">
-                <%= f.text_field :tell, autofocus: true %>
+                <%= f.text_field :tell %><br>半角数字で入力してください(ハイフン不要)
               </div>
             </td>
             <td></td>
           </tr>
 
           <tr>
-            <th class="pa10px40px"><%= f.label :メールアドレス %></th>
-            <td colspan="2">
+            <th class="table-title"><%= f.label :メールアドレス %><span class="required">【必須】</span></th>
+            <td>
               <div class="field">
-                <%= f.email_field :email, autofocus: true %>
+                <%= f.email_field :email %>
               </div>
             </td>
             <td></td>
@@ -130,10 +129,10 @@
 
           <tr>
             <td colspan="3">
-              <div class="actions">
+              <div class="confirm-btn">
                 <%= f.submit "編集内容を保存する", class:"btn btn-primary"%>
               </div>
-              <div class="actions">
+              <div class="withdrawal-btn">
                 <%= link_to "退会する", customers_withdraw_path, class:"btn btn-danger" %>
               </div>
             </td>
