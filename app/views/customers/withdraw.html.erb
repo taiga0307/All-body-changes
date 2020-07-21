@@ -5,7 +5,7 @@
   		<p>会員情報が全て削除されます。<br>問題がなければ「退会」ボタンをクリックしてください。</p>
     <div class="withdrawal-btn-position">
       <div class="confirm-btn">
-		    <%= link_to '退会手続きをやめる', customers_mypage_path, class:"btn btn-success" %>
+		    <%= link_to '退会手続きをやめる', customers_mypage_path, data: {"turbolinks" => false}, class:"btn btn-success" %>
       </div>
       <div class="withdrawal-btn">
 		    <%= link_to "会員を退会する", customers_withdraw_path(current_customer), method: :patch, "data-confirm" => "本当に退会しますか？", class:"btn btn-danger" %>

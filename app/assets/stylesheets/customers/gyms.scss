@@ -88,7 +88,7 @@
   .gymimage{
      padding: 30px 0;
      position: relative;
-     width: 300px;
+     width: 320px;
   }
   .gym-favorite-show{
     position: absolute;
@@ -98,21 +98,25 @@
   /* showブランド */
   .gymbrand-show{
      margin: 30px 0 10px 10px;
+     margin-left: 25px;
   }
   /* show評価スター */
   .gymstar-show{
     float:left;
     margin-right:20px;
+    margin-left: 25px;
   }
   /* show平均評価数 */
   .gymaverage-show{
     float:left;
     margin-right:20px;
+
   }
   /* show紹介文 */
   .gymdescription{
      padding-bottom: 30px;
      margin-top:20px;
+     margin-left: 25px;
   }
   /* show見学予約 */
   .btn-reservation {
@@ -143,7 +147,11 @@
     color: #5E6469;
     border: 1px solid #dedede;
     background: #f9f9f5;
-    width:340px;
+    width:100%;
+  }
+  .gym-table-title{
+    padding: 10px;
+    text-align: center;
   }
   /* show郵便番号 */
   .gympostalcode{
@@ -307,6 +315,10 @@
     width:300px;
     margin-top:20px;
   }
+  .gym-table-title{
+    padding: 10px;
+    text-align: center;
+  }
   /* show郵便番号 */
   .gympostalcode{
     font-size:15px;
@@ -467,19 +479,26 @@
     color: #5E6469;
     border: 1px solid #dedede;
     background: #f9f9f5;
-    width:340px;
+    width:100%;
     margin-top:20px;
+  }
+  .gym-table-title{
+    padding: 5px;
+    text-align: center;
   }
   /* show郵便番号 */
   .gympostalcode{
     font-size:15px;
+    padding: 5px;
   }
   /* show住所 */
   .gymaddress{
     font-size:15px;
+    padding: 5px;
   }
   /* show電話番号 */
   .gymtell{
     font-size:15px;
+    padding: 5px;
   }
 }

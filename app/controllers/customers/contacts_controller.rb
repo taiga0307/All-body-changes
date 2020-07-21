@@ -24,9 +24,10 @@ class Customers::ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.customer_id = current_customer.id #customersの情報
     if @contact.save # @contactには１つのレコードが保存
-    	redirect_to  customers_contacts_thanks_path
+    	 redirect_to  customers_contacts_thanks_path
     else
-    	render 'confirm'
+       flash[:alert] = "お問い合わせが失敗しました"
+    	 render 'confirm'
     end
   end
 

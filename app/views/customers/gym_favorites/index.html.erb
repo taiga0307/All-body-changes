@@ -14,11 +14,11 @@
             <div class="gymimagebox">
               <!-- 画像 -->
               <div class="gym-image-favorite-positon">
-              <%= link_to customers_gym_path(gym.id), {class: "gym-link"} do %>
+              <%= link_to customers_gym_path(gym.id), data: {"turbolinks" => false}, class: "gym-link" do %>
                 <%= image_tag gym.gym_picture_id.to_s,  size:"212x212" %>
               <% end %>
               </div>
-          <%= link_to customers_gym_path(gym.id), {class: "gym-link"} do %>
+          <%= link_to customers_gym_path(gym.id), data: {"turbolinks" => false}, class: "gym-link" do %>
             </div>
             <div class="gymbox">
               <!-- ブランド -->

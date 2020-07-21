@@ -6,11 +6,13 @@ class CustomersController < ApplicationController
 
   def fix_update
     @customer = current_customer
-     if @customer.update(customer_params)
-        redirect_to customers_mypage_path
-      else
-        render "fix"
-      end
+    if @customer.update(customer_params)
+      flash[:notice] = "会員情報の更新が完了しました"
+      redirect_to customers_mypage_path
+    else
+      flash[:alert] = "会員情報の更新が失敗しました"
+      render "fix"
+    end
   end
 
   def withdraw
@@ -19,10 +21,15 @@ class CustomersController < ApplicationController
 
 	def withdraw_update
 		@customer = current_customer
-		@customer.update(customer_status: false)
-        	#ログアウトさせる
-        	reset_session
-        	redirect_to new_customer_registration_path
+		if @customer.update(customer_status: false)
+    	#ログアウトさせる
+    	reset_session
+      flash[:notice] = "退会が完了しました"
+    	redirect_to new_customer_registration_path
+    else
+      flash[:alert] = "退会が失敗しました"
+      render "withdraw"
+    end
   end
 
   def customer_params

@@ -164,6 +164,16 @@
     color: #FFFF00;
     text-decoration: none;
   }
+  /* サイドバーテーブル */
+  .table-side{
+    margin: 30px auto;    /* 上下3px 左右autoで中央寄せ */
+  }
+  .sidetext{
+    font-size:15px;
+    padding:0 auto;
+    margin:15px 0 0 0;
+    font-family:sans-serif;
+  }
   /* サイドバージャンル */
   .genre-title{
     text-align: center;
@@ -186,17 +196,6 @@
     border-bottom: solid 1px #000000;
      font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
   }
-  /* サイドバーテーブル */
-  .table-side{
-    margin:50px 0 30px 5px;
-  }
-  .sidetext{
-    font-size:15px;
-    padding:0 auto;
-    margin:15px 0 0 0;
-    font-family:sans-serif;
-  }
-
   /* サイドバー会員登録ボタン */
   .btn-push1 {
     display: inline-block;
@@ -439,8 +438,16 @@
     color: #FFFF00;
     text-decoration: none;
   }
-
-
+  /* サイドバーテーブル */
+  .table-side{
+    margin: 30px auto;    /* 上下3px 左右autoで中央寄せ */
+  }
+  .sidetext{
+    font-size:15px;
+    padding:0 auto;
+    margin:15px 0 0 0;
+    font-family:sans-serif;
+  }
   /* サイドバージャンル */
   .genre-box{
     margin: 35px 0;
@@ -459,17 +466,6 @@
     border-bottom: solid 1px #000000;
      font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
   }
-  /* サイドバーテーブル */
-  .table-side{
-    margin:50px 0 30px 0;
-  }
-  .sidetext{
-    font-size:15px;
-    padding:0 auto;
-    margin:15px 0 0 0;
-    font-family:sans-serif;
-  }
-
   /* サイドバー会員登録ボタン */
   .btn-push1 {
     display: inline-block;
@@ -530,8 +526,6 @@
     border-left: double 7px #000055;/*左線*/
     border-right: double 7px #000055;/*右線*/
   }
-
-
   /*ページネーション自体のデザイン*/
   .pagination>li>a {
     color: #696969;   /*文字の色を変える*/
@@ -662,7 +656,6 @@
     margin: 20px 0;
     width: 100%;
   }
-
   /* ボディ */
   body{
     display: flex;
@@ -720,7 +713,16 @@
     color: #FFFF00;
     text-decoration: none;
   }
-
+  /* サイドバーテーブル */
+  .table-side{
+    margin: 30px auto;    /* 上下3px 左右autoで中央寄せ */
+  }
+  .sidetext{
+    font-size:15px;
+    padding:0 auto;
+    margin:15px 0 0 0;
+    font-family:sans-serif;
+  }
   /* サイドバージャンル */
   .genre-box{
     margin: 35px 0;
@@ -741,17 +743,6 @@
      font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;/* 游明朝から優先的に表示 */
      text-align: center; /* 追加 */
   }
-  /* サイドバーテーブル */
-  .table-side{
-    margin:50px 0 30px 0;
-  }
-  .sidetext{
-    font-size:15px;
-    padding:0 auto;
-    margin:15px 0 0 0;
-    font-family:sans-serif;
-  }
-
   /* サイドバー会員登録ボタン */
   .btn-push1 {
     display: inline-block;

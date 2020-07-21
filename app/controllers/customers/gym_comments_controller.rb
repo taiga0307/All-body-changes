@@ -14,23 +14,29 @@ class Customers::GymCommentsController < ApplicationController
     @gym = Gym.find(params[:gym_id])
     @gym_comment = current_customer.gym_comments.new(gym_comment_params)
     @gym_comment.gym_id = @gym.id
-   if @gym_comment.save
-  	 flash[:notice] = "success!"
+    if @gym_comment.save
+  	  flash[:notice] = "コメントの投稿が完了しました"
      redirect_to request.referer#成功
-   else
-    @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
-    @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
-    @gym = Gym.find(params[:id])
-    @gym_comment = GymComment.new #施設へのコメントの為
-    @gym_comments = @gym.gym_comments.page(params[:page]).per(2) #コメントのpaginateの為
-   	render 'customers/gyms/show' #失敗
-   end
+    else
+      @genre_status_products = Genre.where(genre_valid: true, genre_status:1) # render(sidebar)用/true且つgenre_statusが1の時に
+      @genre_status_gyms = Genre.where(genre_valid: true, genre_status:0) # render(sidebar)用/true且つgenre_statusが2の時に
+      @gym = Gym.find(params[:id])
+      @gym_comment = GymComment.new #施設へのコメントの為
+      @gym_comments = @gym.gym_comments.page(params[:page]).per(2) #コメントのpaginateの為
+      flash[:alert] = "コメントの投稿が失敗しました"
+     	render 'customers/gyms/show' #失敗
+    end
  end
 
   def destroy
     comment = GymComment.find(params[:id])
-    comment.destroy
-    redirect_back(fallback_location: root_path) #直前のページに遷移、できなければトップに遷移。
+    if comment.destroy
+      flash[:notice] = "コメントの削除が完了しました"
+      redirect_back(fallback_location: root_path) #直前のページに遷移、できなければトップに遷移。
+    else
+      flash[:alert] = "コメントの削除が失敗しました"
+      render 'customers/gyms/show' #失敗
+    end
   end
 
  private

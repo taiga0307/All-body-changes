@@ -17,7 +17,6 @@ class Customers::ProductFavoritesController < ApplicationController
     @product_favorite = ProductFavorite.new(product_id: @product.id)
     @product_favorite.customer_id = current_customer.id
     @product_favorite.save
-
   end
 
   def destroy
@@ -25,7 +24,6 @@ class Customers::ProductFavoritesController < ApplicationController
     @product_favorite = ProductFavorite.find_by(product_id: @product.id)
     @product_favorite.customer_id = current_customer.id
     @product_favorite.destroy
-
   end
 
 end

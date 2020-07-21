@@ -103,11 +103,13 @@
   /* showブランド */
   .productbrand-show{
      margin: 30px 0 10px 10px;
+     margin-left: 25px;
   }
   /* show評価スター */
   .productstar-show{
     float:left;
     margin-right:20px;
+    margin-left: 25px;
   }
   /* show平均評価数 */
   .productaverage-show{
@@ -118,6 +120,7 @@
   .productdescription{
      padding-bottom:30px;
      margin-top:20px;
+     margin-left: 25px;
   }
   /* show価格 */
   .productprice-show{
