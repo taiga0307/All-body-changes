@@ -4,7 +4,6 @@
       <h1>会員情報編集</h1>
       <p>会員情報を入力してください。入力後「編集内容を保存する」ボタンをクリックしてください。尚、退会をご希望される場合は「退会」ボタンをクリックしてください。</p><br>
 
-
     <% if @customer.errors.any? %>
       <div id="error_explanation" class="alert alert-danger">
         <ul>
@@ -15,7 +14,7 @@
       </div>
     <% end %>
 
-      <%= form_with model: @customer, url: '/customers/fix',local: true do |f| %>
+    <%= form_with model: @customer, url: '/customers/fix',local: true do |f| %>
       <table class="table_singup">
         <tbody>
           <tr>
@@ -27,7 +26,6 @@
             </td>
             <td></td>
           </tr>
-
           <tr>
             <th class="table-title">お名前<span class="required">【必須】</span></th>
             <td>
@@ -58,7 +56,6 @@
               </div>
             </td>
           </tr>
-
           <tr>
             <th class="table-title"><%= f.label :ニックネーム %><span class="required">【必須】</span></th>
             <td>
@@ -68,13 +65,12 @@
             </td>
             <td></td>
           </tr>
-
           <tr>
             <th class="table-title", rowspan="4"><%= f.label :ご住所 %><span class="required">【必須】</span></th>
             <td>
               <div class="field">
                 <%= f.label :郵便番号 %><br>
-                <%= f.text_field :postal_code, id: "customer_postal_code"  %><br>半角数字で入力してください(ハイフン不要)
+                <%= f.text_field :postal_code, id: "customer_postal_code"  %><br>半角数字で入力してください（ハイフン不要）
               </div>
             </td>
             <td></td>
@@ -111,12 +107,11 @@
             <th class="table-title"><%= f.label :電話番号 %><span class="required">【必須】</span></th>
             <td>
               <div class="field">
-                <%= f.text_field :tell %><br>半角数字で入力してください(ハイフン不要)
+                <%= f.telephone_field :tell %><br>半角数字で入力してください（ハイフン不要）
               </div>
             </td>
             <td></td>
           </tr>
-
           <tr>
             <th class="table-title"><%= f.label :メールアドレス %><span class="required">【必須】</span></th>
             <td>
@@ -126,11 +121,10 @@
             </td>
             <td></td>
           </tr>
-
           <tr>
             <td colspan="3">
               <div class="confirm-btn">
-                <%= f.submit "編集内容を保存する", class:"btn btn-primary"%>
+                <%= f.submit "保存する", class:"btn btn-success"%>
               </div>
               <div class="withdrawal-btn">
                 <%= link_to "退会する", customers_withdraw_path, class:"btn btn-danger" %>
@@ -139,7 +133,6 @@
             <td></td>
             <td></td>
           </tr>
-
         </tbody>
       </table>
       <% end %>

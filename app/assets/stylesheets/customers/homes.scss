@@ -67,6 +67,10 @@
     font-weight: bold;
     margin:10px 0;
   }
+  /* アバウトコンテンツ */
+  .content{
+    text-align: center;
+  }
   /* アバウト機能説明文 */
   .about-function1-comment{
     font-size:15px;
@@ -75,27 +79,27 @@
   /* アバウト最終文章 */
   .about-last{
     font-size:33px;
-    text-align: center;
-    line-height: px;
+    margin: 150px 0;
     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
   }
   /* アバウトトップページリンクボタン */
   .about-btn {
     display: inline-block;
-    padding: 1em 1em;
-    margin: 100px 0 0 5px;
+    padding: 0.3em 1em;
+    margin: 100px 0 0 0;
     text-decoration: none;
-    color: #006699;
-    border: solid 2px #006699;
+    color: #FF4F02;
+    border: solid 2px #FF4F02;
     border-radius: 3px;
     transition: .4s;
-    width:300px;
-    height:60px;
+    width:200px;
+    height:50px;
+    line-height: 40px;
     text-align: center;
     font-weight:bold;
   }
   .about-btn:hover {
-    background: #006699;
+    background: #FF4F02;
     color: white;
   }
 }
@@ -165,6 +169,10 @@
     font-weight: bold;
     margin:10px 0;
   }
+  /* アバウトコンテンツ */
+  .content{
+    text-align: center;
+  }
   /* アバウト機能説明文 */
   .about-function1-comment{
     font-size:15px;
@@ -173,27 +181,27 @@
   /* アバウト最終文章 */
   .about-last{
     font-size:33px;
-    text-align: center;
-    line-height: px;
+    margin: 150px 0;
     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
   }
   /* アバウトトップページリンクボタン */
   .about-btn {
     display: inline-block;
-    padding: 1em 1em;
-    margin: 100px 0 0 5px;
+    padding: 0.3em 1em;
+    margin: 100px 0 0 0;
     text-decoration: none;
-    color: #006699;
-    border: solid 2px #006699;
+    color: #FF4F02;
+    border: solid 2px #FF4F02;
     border-radius: 3px;
     transition: .4s;
-    width:300px;
-    height:60px;
+    width:200px;
+    height:50px;
+    line-height: 40px;
     text-align: center;
     font-weight:bold;
   }
   .about-btn:hover {
-    background: #006699;
+    background: #FF4F02;
     color: white;
   }
 }
@@ -248,14 +256,14 @@
   }
   /* アバウトサブタイトル */
   .about-subtitle{
-    padding:70px 0 150px 0;
+    padding:70px 0 100px 0;
     text-align: center;
     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
     line-height: 50px;
   }
   /* アバウト機能タイトル */
   .about-function{
-    font-size:30px;
+    font-size:28px;
     text-align: center;
     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
     margin:50px 0;
@@ -266,6 +274,10 @@
     font-weight: bold;
     margin:10px 0;
   }
+  /* アバウトコンテンツ */
+  .content{
+    text-align: center;
+  }
   /* アバウト機能説明文 */
   .about-function1-comment{
     font-size:15px;
@@ -273,28 +285,28 @@
   }
   /* アバウト最終文章 */
   .about-last{
-    font-size:20px;
-    text-align: center;
-    line-height: px;
+    font-size:25px;
+    margin: 100px 0;
     font-family: 游明朝,Yu Mincho,YuMincho,Hiragino Mincho ProN,Hiragino Mincho Pro,HGS明朝E,メイリオ,Meiryo,serif;
   }
   /* アバウトトップページリンクボタン */
   .about-btn {
     display: inline-block;
-    padding: 1em 1em;
-    margin: 100px 0 0 5px;
+    padding: 0.3em 1em;
+    margin: 100px 0 0 0;
     text-decoration: none;
-    color: #006699;
-    border: solid 2px #006699;
+    color: #FF4F02;
+    border: solid 2px #FF4F02;
     border-radius: 3px;
     transition: .4s;
-    width:300px;
-    height:60px;
+    width:200px;
+    height:50px;
+    line-height: 40px;
     text-align: center;
     font-weight:bold;
   }
   .about-btn:hover {
-    background: #006699;
+    background: #FF4F02;
     color: white;
   }
 }

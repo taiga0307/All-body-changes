@@ -10,7 +10,7 @@
         <table class="table_singup">
           <tbody>
             <tr>
-              <th class="table-title">メールアドレス</th>
+              <th class="table-title">メールアドレス<span class="required">【必須】</span></th>
               <td>
                 <div class="field">
                   <%= f.email_field :email, autocomplete: "email" %>
@@ -21,7 +21,7 @@
               </td>
             </tr>
             <tr>
-              <th class="table-title">現在のパスワード</th>
+              <th class="table-title">現在のパスワード<span class="required">【必須】</span></th>
               <td>
                 <div class="field">
                   <%= f.password_field :current_password, autofocus: true, autocomplete: "current-password" %>
@@ -29,7 +29,7 @@
               </td>
             </tr>
             <tr>
-              <th class="table-title">新しいパスワード</th>
+              <th class="table-title">新しいパスワード<span class="required">【必須】</span></th>
               <td>
                 <div class="field">
                   <%= f.password_field :password, autocomplete: "new-password" %>
@@ -41,7 +41,7 @@
               </td>
             </tr>
             <tr>
-              <th class="table-title">新しいパスワード(確認用)</th>
+              <th class="table-title">新しいパスワード(確認用)<span class="required">【必須】</span></th>
               <td>
                 <div class="field">
                   <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
@@ -50,8 +50,8 @@
             </tr>
             <tr>
             <td colspan="2">
-                <div class="changepassword-btn">
-                  <%= f.submit "パスワードを変更する", class:"btn btn-success btn"  %>
+                <div class="change-btn">
+                  <%= f.submit "変更する", class:"btn btn-success btn"  %>
                 </div>
               </td>
               <td></td>

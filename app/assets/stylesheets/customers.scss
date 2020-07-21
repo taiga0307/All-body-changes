@@ -120,6 +120,9 @@
     background: #330000;
     color: white;
   }
+  .withdrawal-btn-position{
+    text-align: right;
+  }
 }
 
 /*768px以上991px以下*/
@@ -238,6 +241,9 @@
     background: #330000;
     color: white;
   }
+  .withdrawal-btn-position{
+    text-align: center;
+  }
 }
 
 /*767px以下*/
@@ -355,5 +361,8 @@
   .btn3:hover {
     background: #330000;
     color: white;
+  }
+  .withdrawal-btn-position{
+    text-align: center;
   }
 }

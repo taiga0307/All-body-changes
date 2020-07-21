@@ -1,8 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-10 col-xs-offset-1"><!-- 左右に余白、中央に配置 -->
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1"><!-- 左右に余白、中央に配置 -->
       <h1>お問い合わせ内容入力</h1>
       <p>お問い合わせは下記入力フォームよりお願いいたします。いただきましたお問い合わせは当日、もしくは翌日中に返答いたします。</p><br>
+
       <% if @contact.errors.any? %>
         <div class="alert alert-warning">
           <ul>
@@ -17,7 +18,7 @@
       <table class="table_singup">
         <tbody>
           <tr>
-            <th class="pa10px40px">お名前</th>
+            <th class="table-title">お名前<span class="required">【必須】</span></th>
             <td>
               <div class="field">
                 <%= f.text_field :contact_name, autofocus: true %>
@@ -25,7 +26,7 @@
             </td>
           </tr>
           <tr>
-            <th class="pa10px40px">メールアドレス</th>
+            <th class="table-title">メールアドレス<span class="required">【必須】</span></th>
             <td>
               <div class="field">
                 <%= f.text_field :contact_email, autofocus: true %>
@@ -33,7 +34,7 @@
             </td>
           </tr>
           <tr>
-            <th class="pa10px40px">お問い合わせ要件</th>
+            <th class="table-title">お問い合わせ要件<span class="required">【必須】</span></th>
             <td>
               <div class="field">
                 <%= f.radio_button :contact_status, :gym %>　ジム・フィットネスについて　
@@ -43,7 +44,7 @@
             </td>
           </tr>
           <tr>
-            <th class="pa10px40px">お問い合わせ内容</th>
+            <th class="table-title">お問い合わせ内容<span class="required">【必須】</span></th>
             <td>
               <div class="field">
                 <%= f.text_field :contact_content, autofocus: true %>
@@ -52,8 +53,8 @@
           </tr>
           <tr>
             <td colspan="2">
-              <div class="actions">
-                <%= f.submit "確認画面に進む", class:"btn btn-success btn-lg" %>
+              <div class="change-btn">
+                <%= f.submit "確認画面に進む", class:"btn btn-success" %>
               </div>
             </td>
           </tr>
