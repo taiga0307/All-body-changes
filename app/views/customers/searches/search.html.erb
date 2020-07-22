@@ -2,7 +2,7 @@
 	<div class="row">
     <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
 		<% if params[:genre] == "item" %><!-- 検索フォームのプルダウンでITEMを選択した場合表示 -->
-			<h2>Seatch Items</h2>
+			<h2>Search Items</h2>
       <div class="row">
         <div class="productsallcount">
           全<%= @products.count %>件
@@ -85,7 +85,7 @@
       </div>
 
 		<% elsif params[:genre] == "club" %><!-- 検索フォームのプルダウンでCLUBを選択した場合表示 -->
-			<h2>Seatch Clubs</h2>
+			<h2>Search Clubs</h2>
       <div class="row">
         <div class="gymsallcount">
           全<%= @gyms.count %>件
