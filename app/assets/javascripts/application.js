@@ -18,6 +18,12 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+window.onpageshow = function(event) {
+  if (event.persisted) {
+     window.location.reload();
+  }
+};
+
 // ハンバーガーメニュー
 $(function() {
   var hamburger = document.getElementById('Hamburger');
