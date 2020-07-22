@@ -3,7 +3,7 @@
     <h4 class=name>ジム・フィットネスクラブ検索・スポーツ商品購入サイト</h4>
 
     <!-- 検索フォーム -->
-      <%= form_with url: customers_searches_search_path, method: :get, local: true, class:"search" do |f| %>
+      <%= form_with url: customers_searches_search_path, method: :get, local: true, class:"search_container" do |f| %>
       <!-- form_withは架空のカラムを使用する際に使用。情報を送信するためのヘルパーメソッド※form_forはデータを保存する必要がある時 ※form_tagはフォームに入力されたデータを保存する必要がない時 -->
         <%= f.select :genre, [["CLUB", "club"], ["ITEM", "item"]] %>
             <%= f.select :direction, [["完全一致","完全一致"], ["前方一致", "前方一致"], ["後方一致", "後方一致"], ["部分一致","部分一致"]] %>
