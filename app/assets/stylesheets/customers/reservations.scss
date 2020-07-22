@@ -71,6 +71,12 @@
   #customer_customer_picture_id{
     margin-left:150px;
   }
+  input[type="file"]{
+    height:30px;
+    border-radius: 5px;
+    font-size:10px;
+    margin:0 auto;
+  }
 }
 
 /*768px以上991px以下*/
@@ -139,8 +145,11 @@
     height:30px;
     border-radius: 5px;
   }
-  #customer_customer_picture_id{
+  input[type="file"]{
+    height:30px;
+    border-radius: 5px;
     font-size:10px;
+    margin:0 auto;
   }
 }
 
@@ -214,5 +223,12 @@
     width: 80%;
     height:30px;
     border-radius: 5px;
+  }
+  input[type="file"]{
+    width: 80%;
+    height:30px;
+    border-radius: 5px;
+    font-size:14px;
+    margin:0 auto;
   }
 }
