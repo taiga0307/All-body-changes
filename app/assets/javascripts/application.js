@@ -18,6 +18,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+// ブラウザバックの際にJavaScriptが反応しないため再読み込み
 window.onpageshow = function(event) {
   if (event.persisted) {
      window.location.reload();
