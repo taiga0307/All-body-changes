@@ -3,17 +3,15 @@
     <h4 class=name>ジム・フィットネスクラブ検索・スポーツ商品購入サイト</h4>
 
     <!-- 検索フォーム -->
-    <div class=search>
-      <%= form_with url: customers_searches_search_path, method: :get, local: true do |f| %>
+      <%= form_with url: customers_searches_search_path, method: :get, local: true, class:"search" do |f| %>
       <!-- form_withは架空のカラムを使用する際に使用。情報を送信するためのヘルパーメソッド※form_forはデータを保存する必要がある時 ※form_tagはフォームに入力されたデータを保存する必要がない時 -->
         <%= f.select :genre, [["CLUB", "club"], ["ITEM", "item"]] %>
             <%= f.select :direction, [["完全一致","完全一致"], ["前方一致", "前方一致"], ["後方一致", "後方一致"], ["部分一致","部分一致"]] %>
         <!-- 配列[[ 選択肢の表示名1, 実際に送信されるデータ1 ], [ 選択肢の表示名1, 実際に送信されるデータ2 ]] -->
-        <%= f.text_field :search, placeholder: "検索ワードを入力" %>
-        <!-- 検索ワードを入力を入力するための架空カラム -->
-        <%= button_tag "", class:"fa fa-search fa-lg", id:"search-box" %>
+          <%= f.text_field :search, placeholder: "検索ワードを入力" %>
+          <!-- 検索ワードを入力を入力するための架空カラム -->
+          <%= button_tag "", class:"fa fa-search fa-lg", id:"search-box" %>
       <% end %>
-    </div>
   </div>
 
   <div class="container-header">
