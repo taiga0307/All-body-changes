@@ -44,6 +44,11 @@
   .btntop-area{
     text-align:center;
   }
+  /* ラジオボタンタイトル */
+  .radio-title{
+  margin:0 10px;
+  font-size:14px;
+  }
 }
 
 /*768px以上991px以下*/
@@ -88,6 +93,11 @@
   .btntop-area{
     text-align:center;
   }
+  /* ラジオボタンタイトル */
+  .radio-title{
+  margin:0 10px;
+  font-size:12px;
+  }
 }
 
 /*767px以下*/
@@ -131,5 +141,10 @@
   /* thanksトップページボタン */
   .btntop-area{
     text-align:center;
+  }
+  /* ラジオボタンタイトル */
+  .radio-title{
+  margin:0 10px;
+  font-size:14px;
   }
 }

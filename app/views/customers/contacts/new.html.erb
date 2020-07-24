@@ -37,9 +37,9 @@
             <th class="table-title">お問い合わせ要件<span class="required">【必須】</span></th>
             <td>
               <div class="field">
-                <%= f.radio_button :contact_status, :gym %>　ジム・フィットネスについて　
-                <%= f.radio_button :contact_status, :product %>　商品について　
-                <%= f.radio_button :contact_status, :other %>　その他　
+                <%= f.radio_button :contact_status, :gym %><span class="radio-title">ジム・フィットネスについて</span>
+                <%= f.radio_button :contact_status, :product %><span class="radio-title">商品について</span>
+                <%= f.radio_button :contact_status, :other %><span class="radio-title">その他</span>
               </div>
             </td>
           </tr>
