@@ -18,6 +18,7 @@ else
       region: ENV['AWS_DEFAULT_REGION']
     }
 
+    config.fog_provider = 'fog/aws'
     config.fog_directory = ENV['AWS_BUCKET']
     config.cache_storage = :fog
     # S3のURLに直アクセス禁止

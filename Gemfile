@@ -78,7 +78,7 @@ gem 'enum_help' #enumの日本語化
 
 gem 'activeadmin' # 管理画面作成のため
 gem 'carrierwave' # activeadmin画像アップロード用
-gem 'fog'
+gem 'fog-aws'
 
 gem "refile", require: "refile/rails", github: 'manfe/refile' # 画像投稿用gem
 gem "refile-mini_magick" # 画像加工用（サイズ調整など）gem
