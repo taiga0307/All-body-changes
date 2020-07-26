@@ -15,7 +15,7 @@
       <% end %>
       <!-- カスタマー画像 -->
       <div class="gymcomment-image">
-        <%= image_tag gym_comment.customer.customer_picture_id.to_s, size:"100x100" %>
+        <%= image_tag gym_comment.customer.customer_picture_id.thumb.url, size:"100x100" %>
       </div>
     </div>
 
