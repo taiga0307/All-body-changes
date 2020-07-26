@@ -87,7 +87,7 @@ gem 'bootstrap-sass', '~> 3.3.6' # デザイン
 
 gem 'jquery-rails' # RailsでjQueryを使えるようにするため
 
-gem 'kaminari','~> 1.1.1' #ページ区切る為
+gem 'kaminari','~> 1.2.1' #ページ区切る為
 
 gem 'jp_prefecture' # 住所機能
 
