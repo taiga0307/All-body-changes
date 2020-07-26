@@ -7,6 +7,7 @@ class Gym < ApplicationRecord
 
   mount_uploader :gym_picture_id, ImageUploader #activeadminにてアップロードするため記述
 
+
   def Gym.search(search, genre, direction)
     if direction == "完全一致"
          Gym.where(gym_name: "#{search}") #where検索したものを全て取得。find,findby
@@ -26,7 +27,6 @@ class Gym < ApplicationRecord
   def gym_favorited_by?(customer)
       gym_favorites.where(customer_id: customer.id).exists? # 引数で送られたcustomerのidがあるかどうか？ということを判定
   end
-
 
 
 end

@@ -31,7 +31,7 @@ ActiveAdmin.register Customer do
     column :tell
     column :customer_status
     column :customer_picture_id do |customer|
-      image_tag(customer.customer_picture_id.url, size: '150x150')
+      image_tag(customer.customer_picture_id.thumb.url, size: '150x150')
     end
     actions
   end
@@ -52,7 +52,7 @@ ActiveAdmin.register Customer do
       row :tell
       row :customer_status
       row :customer_picture_id do # show画面で画像を表示するためのタグを追加
-        image_tag(customer.customer_picture_id.url, size: '400x400')
+        image_tag(customer.customer_picture_id.thumb.url, size: '400x400')
       end
     end
   end

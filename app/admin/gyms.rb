@@ -46,7 +46,7 @@ ActiveAdmin.register Gym do
       column :gym_brand
       column :gym_valid
       column :gym_picture_id do |gym|
-        image_tag(gym.gym_picture_id.url, size: '150x150')
+        image_tag(gym.gym_picture_id.thumb.url, size: '150x150')
       end
     actions
   end
@@ -68,7 +68,7 @@ ActiveAdmin.register Gym do
         row :gym_brand
         row :gym_valid
         row :gym_picture_id do # show画面で画像を表示するためのタグを追加
-          image_tag(gym.gym_picture_id.url, size: '400x400')
+          image_tag(gym.gym_picture_id.thumb.url, size: '400x400')
         end
       end
   end

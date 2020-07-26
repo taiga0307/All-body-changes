@@ -13,7 +13,7 @@
         <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
           <!-- 画像 -->
 					<div class="productimage">
-						<%= image_tag @product.product_picture_id.to_s, id:"product-show-img" %><br>
+						<%= image_tag @product.product_picture_id.thumb.url, id:"product-show-img" %><br>
 					</div>
           <!-- お気に入り -->
           <div class="product-favorite-show">

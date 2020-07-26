@@ -38,7 +38,7 @@ ActiveAdmin.register Product do
       column :product_brand
       column :product_valid
       column :product_picture_id do |product|
-        image_tag(product.product_picture_id.url, size: '150x150')
+        image_tag(product.product_picture_id.thumb.url, size: '150x150')
       end
     actions
   end
@@ -54,7 +54,7 @@ ActiveAdmin.register Product do
         row :product_brand
         row :product_valid
         row :product_picture_id do # show画面で画像を表示するためのタグを追加
-          image_tag(product.product_picture_id.url, size: '400x400')
+          image_tag(product.product_picture_id.thumb.url, size: '400x400')
         end
       end
   end

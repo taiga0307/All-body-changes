@@ -22,7 +22,7 @@
               <!-- 画像 -->
               <div class="gym-image-favorite-positon">
               <%= link_to customers_gym_path(gym.id), data: {"turbolinks" => false}, class: "gym-link" do %>
-                <%= image_tag gym.gym_picture_id.to_s,  size:"212x212" %>
+                <%= image_tag gym.gym_picture_id.thumb.url,  size:"212x212" %>
               <% end %>
                 <!-- お気に入り -->
                 <div class="gym-favorite-index">
