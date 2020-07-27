@@ -41,6 +41,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug' # 一度プログラム処理を止めて、その時点のアプリケーションの状態をみることができる
 
+  gem 'rspec-rails'  # テスト
+
   gem 'capistrano' #Capistranoの利用に必要なgem
   gem 'capistrano-rails' #Capistranoの利用に必要なgem
   gem 'capistrano3-puma' #Capistranoの利用に必要なgem
