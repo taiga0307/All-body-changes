@@ -1,54 +1,201 @@
 require 'rails_helper'
 
 RSpec.describe Customer, type: :model do # Customerモデルをテスト対象
-  context "データが正しく保存される" do # データが正しく保存できることに関するテストを記述
-
-    it "名前（姓）に全角９文字入っていたらエラーメッセージが表示される" do
+  context "customerバリデーションテスト" do # データが正しく保存できることに関するテストを記述
+    it "名前（姓）が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.name_sei = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:name_sei]).to include('を入力してください')
+    end
+    it "名前（姓）が全角８文字以内ではない場合エラーメッセージが表示される" do
       customer = Customer.new
       customer.name_sei = "１２３４５６７８９"
       customer.valid? # バリデーションをかけている
       expect(customer.errors.messages[:name_sei]).to include('は8文字以内で入力してください')
     end
-    it "名前（姓）が空欄の場合エラーメッセージが表示される" do
+
+    it "名前（名）が空欄の場合エラーメッセージが表示される" do
       customer = Customer.new
+      customer.name_mei = nil
       customer.valid? # バリデーションをかけている
-      expect(customer.errors.messages[:name_sei]).to include('を入力してください')
+      expect(customer.errors.messages[:name_mei]).to include('を入力してください')
+    end
+    it "名前（名）が全角８文字以内ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.name_mei = "１２３４５６７８９"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:name_mei]).to include('は8文字以内で入力してください')
     end
 
-    # it "全て入力してあるので保存される" do # 正しくデータが保存されているか確認
+    it "名前（セイ）が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.yomi_sei = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:yomi_sei]).to include('を入力してください')
+    end
+    it "名前（セイ）が全角８文字以内ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.yomi_sei = "１２３４５６７８９"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:yomi_sei]).to include('は8文字以内で入力してください')
+    end
+    it "名前（セイ）がカタカナ以外の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.yomi_sei = "あいうえお"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:yomi_sei]).to include('はカタカナで入力して下さい')
+    end
+
+    it "名前（メイ）が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.yomi_mei = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:yomi_mei]).to include('を入力してください')
+    end
+    it "名前（メイ）が全角８文字以内ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.yomi_mei = "１２３４５６７８９"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:yomi_mei]).to include('は8文字以内で入力してください')
+    end
+    it "名前（メイ）がカタカナ以外の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.yomi_mei = "あいうえお"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:yomi_mei]).to include('はカタカナで入力して下さい')
+    end
+
+    it "ニックネームが空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.nickname = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:nickname]).to include('を入力してください')
+    end
+    it "ニックネームが全角２文字以上ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.nickname = "１"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:nickname]).to include('は2文字以上で入力してください')
+    end
+    it "ニックネームが全角８文字以内ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.nickname = "１２３４５６７８９"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:nickname]).to include('は8文字以内で入力してください')
+    end
+
+    it "郵便番号が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.postal_code = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:postal_code]).to include('を入力してください')
+    end
+    it "郵便番号が半角数字ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.postal_code = "１２３４５６７８９"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:postal_code]).to include('は半角数値で入力してください')
+    end
+
+    it "都道府県が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.prefecture_code = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:prefecture_code]).to include('を入力してください')
+    end
+
+    it "市区町村が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.address_city = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:address_city]).to include('を入力してください')
+    end
+
+    it "町名番地が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.address_street = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:address_street]).to include('を入力してください')
+    end
+
+    it "電話番号が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.tell = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:tell]).to include('を入力してください')
+    end
+    it "電話番号が半角数字ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.tell = "１２３４５６７８９"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:tell]).to include('は半角数値で入力してください')
+    end
+
+    it "電話番号が空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.tell = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:tell]).to include('を入力してください')
+    end
+    it "電話番号が半角数字ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.tell = "１２３４５６７８９"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:tell]).to include('は半角数値で入力してください')
+    end
+
+    it "メールアドレスが空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.email = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:email]).to include('を入力してください')
+    end
+    it "メールアドレスが@がない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.email = "000000000000000"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:email]).to include('は不正な値です')
+    end
+    # it "メールアドレスが重複した場合エラーメッセージが表示される" do
     #   customer = Customer.new
-    #   customer.name_sei = "森田"
-    #   customer.name_mei = "太一"
-    #   customer.yomi_sei = "モリタ"
-    #   customer.yomi_mei = "タイチ"
-    #   customer.nickname = "たいたい"
-    #   customer.postal_code = "2733322"
-    #   customer.prefecture_code = "千葉県"
-    #   customer.address_city = "習志野市"
-    #   customer.address_street = "津田沼"
-    #   customer.tell = "09090909090909"
-    #   customer.email = "4tai03.ga07@gmail.com"
-    #   customer.password = "TAIGA03ga07"
-    #   customer.password_confirmation = "TAIGA03ga07"
-    #   customer.save
-    #   expect(customer).to be_valid
+    #   duplicate_customer = @customer.dup
+    #   duplicate_customer.save
+    #   assert_not duplicate_customer.valid?
+    #   expect(customer.errors[:email]).to include("既に登録されてます")
     # end
-    # it "名前が空欄だと登録できない" do
-    # end
+
+    it "パスワードが空欄の場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.password = nil
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:password]).to include('を入力してください')
+    end
+    it "パスワードが６文字以上ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.password = "12345"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:password]).to include('は6文字以上で入力してください')
+    end
+    it "パスワードが１２文字以内ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.password = "1234567891234"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:password]).to include('は12文字以内で入力してください')
+    end
+    it "パスワードが半角英数字ではない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.password = "１２３４５６７８９"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:password]).to include('は半角英数字で入力して下さい')
+    end
+
+    it "パスワード(確認用)がパスワードに一致しない場合エラーメッセージが表示される" do
+      customer = Customer.new
+      customer.password = "１２３４５６７８９"
+      customer.password_confirmation = "１２３４５６７８"
+      customer.valid? # バリデーションをかけている
+      expect(customer.errors.messages[:password_confirmation]).to include('とパスワードの入力が一致しません')
+    end
   end
 end
-
-
-
-
-
-  # validates :name_sei, presence: true, length: { maximum:8 } # 文字数最大8文字
-  # validates :name_mei, presence: true, length: { maximum:8 } # 文字数最大8文字
-  # validates :yomi_sei, presence: true, length: { maximum:8 } # 文字数最大8文字
-  # validates :yomi_mei, presence: true, length: { maximum:8 } # 文字数最大8文字
-  # validates :nickname, presence: true, length: { minimum:2, maximum:8 } # 文字数最小2文字、最大8文字
-  # validates :postal_code, presence: true, numericality: { only_integer: true } # 数字のみ許可
-  # validates :prefecture_code, presence: true
-  # validates :address_city, presence: true
-  # validates :address_street, presence: true
-  # validates :tell, presence: true, numericality: { only_integer: true } # 数字のみ許可
