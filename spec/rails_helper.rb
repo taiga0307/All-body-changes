@@ -20,7 +20,9 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+
+# spec/support/配下のファイルを読み込むことができます。
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -33,6 +35,15 @@ end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
+
+  #rspecのテストコード中でFactory_botのメソッドを使用する際に、クラス名の指定を省略できる
+  config.include FactoryBot::Syntax::Methods
+  # 通常FactoryBotをつけないと、メソッドを呼べない
+  #user = FactoryBot.create(:user)
+  # 上の設定を追加することで、FactoryBotの記述が省略できる。
+  #user = create(:user)
+
+
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
