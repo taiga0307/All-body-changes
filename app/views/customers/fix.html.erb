@@ -21,7 +21,7 @@
             <th class="table-title"><%= f.label :プロフィール画像 %></th>
             <td>
               <div class="field">
-                <%= f.file_field :customer_picture_id %>
+                <%= f.file_field :customer_picture_id %>拡張子は jpg/png/jpeg のいずれかをご使用ください
               </div>
             </td>
             <td></td>
@@ -31,13 +31,13 @@
             <td>
               <div class="field">
                 <%= f.label :姓 %><br>
-                <%= f.text_field :name_sei, autofocus: true %>
+                <%= f.text_field :name_sei, autofocus: true %><br>8文字以内で入力してください
               </div>
             </td>
             <td>
               <div class="field">
                 <%= f.label :名 %><br>
-                <%= f.text_field :name_mei %>
+                <%= f.text_field :name_mei %><br>8文字以内で入力してください
               </div>
             </td>
           </tr>
@@ -46,13 +46,13 @@
             <td>
               <div class="field">
                 <%= f.label :セイ %><br>
-                <%= f.text_field :yomi_sei %>
+                <%= f.text_field :yomi_sei %><br>カタカナ8文字以内で入力してください
               </div>
             </td>
             <td>
               <div class="field">
                 <%= f.label :メイ %><br>
-                <%= f.text_field :yomi_mei %>
+                <%= f.text_field :yomi_mei %><br>カタカナ8文字以内で入力してください
               </div>
             </td>
           </tr>
@@ -60,7 +60,7 @@
             <th class="table-title"><%= f.label :ニックネーム %><span class="required">【必須】</span></th>
             <td>
               <div class="field">
-                <%= f.text_field :nickname %>
+                <%= f.text_field :nickname %><br>2〜8文字で入力してください
               </div>
             </td>
             <td></td>
@@ -70,7 +70,7 @@
             <td>
               <div class="field">
                 <%= f.label :郵便番号 %><br>
-                <%= f.text_field :postal_code, id: "customer_postal_code"  %><br>半角数字で入力してください（ハイフン不要）
+                <%= f.text_field :postal_code, id: "customer_postal_code"  %><br>半角数字7桁で入力してください（ハイフン不要）
               </div>
             </td>
             <td></td>
@@ -88,7 +88,7 @@
             <td>
               <div class="field">
                 <%= f.label :市区町村 %><br>
-                <%= f.text_field :address_city, id: "customer_address_city" %>
+                <%= f.text_field :address_city, id: "customer_address_city" %><br>2〜6文字で入力してください
               </div>
             </td>
             <td></td>
@@ -107,7 +107,7 @@
             <th class="table-title"><%= f.label :電話番号 %><span class="required">【必須】</span></th>
             <td>
               <div class="field">
-                <%= f.telephone_field :tell %><br>半角数字で入力してください（ハイフン不要）
+                <%= f.telephone_field :tell %><br>半角数字10桁または11桁で入力してください（ハイフン不要）
               </div>
             </td>
             <td></td>

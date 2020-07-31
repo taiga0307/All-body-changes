@@ -12,13 +12,13 @@
               <td>
                 <div class="field">
                   <%= f.label :姓 %><br>
-                  <%= f.text_field :name_sei, autofocus: true, autocomplete: "name_sei" %>
+                  <%= f.text_field :name_sei, autofocus: true, autocomplete: "name_sei" %><br>8文字以内で入力してください
                 </div>
               </td>
               <td>
                 <div class="field">
                   <%= f.label :名 %><br>
-                  <%= f.text_field :name_mei, autocomplete: "name_mei" %>
+                  <%= f.text_field :name_mei, autocomplete: "name_mei" %><br>8文字以内で入力してください
                 </div>
               </td>
             </tr>
@@ -27,13 +27,13 @@
               <td>
                 <div class="field">
                   <%= f.label :セイ %><br>
-                  <%= f.text_field :yomi_sei, autocomplete: "name_sei" %>
+                  <%= f.text_field :yomi_sei, autocomplete: "name_sei" %><br>カタカナ8文字以内で入力してください
                 </div>
               </td>
               <td>
                 <div class="field">
                   <%= f.label :メイ %><br>
-                  <%= f.text_field :yomi_mei, autocomplete: "name_mei" %>
+                  <%= f.text_field :yomi_mei, autocomplete: "name_mei" %><br>カタカナ8文字以内で入力してください
                 </div>
               </td>
             </tr>
@@ -41,7 +41,7 @@
               <th class="table-title"><%= f.label :ニックネーム %><span class="required">【必須】</span></th>
               <td>
                 <div class="field">
-                  <%= f.text_field :nickname, autocomplete: "nickname" %>
+                  <%= f.text_field :nickname, autocomplete: "nickname" %><br>2〜8文字で入力してください
                 </div>
               </td>
               <td></td>
@@ -51,7 +51,7 @@
               <td>
                 <div class="field">
                   <%= f.label :郵便番号 %><br>
-                  <%= f.text_field :postal_code, autocomplete: "postal_code", id: "customer_postal_code" %><br>半角数字で入力してください（ハイフン不要）
+                  <%= f.text_field :postal_code, autocomplete: "postal_code", id: "customer_postal_code" %><br>半角数字7桁で入力してください（ハイフン不要）
                 </div>
               </td>
               <td></td>
@@ -69,7 +69,7 @@
               <td>
                 <div class="field">
                   <%= f.label :市区町村 %><br>
-                  <%= f.text_field :address_city, autocomplete: "address_city", id: "customer_address_city" %>
+                  <%= f.text_field :address_city, autocomplete: "address_city", id: "customer_address_city" %><br>2〜6文字で入力してください
                 </div>
               </td>
               <td></td>
@@ -87,7 +87,7 @@
               <th class="table-title"><%= f.label :電話番号 %><span class="required">【必須】</span></th>
               <td>
                 <div class="field">
-                  <%= f.telephone_field :tell, autocomplete: "tell" %><br>半角数字で入力してください（ハイフン不要）
+                  <%= f.telephone_field :tell, autocomplete: "tell" %><br>半角数字10桁または11桁で入力してください（ハイフン不要）
                 </div>
               </td>
               <td></td>
@@ -108,7 +108,7 @@
                   <% if @minimum_password_length %>
                   <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
                   <% end %>
-                  <%= f.password_field :password, autocomplete: "new-password" %>
+                  <%= f.password_field :password, autocomplete: "new-password" %><br>半角英数字6〜12文字で入力してください
                 </div>
               </td>
               <td></td>
@@ -117,7 +117,7 @@
               <th class="table-title">パスワード(確認用)<span class="required">【必須】</span></th>
               <td>
                 <div class="field">
-                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+                  <%= f.password_field :password_confirmation, autocomplete: "new-password" %><br>半角英数字6〜12文字で入力してください
                 </div>
               </td>
               <td></td>

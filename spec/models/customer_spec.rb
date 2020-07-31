@@ -306,103 +306,142 @@ RSpec.describe Customer, type: :model do # Customerモデルをテスト対象
       end
     end
 
-
-    describe '電話番号が' do
-      context '空欄の場合' do
-        it "エラーメッセージが表示される" do
+    describe '電話番号のテスト' do
+      context '空欄のチェック' do
+        it "空欄の場合登録できない" do
           @customer.tell = nil
+          expect(@customer.valid?).to eq false
           expect(@customer.errors.messages[:tell]).to include('を入力してください')
         end
       end
-      context '半角数字ではない場合' do
-        it "エラーメッセージが表示される" do
-          @customer.tell = "１２３４５６７８９"
+      context '文字数のチェック(10文字または11文字のみ登録可)' do
+        it "10文字の場合登録できる" do
+          @customer.tell = "1234567890"
+          expect(@customer).to be_valid #有効か確認
+        end
+        it "11文字の場合登録できる" do
+          @customer.tell = "12345678901"
+          expect(@customer).to be_valid #有効か確認
+        end
+        it "9文字の場合登録できない" do
+          @customer.tell = "123456789"
+          expect(@customer.valid?).to eq false
+          expect(@customer.errors.messages[:tell]).to include('は10桁または11桁で入力して下さい')
+        end
+        it "12文字の場合登録できない" do
+          @customer.tell = "123456789012"
+          expect(@customer.valid?).to eq false
+          expect(@customer.errors.messages[:tell]).to include('は10桁または11桁で入力して下さい')
+        end
+      end
+      context '文字表記のチェック' do
+        it "半角数字の場合登録できる" do
+          @customer.tell = "1234567890"
+          expect(@customer).to be_valid #有効か確認
+        end
+        it "全角数字の場合登録できない" do
+          @customer.tell = "１２３４５６７８９０"
+          expect(@customer.valid?).to eq false
           expect(@customer.errors.messages[:tell]).to include('は半角数値で入力してください')
         end
-      end
-      context '空欄の場合' do
-        it "エラーメッセージが表示される" do
-          @customer.tell = nil
-          expect(@customer.errors.messages[:tell]).to include('を入力してください')
+        it "平仮名の場合登録できない" do
+          @customer.tell = "あいうえおかきくけこ"
+          expect(@customer.valid?).to eq false
+          expect(@customer.errors.messages[:tell]).to include('は半角数値で入力してください')
         end
-      end
-      context '半角数字ではない場合' do
-        it "エラーメッセージが表示される" do
-          @customer.tell = "１２３４５６７８９"
+        it "半角英字の場合登録できない" do
+          @customer.tell = "ABCDEFGHIJ"
+          expect(@customer.valid?).to eq false
+          expect(@customer.errors.messages[:tell]).to include('は半角数値で入力してください')
+        end
+        it "全角英字の場合登録できない" do
+          @customer.tell = "ＡＢＣＤＥＦＧＨＩＪ"
+          expect(@customer.valid?).to eq false
+          expect(@customer.errors.messages[:tell]).to include('は半角数値で入力してください')
+        end
+        it "記号(ピリオド)の場合登録できない" do
+          @customer.tell = ".........."
+          expect(@customer.valid?).to eq false
           expect(@customer.errors.messages[:tell]).to include('は半角数値で入力してください')
         end
       end
     end
 
-    describe 'メールアドレスが' do
-      context '空欄の場合' do
-        it "エラーメッセージが表示される" do
+    describe 'メールアドレスのテスト' do
+      context '空欄のチェック' do
+        it "空欄の場合登録できない" do
           @customer.email = nil
+          expect(@customer.valid?).to eq false
           expect(@customer.errors.messages[:email]).to include('を入力してください')
         end
       end
-      context '@がない場合' do
-        it "エラーメッセージが表示される" do
-          @customer.email = "000000000000000"
-          expect(@customer.errors.messages[:email]).to include('は不正な値です')
-        end
-      end
-      context '重複した場合' do
-        it "登録ができない" do
+      context 'メールアドレス重複登録のチェック' do
+        it "重複登録の場合登録できない" do
           customer = create(:customer)
           customer2 = build(:customer, email: "123456789@gmail.com")
           customer2.save
-          expect(customer2.invalid?).to eq true
+          expect(customer2.valid?).to eq false
           expect(customer2.errors[:email]).to include("はすでに存在します")
         end
       end
     end
 
     describe 'パスワードのテスト' do
-      context '空欄の場合' do
-        it "エラーメッセージが表示される" do
+      context '空欄のチェック' do
+        it "空欄の場合登録できない" do
           @customer.password = nil
+          expect(@customer.valid?).to eq false
           expect(@customer.errors.messages[:password]).to include('を入力してください')
         end
       end
-
-      context '文字数のチェック' do
-        it "5文字の場合登録できない" do
-          @customer.password = "12345"
-          expect(@customer.errors.messages[:password]).to include('は6文字以上で入力してください')
+      context 'メールアドレス重複登録のチェック' do
+        it "重複登録の場合登録できない" do
+          customer = create(:customer)
+          customer2 = build(:customer, email: "123456789@gmail.com")
+          customer2.save
+          expect(customer2.valid?).to eq false
+          expect(customer2.errors[:email]).to include("はすでに存在します")
         end
+      end
+    end
+
+    describe 'パスワードのテスト' do
+      context '空欄のチェック' do
+        it "空欄の場合登録できない" do
+          @customer.password = nil
+          expect(@customer.valid?).to eq false
+          expect(@customer.errors.messages[:password]).to include('を入力してください')
+        end
+      end
+      context '文字数のチェック' do
         it "6文字の場合登録できる" do
+          @customer = build(:customer, password: "123456", password_confirmation: "123456")
+          expect(@customer).to be_valid #有効か確認
         end
         it "12文字の場合登録できる" do
+          @customer = build(:customer, password: "123456789012", password_confirmation: "123456789012")
+          expect(@customer).to be_valid #有効か確認
+        end
+        it "5文字の場合登録できない" do
+          @customer = build(:customer, password: "12345", password_confirmation: "12345")
+          expect(@customer.valid?).to eq false
+          expect(@customer.errors.messages[:password]).to include('は6文字以上で入力してください')
         end
         it "13文字の場合登録できない" do
-          @customer.password = "1234567891234"
+          @customer = build(:customer, password: "1234567890123", password_confirmation: "1234567890123")
+          expect(@customer.valid?).to eq false
           expect(@customer.errors.messages[:password]).to include('は12文字以内で入力してください')
         end
       end
-     
-      context '半角英数字のチェック' do
-        it '全て全角の場合登録できない' do
-          @customer.password = "１２３４５６７８９"
-          expect(@customer.errors.messages[:password]).to include('は半角英数字で入力して下さい')
-        end
-
-        it "全角が一文字でもある場合登録できない" do
-          
-        end
-
-        it "全て半角の場合登録できる" do
-
-        end
-      end
-
-      context '(確認用)がパスワードに一致しない場合' do
-        it "エラーメッセージが表示される" do
-          @customer.password = "１２３４５６７８９"
-          @customer.password_confirmation = "１２３４５６７８"
+      context 'パスワード(確認用)とパスワードが異なるチェック' do
+        it "パスワード(確認用)とパスワードが異なる場合登録できない" do
+          @customer.password_confirmation = "nil"
+          expect(@customer.valid?).to eq false
           expect(@customer.errors.messages[:password_confirmation]).to include('とパスワードの入力が一致しません')
         end
       end
     end
+
   end
 end
+

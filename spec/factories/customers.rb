@@ -9,9 +9,9 @@ FactoryBot.define do
     prefecture_code       {"東京都"}
     address_city          {"港区"}
     address_street        {"六本木3-2-1"}
-    tell                  {"123456789"}
+    tell                  {"1234567890"}
     email                 {"123456789@gmail.com"}
-    password              {"000000000"}
-    password_confirmation {"000000000"}
+    password              {"123456789012"}
+    password_confirmation {"123456789012"}
   end
 end
