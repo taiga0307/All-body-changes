@@ -19,6 +19,51 @@
 ### 主な利用シーン
 ジムを探す時、トレーニンググッズを購入する時
 
+### 開発環境・言語等
+- OS
+Linux(Ubuntu)
+
+- 言語
+HTML,CSS,JavaScript,Ruby,SQL
+
+- フレームワーク
+Ruby on Rails
+
+- Railsライブラリ
+bootstrap
+byebug
+pry-byebug
+rspec-rails factory_bot_rails
+capistrano
+capistrano-rails
+capistrano3-puma
+capistrano-rbenv
+devise
+devise-i18n
+devise-i18n-views
+enum_help
+active_admin
+carrierwave
+fog-aws
+jp_prefecture
+kaminari
+jquery-rails
+dotenv-rails
+
+- JSライブラリ
+Bootstrap
+
+- インフラ
+AWS(EC2,RDS,EIP,S3)
+
+- テストフレームワーク
+RSpec
+factory bot
+
+- その他ツールなど
+Vagrant
+VirtualBox
+
 ## 設計書
 
 
